@@ -39,14 +39,17 @@ public abstract class Weapon : MonoBehaviour
         shootingTimer += Time.deltaTime;
     }
 
-    public void Fire()
+    public bool TryToFire()
     {
         if (CanFire())
         {
             shootingTimer = 0;
             Fire(vectorToTarget);
             currentAmmo--;
+            return true;
         }
+
+        return false;
     }
 
     public void Reload()
@@ -54,6 +57,16 @@ public abstract class Weapon : MonoBehaviour
         if (reloading) return;
         reloading = true;
         Invoke(nameof(ResetAmmo), reloadTime);
+    }
+
+    public float GetKnockback()
+    {
+        return knockback;
+    }
+
+    public Vector2 GetDirection()
+    {
+        return vectorToTarget;
     }
 
     protected abstract void Fire(Vector2 shootingDirection);

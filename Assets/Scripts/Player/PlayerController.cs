@@ -3,17 +3,26 @@ using UnityEngine;
 class PlayerController : MonoBehaviour
 {
     [SerializeField] Weapon weapon;
-    [SerializeField] KeyCode reloadKey;
+    const KeyCode RELOAD_KEY = KeyCode.R;
 
+    PlayerMovement movement;
+
+    private void Awake()
+    {
+        movement = GetComponent<PlayerMovement>();
+    }
 
     void Update()
     {
         if (WantsToShoot())
         {
-            weapon.Fire();
+            if (weapon.TryToFire())
+            {
+                movement.ApplyKnockback(weapon.GetKnockback(), weapon.GetDirection().normalized);
+            }
         }
 
-        if (Input.GetKeyDown(reloadKey))
+        if (Input.GetKeyDown(RELOAD_KEY))
         {
             weapon.Reload();
         }
