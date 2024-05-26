@@ -630,13 +630,23 @@ namespace Pathfinding {
 			else nextRotation = simulatedRotation;
 		}
 
-		/// <summary>\copydoc Pathfinding::IAstarAI::FinalizeMovement</summary>
-		public void FinalizeMovement (Vector3 nextPosition, Quaternion nextRotation) {
+        //vezy: modified this part so the movement is based on rigidbody
+        public Rigidbody2D rb;
+
+        /// <summary>\copydoc Pathfinding::IAstarAI::FinalizeMovement</summary>
+        public void FinalizeMovement (Vector3 nextPosition, Quaternion nextRotation) {
+
+			if(rb == null)
+			{
+				rb = gameObject.GetComponent<Rigidbody2D>();
+			}
+
 			previousPosition2 = previousPosition1;
 			previousPosition1 = simulatedPosition = nextPosition;
 			simulatedRotation = nextRotation;
-			if (updatePosition) tr.position = nextPosition;
-			if (updateRotation) tr.rotation = nextRotation;
+            //if (updatePosition) tr.position = nextPosition; //changed this part to move the rigidbody instead of transform
+            if (updatePosition) rb.MovePosition(nextPosition);
+            if (updateRotation) tr.rotation = nextRotation;
 		}
 
 		Quaternion SimulateRotationTowards (Vector3 direction, float deltaTime) {

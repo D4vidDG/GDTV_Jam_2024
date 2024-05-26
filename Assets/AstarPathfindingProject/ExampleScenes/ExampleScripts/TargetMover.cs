@@ -46,6 +46,9 @@ namespace Pathfinding {
 			}
         }
 
+        //vezy: modified this part so the movement is based on rigidbody
+        public Rigidbody2D rb;
+
         public void UpdateTargetPosition () {
 			Vector3 newPosition = Vector3.zero;
 			bool positionFound = false;
@@ -64,7 +67,14 @@ namespace Pathfinding {
 			}
 
 			if (positionFound && newPosition != target.position) {
-				target.position = newPosition;
+
+				if(rb == null)
+				{
+					rb = gameObject.GetComponent<Rigidbody2D>();
+				}
+
+				//target.position = newPosition; //changed this to move the rigidbody instead of transform
+				rb.MovePosition(newPosition);
 
 				if (onlyOnDoubleClick) {
 					for (int i = 0; i < ais.Length; i++) {

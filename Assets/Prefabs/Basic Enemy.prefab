@@ -55,6 +55,12 @@ MonoBehaviour:
   target: {fileID: 0}
   AIDestinationSetter: {fileID: 0}
   shouldDestroy: 0
+  maxHP: 5
+  currentHP: 0
+  attackDamage: 1
+  attackCooldown: 3
+  attackCooldownTimer: 0
+  canAttack: 0
 --- !u!114 &5922736595248540099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 4
   autoRepath:
-    mode: 0
+    mode: 1
     interval: Infinity
     sensitivity: 10
     maximumInterval: 2
@@ -112,6 +118,7 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   repathRateCompatibility: Infinity
   canSearchCompability: 1
+  rb: {fileID: 0}
 --- !u!114 &1170883005473987798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +211,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
