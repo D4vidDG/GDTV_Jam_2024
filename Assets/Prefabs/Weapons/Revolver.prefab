@@ -8,9 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2703953164516090302, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.449
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703953164516090302, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.148
+      objectReference: {fileID: 0}
     - target: {fileID: 3385729601472810205, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_Name
       value: Revolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729630517083375823, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729630517083375823, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729630517083375823, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.349
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729630517083375823, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.248
       objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,10 +76,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6627926098623417504, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.363
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627926098623417504, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.268
+      objectReference: {fileID: 0}
     - target: {fileID: 9198028394356198374, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+      objectReference: {fileID: 21300000, guid: 92e9c3e5ebcfbc04588cd7481e277a3c, type: 3}
     - target: {fileID: 9198028394356198374, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
