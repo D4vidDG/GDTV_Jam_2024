@@ -14,9 +14,8 @@ public class MouseLookAheadTarget : MonoBehaviour
 
     private void Update()
     {
-        Vector2 mousePosition = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 playerPosition = player.transform.position;
-        Vector2 fromPlayerToMouse = mousePosition - playerPosition;
+        Vector2 fromPlayerToMouse = Mouse.GetVectorToMouse(player.transform.position);
         Vector2 lookAheadPosition = playerPosition + fromPlayerToMouse.normalized * lookAheadDistance;
         transform.position = lookAheadPosition;
     }

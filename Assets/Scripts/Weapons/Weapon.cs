@@ -1,3 +1,4 @@
+using ExtensionMethods;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
@@ -15,6 +16,7 @@ public abstract class Weapon : MonoBehaviour
     float shootingTimer;
     int currentAmmo;
     bool reloading;
+    bool equipped;
 
     Camera mainCamera;
     GameObject player;
@@ -34,9 +36,13 @@ public abstract class Weapon : MonoBehaviour
 
     void Update()
     {
-        Vector2 target = GetTargetPosition();
-        vectorToTarget = (target - (Vector2)transform.position);
+        vectorToTarget = Mouse.GetVectorToMouse(gunTip.position);
         shootingTimer += Time.deltaTime;
+
+        if (equipped)
+        {
+            FaceDirection(vectorToTarget);
+        }
     }
 
     public bool TryToFire()
@@ -50,6 +56,19 @@ public abstract class Weapon : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void Equip(Transform holdingPoint)
+    {
+        equipped = true;
+        transform.SetParent(holdingPoint, false);
+        transform.localPosition = Vector2.zero;
+    }
+
+    public void UnEquip()
+    {
+        transform.right = Vector2.right;
+        equipped = false;
     }
 
     public void Reload()
@@ -82,6 +101,20 @@ public abstract class Weapon : MonoBehaviour
         projectile.OnTargetHit += OnTargetHit;
     }
 
+    private void FaceDirection(Vector2 direction)
+    {
+        float globalXScale = transform.lossyScale.x;
+        if (globalXScale > 0)
+        {
+            transform.right = -direction.normalized;
+        }
+        else
+        {
+            transform.right = direction.normalized;
+        }
+
+    }
+
     private void OnTargetHit(Health target)
     {
         Debug.Log("target hit:" + target.gameObject.name);
@@ -93,7 +126,7 @@ public abstract class Weapon : MonoBehaviour
         float timeToShoot = 1 / fireRate;
         bool hasEnoughAmmo = currentAmmo > 0;
         bool shootingCooldownElapsed = shootingTimer >= timeToShoot;
-        return shootingCooldownElapsed && hasEnoughAmmo;
+        return shootingCooldownElapsed && hasEnoughAmmo && equipped;
     }
 
     private void ResetAmmo()
@@ -115,6 +148,6 @@ public abstract class Weapon : MonoBehaviour
     protected virtual void DrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(gunTip.position, range);
     }
 }

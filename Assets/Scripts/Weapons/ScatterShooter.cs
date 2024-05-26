@@ -39,7 +39,7 @@ public class ScatterShooter : Weapon
         for (int i = 0; i < numberOfBullets; i++)
         {
             newDirection = oldDirection.Rotate(-deltaAngle);
-            Gizmos.DrawLine(transform.position, (Vector2)transform.position + newDirection * range);
+            Gizmos.DrawLine(gunTip.position, (Vector2)gunTip.position + newDirection * range);
             oldDirection = newDirection;
         }
     }

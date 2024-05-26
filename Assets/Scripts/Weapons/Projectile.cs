@@ -46,6 +46,7 @@ public class Projectile : MonoBehaviour
         EnableModel(true);
         collider2d.enabled = true;
         rigidBody.velocity = direction.normalized * startSpeed;
+        transform.right = direction.normalized;
         maxTravelingDistance = maxDistance;
     }
 
