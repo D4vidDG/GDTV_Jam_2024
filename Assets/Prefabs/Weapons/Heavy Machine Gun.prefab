@@ -58,14 +58,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3385729601472810205, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8250745583300336574}
+      addedObject: {fileID: 1709667104457420121}
   m_SourcePrefab: {fileID: 100100000, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
 --- !u!1 &4753910557475194459 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3385729601472810205, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
   m_PrefabInstance: {fileID: 8000028275479284358}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8250745583300336574
+--- !u!114 &1709667104457420121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,17 +74,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4753910557475194459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b01f04d879a5e4abd1e72993e22899, type: 3}
+  m_Script: {fileID: 11500000, guid: 241ad5d5e5ba266439e11310112ff6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 10
-  reloadTime: 10
+  reloadTime: 4
   knockback: 60
   ammo: 100
   range: 15
   damage: 5
   projectile: {fileID: 2922320754034976153, guid: 4d868639549942048bf7a84784e0c346, type: 3}
   gunTip: {fileID: 5369293815729384248}
+  maxRandomSpread: 15
 --- !u!4 &5369293815729384248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2703953164516090302, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}

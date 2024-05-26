@@ -12,7 +12,10 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Transform gunTip;
 
     Vector2 vectorToTarget;
-    float shootingTimer = 0;
+    float shootingTimer;
+    int currentAmmo;
+    bool reloading;
+
     Camera mainCamera;
     GameObject player;
 
@@ -20,6 +23,13 @@ public abstract class Weapon : MonoBehaviour
     {
         mainCamera = Camera.main;
         player = GameObject.FindWithTag("Player");
+    }
+
+    private void Start()
+    {
+        shootingTimer = 0;
+        currentAmmo = ammo;
+        reloading = false;
     }
 
     void Update()
@@ -35,7 +45,15 @@ public abstract class Weapon : MonoBehaviour
         {
             shootingTimer = 0;
             Fire(vectorToTarget);
+            currentAmmo--;
         }
+    }
+
+    public void Reload()
+    {
+        if (reloading) return;
+        reloading = true;
+        Invoke(nameof(ResetAmmo), reloadTime);
     }
 
     protected abstract void Fire(Vector2 shootingDirection);
@@ -60,7 +78,15 @@ public abstract class Weapon : MonoBehaviour
     private bool CanFire()
     {
         float timeToShoot = 1 / fireRate;
-        return shootingTimer >= timeToShoot;
+        bool hasEnoughAmmo = currentAmmo > 0;
+        bool shootingCooldownElapsed = shootingTimer >= timeToShoot;
+        return shootingCooldownElapsed && hasEnoughAmmo;
+    }
+
+    private void ResetAmmo()
+    {
+        currentAmmo = ammo;
+        reloading = false;
     }
 
     private Vector2 GetTargetPosition()
