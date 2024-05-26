@@ -61,7 +61,7 @@ public class Health : MonoBehaviour
         {
             Die();
             health = 0;
-            healthBar.SetPercentage(0);
+            if (healthBar != null) healthBar.SetPercentage(0);
         }
     }
 
@@ -74,7 +74,7 @@ public class Health : MonoBehaviour
     {
         health = maxHealth;
         isDead = false;
-        healthBar.SetPercentage(health / maxHealth);
+        if (healthBar != null) healthBar.SetPercentage(health / maxHealth);
     }
 
     public void SetInvincible(bool isInvincible)
@@ -92,7 +92,7 @@ public class Health : MonoBehaviour
             damageEffectCoroutine = null;
             spriteRenderer.color = originalColor;
         }
-        Instantiate(bloodEffect, transform.position, Quaternion.identity, null);
+        if (bloodEffect != null) Instantiate(bloodEffect, transform.position, Quaternion.identity, null);
         OnDead?.Invoke();
         foreach (GameObject gameObject in disableOnDie)
         {
