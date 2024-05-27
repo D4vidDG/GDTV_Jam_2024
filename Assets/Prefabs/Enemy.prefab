@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5956092404750509747}
   - component: {fileID: 5956155339931412646}
-  - component: {fileID: 9079710607693738606}
   - component: {fileID: 1124398122996010543}
   m_Layer: 0
   m_Name: Enemy
@@ -62,24 +61,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9079710607693738606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5115906193322883588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6140fbb39a2286144b5ba67a152e2225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  healthBar: {fileID: 0}
-  bloodEffect: {fileID: 0}
-  disableOnDie: []
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 7155128640366485299}
 --- !u!61 &1124398122996010543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -220,7 +201,7 @@ Animator:
   m_GameObject: {fileID: 7639579300832699624}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9c8db60902e4619428dcc0ce04a52c8f, type: 2}
+  m_Controller: {fileID: 22100000, guid: c0a0a2363f4e76b48baf0d2ae7e05880, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

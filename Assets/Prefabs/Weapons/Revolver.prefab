@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Revolver
       objectReference: {fileID: 0}
+    - target: {fileID: 3385729601472810205, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5729630517083375823, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -38,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.747
       objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.471
       objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -119,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   reloadTime: 1.5
-  knockback: 10
+  knockback: 20
   ammo: 6
   range: 15
   damage: 50

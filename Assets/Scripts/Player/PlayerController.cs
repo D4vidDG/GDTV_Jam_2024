@@ -3,11 +3,15 @@ using UnityEngine;
 
 class PlayerController : MonoBehaviour
 {
-    [SerializeField] Weapon weapon;
+    [SerializeField] Weapon[] weapons;
     [SerializeField] Transform gunHoldingPoint;
     const KeyCode RELOAD_KEY = KeyCode.R;
+    const KeyCode SWITCH_WEAPON_KEY = KeyCode.Z;
+    int currentWeaponIndex;
+    Weapon currentWeapon => weapons[currentWeaponIndex];
 
     PlayerMovement movement;
+
 
     private void Awake()
     {
@@ -16,22 +20,32 @@ class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        weapon.Equip(gunHoldingPoint);
+        currentWeaponIndex = 0;
+        currentWeapon.gameObject.SetActive(true);
+        currentWeapon.Equip(gunHoldingPoint);
     }
 
     void Update()
     {
-        if (WantsToShoot())
+        if (currentWeapon != null)
         {
-            if (weapon.TryToFire())
+            if (WantsToShoot())
             {
-                movement.ApplyKnockback(weapon.GetKnockback(), weapon.GetDirection().normalized);
+                if (currentWeapon.TryToFire())
+                {
+                    movement.ApplyKnockback(currentWeapon.GetKnockback(), currentWeapon.GetDirection().normalized);
+                }
             }
-        }
 
-        if (Input.GetKeyDown(RELOAD_KEY))
-        {
-            weapon.Reload();
+            if (Input.GetKeyDown(RELOAD_KEY))
+            {
+                currentWeapon.Reload();
+            }
+
+            if (Input.GetKeyDown(SWITCH_WEAPON_KEY))
+            {
+                SwitchWeapon();
+            }
         }
 
         FaceMouse();
@@ -43,13 +57,26 @@ class PlayerController : MonoBehaviour
         float angle = vectorToMouse.GetAngle();
         bool isMouseLeft = 90f < angle && angle < 270f;
         float xScale = isMouseLeft ? 1 : -1;
-        Debug.Log(xScale);
         transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
     }
 
     private bool WantsToShoot()
     {
         return Input.GetMouseButton(0);
+    }
+
+    private void SwitchWeapon()
+    {
+        if (weapons.Length > 0)
+        {
+            currentWeapon.UnEquip();
+            currentWeapon.gameObject.SetActive(false);
+
+            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+
+            currentWeapon.gameObject.SetActive(true);
+            currentWeapon.Equip(gunHoldingPoint);
+        }
     }
 
 }

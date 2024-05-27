@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heavy Machine Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 3385729601472810205, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5729630517083375823, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -38,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.1819999
       objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.z
