@@ -116,6 +116,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7765539971246081409}
   - component: {fileID: 99314863438792096}
+  - component: {fileID: 5415718773845451602}
+  - component: {fileID: 1027145647478244614}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -131,7 +133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7932971661703256402}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -174,3 +176,31 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.35
+--- !u!114 &5415718773845451602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932971661703256402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1697e73f692480842adfd787c1f83a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifetime: 20
+  timeToBlink: 15
+--- !u!114 &1027145647478244614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932971661703256402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a3bf39a81edcc4e88b23e3461d3ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 828646288112134824}
+  blinkFrequency: 3
