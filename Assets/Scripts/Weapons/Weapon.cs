@@ -98,7 +98,7 @@ public abstract class Weapon : MonoBehaviour
                                   Quaternion.identity,
                                   null);
         instance.Launch(direction, range);
-        projectile.OnTargetHit += OnTargetHit;
+        instance.OnTargetHit += OnTargetHit;
     }
 
     private void FaceDirection(Vector2 direction)
@@ -117,7 +117,6 @@ public abstract class Weapon : MonoBehaviour
 
     private void OnTargetHit(Health target)
     {
-        Debug.Log("target hit:" + target.gameObject.name);
         target.TakeDamage(damage);
     }
 
