@@ -7,11 +7,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float drag;
 
     Rigidbody2D rigidBody;
+    Animator animator;
 
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -19,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.drag = drag;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
-
+        animator.SetFloat("Speed", rigidBody.velocity.magnitude);
     }
 
     public void ApplyKnockback(float knockback, Vector2 direction)
