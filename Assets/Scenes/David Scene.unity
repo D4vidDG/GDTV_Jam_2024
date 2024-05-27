@@ -517,6 +517,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnAttacked.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnAttacked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDead
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnAttacked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnAttacked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DamageEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnAttacked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DamageEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: OnAttacked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5115906193322883588, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
       propertyPath: m_Name
       value: Enemy (10)
@@ -701,6 +753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2859497161249791981, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5115906193322883588, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
       propertyPath: m_Name
       value: Enemy (4)
@@ -1428,7 +1484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956092404750509747, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1600046
+      value: 5.160005
       objectReference: {fileID: 0}
     - target: {fileID: 5956092404750509747, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
       propertyPath: m_LocalPosition.y

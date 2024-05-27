@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3113746152847609872}
-  - component: {fileID: 2404557810668792854}
   - component: {fileID: 2899670607375404609}
-  - component: {fileID: 263513751193575780}
   - component: {fileID: 590699532755547097}
+  - component: {fileID: 2404557810668792854}
+  - component: {fileID: 263513751193575780}
+  - component: {fileID: 4181085835563575384}
+  - component: {fileID: 6110596200275751367}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -37,23 +39,6 @@ Transform:
   - {fileID: 246104570129978374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2404557810668792854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184733888416179389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c2538bde3338454ba38a520646e3b52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  gunHoldingPoint: {fileID: 246104570129978374}
 --- !u!50 &2899670607375404609
 Rigidbody2D:
   serializedVersion: 4
@@ -81,20 +66,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &263513751193575780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184733888416179389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e40929958e6507b4dad50fa2849fd449, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackSensitivity: 1
-  drag: 5
 --- !u!58 &590699532755547097
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -130,6 +101,71 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2404557810668792854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184733888416179389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2538bde3338454ba38a520646e3b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gunHoldingPoint: {fileID: 246104570129978374}
+--- !u!114 &263513751193575780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184733888416179389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40929958e6507b4dad50fa2849fd449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackSensitivity: 1
+  drag: 5
+--- !u!114 &4181085835563575384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184733888416179389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c2d5c9b5852e34b8baec541469dfee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  OnAttacked:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6110596200275751367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184733888416179389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2d95f6776da00489c74bc2630e254e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 4181085835563575384}
+  damagedColor: {r: 1, g: 0, b: 0, a: 1}
+  spriteRenderer: {fileID: 8882940907625150381}
 --- !u!1 &3094364272628612999
 GameObject:
   m_ObjectHideFlags: 0
