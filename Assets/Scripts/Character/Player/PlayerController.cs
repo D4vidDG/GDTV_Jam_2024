@@ -8,7 +8,7 @@ class PlayerController : MonoBehaviour
     const KeyCode RELOAD_KEY = KeyCode.R;
     const KeyCode SWITCH_WEAPON_KEY = KeyCode.Z;
     int currentWeaponIndex;
-    Weapon currentWeapon => weapons[currentWeaponIndex];
+    public Weapon currentWeapon => weapons[currentWeaponIndex];
 
     PlayerMovement movement;
 
