@@ -47,9 +47,14 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackCooldownTimer += Time.deltaTime;
-        AI.canMove = !PlayerWithinAttackRange() && !health.IsDead();
+        if (health.IsDead())
+        {
+            AI.canMove = false;
+            return;
+        }
 
+        attackCooldownTimer += Time.deltaTime;
+        AI.canMove = !PlayerWithinAttackRange();
         if (PlayerWithinAttackRange() && attackCooldown < attackCooldownTimer && !attacking)
         {
             StartAttack();

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 263513751193575780}
   - component: {fileID: 4181085835563575384}
   - component: {fileID: 6110596200275751367}
+  - component: {fileID: 8060268272673990645}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -191,6 +192,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8882940907625150381}
   effectDuration: 0.2
   timeWindowBetweenChanges: 0.1
+--- !u!114 &8060268272673990645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184733888416179389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0b6de95e791ea46bc04a949df2d4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCoins: 999
 --- !u!1 &3094364272628612999
 GameObject:
   m_ObjectHideFlags: 0
