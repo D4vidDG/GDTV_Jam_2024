@@ -67,7 +67,7 @@ public class PauseFunctions : MonoBehaviour
         yield return new WaitForSecondsRealtime(delay);
         GameOver.instance.gameObject.SetActive(true);
         Time.timeScale = 1;
-        SceneManager.LoadScene("EnemyAIStuff");//this should set to the current scene name instead
+        SceneManager.LoadScene("MergedScene");//this should set to the current scene name instead
     }
 
 

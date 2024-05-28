@@ -82,14 +82,14 @@ public class SpawnManager : MonoBehaviour
         {
             roll = -1;
         }
-        x = Random.Range(minDistance, maxDistance) * roll;
+        x = GameManager.instance.player.transform.position.x * roll + Random.Range(minDistance, maxDistance) * roll;
 
         roll = Random.Range(0, 2);
         if (roll == 0)
         {
             roll = -1;
         }
-        y = Random.Range(minDistance, maxDistance) * roll;
+        y = GameManager.instance.player.transform.position.y * roll + Random.Range(minDistance, maxDistance) * roll;
 
 
         Vector2 location = new Vector2(x, y);
