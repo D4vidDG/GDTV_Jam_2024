@@ -44,19 +44,19 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         attackCooldownTimer += Time.deltaTime;
-        float distanceToPlayer = GetDistanceToPlayer();
-        if (distanceToPlayer < attackDistance)
-        {
-            AI.canMove = false;
-            if (attackCooldown < attackCooldownTimer) Attack();
-        }
-        else
-        {
-            AI.canMove = true;
-        }
+        AI.canMove = !PlayerWithinAttackRange() && !health.IsDead();
 
+        if (PlayerWithinAttackRange() && attackCooldown < attackCooldownTimer)
+        {
+            Attack();
+        }
     }
 
+    private bool PlayerWithinAttackRange()
+    {
+        float distanceToPlayer = GetDistanceToPlayer();
+        return distanceToPlayer < attackDistance;
+    }
 
     private void LateUpdate()
     {
