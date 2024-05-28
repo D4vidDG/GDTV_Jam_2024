@@ -13,7 +13,7 @@ public class EnemyScript : MonoBehaviour
     public float currentHP;
 
     float attackCooldownTimer;
-
+    bool attacking;
 
     Health health;
     Animator animator;
@@ -46,17 +46,13 @@ public class EnemyScript : MonoBehaviour
         attackCooldownTimer += Time.deltaTime;
         AI.canMove = !PlayerWithinAttackRange() && !health.IsDead();
 
-        if (PlayerWithinAttackRange() && attackCooldown < attackCooldownTimer)
+        if (PlayerWithinAttackRange() && attackCooldown < attackCooldownTimer && !attacking)
         {
-            Attack();
+            StartAttack();
         }
     }
 
-    private bool PlayerWithinAttackRange()
-    {
-        float distanceToPlayer = GetDistanceToPlayer();
-        return distanceToPlayer < attackDistance;
-    }
+
 
     private void LateUpdate()
     {
@@ -64,15 +60,11 @@ public class EnemyScript : MonoBehaviour
         animator.SetBool("Dead", health.IsDead());
     }
 
-    private float GetDistanceToPlayer()
-    {
-        return Vector2.Distance(transform.position, player.transform.position);
-    }
-
-    private void Attack()
+    public void Attack()
     {
         player.TakeDamage(damage);
         attackCooldownTimer = 0;
+        attacking = false;
     }
 
 
@@ -90,6 +82,21 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    private void StartAttack()
+    {
+        attacking = true; ;
+        animator.SetTrigger("Attack");
+    }
+
+    private bool PlayerWithinAttackRange()
+    {
+        float distanceToPlayer = GetDistanceToPlayer();
+        return distanceToPlayer < attackDistance;
+    }
+    private float GetDistanceToPlayer()
+    {
+        return Vector2.Distance(transform.position, player.transform.position);
+    }
 
     private void OnDestroy()
     {
