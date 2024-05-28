@@ -1,3 +1,5 @@
+using System;
+using ExtensionMethods;
 using Pathfinding;
 using UnityEngine;
 
@@ -20,6 +22,7 @@ public class EnemyScript : MonoBehaviour
     Health player;
     AIPath AI;
     AIDestinationSetter AIDestinationSetter;
+    GameObject model;
 
     private void Awake()
     {
@@ -27,6 +30,7 @@ public class EnemyScript : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         AI = GetComponent<AIPath>();
         AIDestinationSetter = GetComponent<AIDestinationSetter>();
+        model = transform.GetChild(0).gameObject;
     }
 
 
@@ -50,8 +54,9 @@ public class EnemyScript : MonoBehaviour
         {
             StartAttack();
         }
-    }
 
+        FaceDirection();
+    }
 
 
     private void LateUpdate()
@@ -98,10 +103,19 @@ public class EnemyScript : MonoBehaviour
         return Vector2.Distance(transform.position, player.transform.position);
     }
 
-    private void OnDestroy()
+    private void FaceDirection()
     {
-        if (SpawnManager.instance != null) SpawnManager.instance.enemyList.Remove(gameObject);
+        Vector2 vectorToPlayer = player.transform.position - transform.position;
+        float angle = vectorToPlayer.GetAngle();
+        float xScale = 90 < angle && angle < 270 ? 1 : -1;
+        model.transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
     }
+
+
+    // private void OnDestroy()
+    // {
+    //     if (SpawnManager.instance != null) SpawnManager.instance.enemyList.Remove(gameObject);
+    // }
 
     private void OnDrawGizmosSelected()
     {
