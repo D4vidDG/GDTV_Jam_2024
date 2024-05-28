@@ -28,8 +28,8 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shouldSpawn) 
-        { 
+        if (shouldSpawn)
+        {
             spawnTimer += Time.deltaTime;
 
             if (spawnTimer > spawnDelay)
@@ -69,6 +69,13 @@ public class SpawnManager : MonoBehaviour
     public void SpawnEnemy()
     {
         GameObject newEnemy = Instantiate(Enemy, RandomLocation(), Quaternion.identity);
+
+        newEnemy.GetComponent<Health>().OnDead.AddListener(() =>
+        {
+            Debug.Log("Removing " + newEnemy.name);
+            RemoveEnemyFromList(newEnemy);
+        });
+
         enemyList.Add(newEnemy);
         enemyLeftToSpawn--;
     }
@@ -78,7 +85,7 @@ public class SpawnManager : MonoBehaviour
         float x, y;
 
         float roll = Random.Range(0, 2);
-        if(roll == 0) // rolls for positive or negative number
+        if (roll == 0) // rolls for positive or negative number
         {
             roll = -1;
         }
@@ -101,7 +108,7 @@ public class SpawnManager : MonoBehaviour
     {
         enemyList.Remove(self);
 
-        if(enemyList.Count <= 0)
+        if (enemyList.Count <= 0)
         {
             EndWave();
             GameManager.instance.NextWave();

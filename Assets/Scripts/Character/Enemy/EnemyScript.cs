@@ -7,7 +7,6 @@ public class EnemyScript : MonoBehaviour
 
     float corpseTimer;
 
-    public bool hasBeenDeaded;
 
     Health health;
     Animator animator;
@@ -25,7 +24,6 @@ public class EnemyScript : MonoBehaviour
         attacker = GetComponent<EnemyAttack>();
         myCollider = GetComponent<Collider2D>();
         facer = GetComponent<CharacterFacer>();
-        hasBeenDeaded = false;
     }
 
 
@@ -50,12 +48,6 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         if (health.IsDead()) return;
-
-        if (FindObjectOfType<SpawnManager>() != null && !hasBeenDeaded)
-        {
-            hasBeenDeaded = true;
-            FindObjectOfType<SpawnManager>().RemoveEnemyFromList(gameObject);
-        }
 
         if (attacker.IsPlayerWithinAttackRange() || attacker.IsAttacking())
         {
