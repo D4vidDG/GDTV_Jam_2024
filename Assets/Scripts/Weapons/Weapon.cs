@@ -88,6 +88,11 @@ public abstract class Weapon : MonoBehaviour
         return vectorToTarget;
     }
 
+    public int GetAmmoLeft()
+    {
+        return currentAmmo;
+    }
+
     protected abstract void Fire(Vector2 shootingDirection);
 
     protected void LaunchProjectle(Vector2 direction)
@@ -125,7 +130,7 @@ public abstract class Weapon : MonoBehaviour
         float timeToShoot = 1 / fireRate;
         bool hasEnoughAmmo = currentAmmo > 0;
         bool shootingCooldownElapsed = shootingTimer >= timeToShoot;
-        return shootingCooldownElapsed && hasEnoughAmmo && equipped;
+        return shootingCooldownElapsed && hasEnoughAmmo && equipped && !reloading;
     }
 
     private void ResetAmmo()

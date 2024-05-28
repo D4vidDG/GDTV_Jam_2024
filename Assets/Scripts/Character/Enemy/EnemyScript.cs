@@ -1,63 +1,86 @@
 using Pathfinding;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [Header("Core")]
-    public GameObject target;
-    public IAstarAI AI;
-    public AIDestinationSetter AIDestinationSetter;
-    public bool shouldDestroy = false;
-
     [Header("Stats")]
+    [SerializeField] float speed;
+    [SerializeField] float attackDistance;
+    [SerializeField] float damage;
+    [SerializeField] float attackCooldown;
+
     public float maxHP;
     public float currentHP;
-    public float attackDamage, attackCooldown, attackCooldownTimer;
-    public bool canAttack;
-    // Start is called before the first frame update
+
+    float attackCooldownTimer;
+
+
+    Health health;
+    Animator animator;
+    Health player;
+    AIPath AI;
+    AIDestinationSetter AIDestinationSetter;
+
+    private void Awake()
+    {
+        health = GetComponent<Health>();
+        animator = GetComponentInChildren<Animator>();
+        AI = GetComponent<AIPath>();
+        AIDestinationSetter = GetComponent<AIDestinationSetter>();
+    }
+
+
     void Start()
     {
-        target = GameObject.Find("Player");
-        AI = gameObject.GetComponent<IAstarAI>();
-        AIDestinationSetter = gameObject.GetComponent<AIDestinationSetter>();
+        player = GameObject.Find("Player").GetComponent<Health>();
+        AIDestinationSetter.target = player.transform;
+        AI.maxSpeed = speed;
         currentHP = maxHP;
         attackCooldownTimer = 0;
-        canAttack = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        attackCooldownTimer += Time.deltaTime;
+        float distanceToPlayer = GetDistanceToPlayer();
+        if (distanceToPlayer < attackDistance)
         {
-            AIDestinationSetter.target = target.transform;
-
-            SearchPath();
+            AI.canMove = false;
+            if (attackCooldown < attackCooldownTimer) Attack();
+        }
+        else
+        {
+            AI.canMove = true;
         }
 
-        if(shouldDestroy)
-        {
-            Destroy(gameObject);
-        }
-
-        if(attackCooldownTimer < attackCooldown)
-        {
-            attackCooldownTimer += Time.deltaTime;
-        }
     }
 
-    public void SearchPath()
+
+    private void LateUpdate()
     {
-        AI.SearchPath();
+        animator.SetFloat("Speed", AI.canMove ? AI.maxSpeed : 0f);
+        animator.SetBool("Dead", health.IsDead());
     }
+
+    private float GetDistanceToPlayer()
+    {
+        return Vector2.Distance(transform.position, player.transform.position);
+    }
+
+    private void Attack()
+    {
+        player.TakeDamage(damage);
+        attackCooldownTimer = 0;
+    }
+
 
     public void UpdateHPBy(float mod)
     {
         currentHP += mod;
 
-        if(currentHP <= 0)
+        if (currentHP <= 0)
         {
             Destroy(gameObject);
         }
@@ -67,25 +90,15 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    public void Attack()
-    {
-        if (attackCooldownTimer >= attackCooldown)
-        {
-            attackCooldownTimer = 0;
-            Debug.Log("attacking" + attackCooldownTimer);
-        }
-    }
 
     private void OnDestroy()
     {
-        SpawnManager.instance.enemyList.Remove(gameObject);
+        if (SpawnManager.instance != null) SpawnManager.instance.enemyList.Remove(gameObject);
     }
 
-    public void OnCollisionStay2D(Collision2D collision)
+    private void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.name == "Player")
-        {
-            Attack();
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
     }
 }

@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 2859497161249791981}
   - component: {fileID: 1485514427238091145}
   - component: {fileID: 3664542059945531116}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 100
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -340,15 +340,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e105d2716d06ae4ab30f64b30a39cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  AIDestinationSetter: {fileID: 0}
-  shouldDestroy: 0
+  speed: 2
+  attackDistance: 1.8
+  damage: 10
+  attackCooldown: 2
   maxHP: 5
   currentHP: 0
-  attackDamage: 1
-  attackCooldown: 3
-  attackCooldownTimer: 0
-  canAttack: 0
 --- !u!114 &8517998560909734065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +412,7 @@ MonoBehaviour:
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
   endReachedDistance: 0.2
-  alwaysDrawGizmos: 1
+  alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
