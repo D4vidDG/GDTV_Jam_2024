@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject player;
     public int waveCounter;
+    public bool playerDead;
 
     private void Awake()
     {
@@ -19,11 +21,26 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        playerDead = false;
+    }
+
+    private void Start()
+    {
+        StartWave();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "EnemyAIStuff")
+        {
+            StartWave();
+        }
     }
 
     public void StartWave()
     {
-        SpawnManager.instance.NewWave();
+        FindObjectOfType<SpawnManager>().NewWave();
     }
 
     public void OpenUpgradeMenu()
@@ -33,10 +50,24 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseDifficulty()
     {
-        SpawnManager sm = SpawnManager.instance;
+        SpawnManager sm = FindObjectOfType<SpawnManager>();
 
         sm.maxEnemyAtOnce += 1 * waveCounter;
         sm.enemyPerBatch += 1 * waveCounter;
         sm.enemyPerWave += 1 * waveCounter;
+    }
+
+    public void PlayerKilled()
+    {
+        if (!playerDead)
+        {
+            playerDead = true;
+            if(FindObjectOfType<PauseFunctions>() != null)
+            {
+                FindObjectOfType<PauseFunctions>().enableInput = false;
+            }
+            GameOver.instance.gameObject.SetActive(true);
+            GameOver.instance.StartGameOverScreen();
+        }
     }
 }

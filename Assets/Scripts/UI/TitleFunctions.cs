@@ -1,13 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseFunctions : MonoBehaviour
+public class TitleFunctions : MonoBehaviour
 {
-    public Image retry, options, quit;
-    public Sprite retrySprite, optionsSprite, quitSprite;
-    public bool retryPressed, optionsPressed, quitPressed;
+    public Image play, options, quit;
+    public Sprite playSprite, optionsSprite, quitSprite;
+    public bool playPressed, optionsPressed, quitPressed;
     public Color flashColor;
     public float flashDelay, flashTimer;
     public bool isFlashing, enableInput;
@@ -21,14 +22,15 @@ public class PauseFunctions : MonoBehaviour
 
     public void ButtonChange(int clicked)
     {
-        if (enableInput) { 
+        if (enableInput)
+        {
             switch (clicked)
             {
                 case 0:
-                    if (!retryPressed && retry != null)
+                    if (!playPressed && play != null)
                     {
-                        retry.overrideSprite = retrySprite;
-                        retryPressed = true;
+                        play.overrideSprite = playSprite;
+                        playPressed = true;
                         enableInput = false;
                     }
                     break;
@@ -52,22 +54,20 @@ public class PauseFunctions : MonoBehaviour
         }
     }
 
-
-    public void PressRetryButton(float delay)
+    //might be better to merge the button press functions into 1 instead
+    public void PressPlayButton(float delay)
     {
         if (enableInput)
         {
-            StartCoroutine(RetryButton(delay));
+            StartCoroutine(PlayButton(delay));
         }
     }
 
 
-    public IEnumerator RetryButton(float delay)
+    public IEnumerator PlayButton(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        GameOver.instance.gameObject.SetActive(true);
-        Time.timeScale = 1;
-        SceneManager.LoadScene("EnemyAIStuff");//this should set to the current scene name instead
+        SceneManager.LoadScene("EnemyAIStuff");
     }
 
 
@@ -88,7 +88,7 @@ public class PauseFunctions : MonoBehaviour
         options.color = new Color(255, 255, 255, 100);
         isFlashing = false;
         enableInput = true;
-        PauseMenu.instance.ToggleOptions();//this should only be able to be pressed when the options button is visible
+        FindObjectOfType<TitleMenu>().ToggleOptions();//this should only be able to be pressed when the options button is visible
     }
 
 
@@ -110,51 +110,48 @@ public class PauseFunctions : MonoBehaviour
 
     public void Update()
     {
-        if (PauseMenu.instance.isPaused)
+        flashTimer += Time.unscaledDeltaTime;
+
+        if (flashTimer >= flashDelay)
         {
-            flashTimer += Time.unscaledDeltaTime;
-
-            if (flashTimer >= flashDelay)
+            if (playPressed)
             {
-                if (retryPressed)
+                if (isFlashing)
                 {
-                    if (isFlashing)
-                    {
-                        retry.color = flashColor;
-                    }
-                    else
-                    {
-                        retry.color = new Color(255, 255, 255, 100);
-                    }
+                    play.color = flashColor;
                 }
-                else if (optionsPressed)
+                else
                 {
-                    if (isFlashing)
-                    {
-                        options.color = flashColor;
-                    }
-                    else
-                    {
-                        options.color = new Color(255, 255, 255, 100);
-                    }
-
+                    play.color = new Color(255, 255, 255, 100);
                 }
-                else if (quitPressed)
-                {
-                    if (isFlashing)
-                    {
-                        quit.color = flashColor;
-                    }
-                    else
-                    {
-                        quit.color = new Color(255, 255, 255, 100);
-                    }
-                }
-
-                isFlashing = !isFlashing;
-
-                flashTimer = 0;
             }
+            else if (optionsPressed)
+            {
+                if (isFlashing)
+                {
+                    options.color = flashColor;
+                }
+                else
+                {
+                    options.color = new Color(255, 255, 255, 100);
+                }
+
+            }
+            else if (quitPressed)
+            {
+                if (isFlashing)
+                {
+                    quit.color = flashColor;
+                }
+                else
+                {
+                    quit.color = new Color(255, 255, 255, 100);
+                }
+            }
+
+            isFlashing = !isFlashing;
+
+            flashTimer = 0;
         }
     }
 }

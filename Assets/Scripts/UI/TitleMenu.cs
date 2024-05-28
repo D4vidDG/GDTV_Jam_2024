@@ -2,35 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class TitleMenu : MonoBehaviour
 {
-    public static PauseMenu instance;
-    public GameObject pauseScreen, optionsMenu;
+    public GameObject menuScreen, optionsMenu;
     public bool disablePauseMenu, isPaused, isOnOptions;
     // Start is called before the first frame update
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void Start()
     {
         if (disablePauseMenu)
         {
-            pauseScreen.SetActive(false);
+            menuScreen.SetActive(false);
             isPaused = false;
         }
         else
         {
-            pauseScreen.SetActive(true);
+            menuScreen.SetActive(true);
             isPaused = true;
         }
         optionsMenu.SetActive(false);
@@ -57,13 +43,13 @@ public class PauseMenu : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 1.0f;
-            pauseScreen.SetActive(false);
+            menuScreen.SetActive(false);
             isPaused = false;
         }
         else
         {
             Time.timeScale = 0.0f;
-            pauseScreen.SetActive(true);
+            menuScreen.SetActive(true);
             isPaused = true;
         }
     }
@@ -72,13 +58,13 @@ public class PauseMenu : MonoBehaviour
     {
         if (isOnOptions)
         {
-            pauseScreen.SetActive(true);
+            menuScreen.SetActive(true);
             optionsMenu.SetActive(false);
             isOnOptions = false;
         }
         else
         {
-            pauseScreen.SetActive(false);
+            menuScreen.SetActive(false);
             optionsMenu.SetActive(true);
             isOnOptions = true;
         }

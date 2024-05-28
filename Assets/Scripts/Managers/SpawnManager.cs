@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public static SpawnManager instance;
     [Header("Number Settings")]
     public int maxEnemyAtOnce;
     public int enemyPerBatch;
@@ -24,20 +23,6 @@ public class SpawnManager : MonoBehaviour
     public bool shouldSpawn;
     public GameObject Enemy;
     public List<GameObject> enemyList = new List<GameObject>();
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-        
-    }
 
 
     // Update is called once per frame
