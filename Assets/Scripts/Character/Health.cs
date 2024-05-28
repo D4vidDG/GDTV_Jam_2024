@@ -40,12 +40,11 @@ public class Health : MonoBehaviour
     {
         if (isDead) return;
         if (isInvincible) return;
-        health -= damage;
+        health = Mathf.Max(0, health - damage);
         OnAttacked?.Invoke(damage);
-        if (health <= 0)
+        if (health == 0)
         {
             Die();
-            health = 0;
         }
     }
 

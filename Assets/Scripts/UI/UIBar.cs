@@ -1,15 +1,13 @@
-﻿
+
 using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class UIBar : MonoBehaviour
 {
     [SerializeField] Image bar;
-    [SerializeField] Image cost;
     Slider slider;
-    float percentage = 1f;
+    float fraction = 1f;
 
     RectTransform rectTransform;
 
@@ -26,24 +24,23 @@ public class UIBar : MonoBehaviour
 
     private void Update()
     {
-        slider.value = percentage;
-        if (cost != null) UpdateCostBarPosition();
+        slider.value = fraction;
     }
 
-    public float GetPercentage()
+    public float GetFraction()
     {
-        return percentage;
+        return fraction;
     }
 
-    public void SetPercentage(float percentage)
+    public void SetFraction(float fraction)
     {
-        this.percentage = Mathf.Clamp(percentage, 0, 1);
+        this.fraction = Mathf.Clamp(fraction, 0, 1);
     }
 
-    public void Add(float percentage)
+    public void Add(float fraction)
     {
-        this.percentage += percentage;
-        this.percentage = Mathf.Clamp(this.percentage, 0, 1);
+        this.fraction += fraction;
+        this.fraction = Mathf.Clamp(this.fraction, 0, 1);
     }
 
     public Color GetColor()
@@ -54,25 +51,5 @@ public class UIBar : MonoBehaviour
     public void SetColor(Color color)
     {
         bar.color = color;
-    }
-
-    private void UpdateCostBarPosition()
-    {
-        cost.rectTransform.anchoredPosition = new Vector2(percentage * rectTransform.rect.width, cost.rectTransform.anchoredPosition.y);
-    }
-
-    public void EnableCost(bool enable)
-    {
-        cost.enabled = enable;
-    }
-
-    internal string Blink()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SetCost(float value)
-    {
-        cost.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, value * rectTransform.rect.width);
     }
 }

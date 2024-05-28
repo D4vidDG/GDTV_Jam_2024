@@ -1,32 +1,32 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BlinkAlpha : MonoBehaviour
+public class BlinkColor : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Image image;
     [SerializeField] float blinkFrequency;
-    [SerializeField][Range(0f, 1f)] float targetAlpha = 0f;
+    [SerializeField] Color targetColor;
 
     Color initialColor;
     private Coroutine blinkCoroutine;
 
     private void Start()
     {
-        initialColor = spriteRenderer.color;
+        initialColor = image.color;
     }
-
 
     public void Trigger()
     {
         blinkCoroutine = StartCoroutine(Blink());
-        initialColor = spriteRenderer.color;
+        initialColor = image.color;
     }
 
     public void Stop()
     {
         if (blinkCoroutine != null) StopCoroutine(blinkCoroutine);
-        spriteRenderer.color = initialColor;
+        image.color = initialColor;
     }
 
     private IEnumerator Blink()
@@ -34,13 +34,13 @@ public class BlinkAlpha : MonoBehaviour
         float t = 0;
         float maxTime = 1 / blinkFrequency;
 
-        Color initialColor = spriteRenderer.color;
-        Color newColor = new Color(initialColor.r, initialColor.b, initialColor.g, targetAlpha);
+        Color initialColor = image.color;
+        Color newColor = new Color(targetColor.r, targetColor.b, targetColor.g);
 
         yield return new WaitUntil(() =>
         {
             Color lerpColor = Color.Lerp(initialColor, newColor, t / maxTime);
-            spriteRenderer.color = lerpColor;
+            image.color = lerpColor;
 
             t += Time.deltaTime;
             return t >= maxTime;
@@ -51,7 +51,7 @@ public class BlinkAlpha : MonoBehaviour
         yield return new WaitUntil(() =>
        {
            Color lerpColor = Color.Lerp(newColor, initialColor, t / maxTime);
-           spriteRenderer.color = lerpColor;
+           image.color = lerpColor;
 
            t += Time.deltaTime;
            return t >= maxTime;
