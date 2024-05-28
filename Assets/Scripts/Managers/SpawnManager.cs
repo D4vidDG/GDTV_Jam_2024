@@ -68,12 +68,12 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        GameObject newEnemy = Instantiate(Enemy, randomLocation(), Quaternion.identity);
+        GameObject newEnemy = Instantiate(Enemy, RandomLocation(), Quaternion.identity);
         enemyList.Add(newEnemy);
         enemyLeftToSpawn--;
     }
 
-    public Vector2 randomLocation()
+    public Vector2 RandomLocation()
     {
         float x, y;
 
@@ -95,5 +95,16 @@ public class SpawnManager : MonoBehaviour
         Vector2 location = new Vector2(x, y);
 
         return location;
+    }
+
+    public void RemoveEnemyFromList(GameObject self)
+    {
+        enemyList.Remove(self);
+
+        if(enemyList.Count <= 0)
+        {
+            EndWave();
+            GameManager.instance.NextWave();
+        }
     }
 }

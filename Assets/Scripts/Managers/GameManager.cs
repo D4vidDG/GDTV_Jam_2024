@@ -22,26 +22,48 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         playerDead = false;
+        waveCounter = 0;
     }
 
     private void Start()
     {
+        Startup();
         StartWave();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "EnemyAIStuff")
+        if (scene.name == "MergedScene")
         {
+            Startup();
             StartWave();
         }
     }
 
     public void StartWave()
     {
+        IncreaseDifficulty();
         FindObjectOfType<SpawnManager>().NewWave();
     }
+
+    public void NextWave()
+    {
+        waveCounter++;
+        FindObjectOfType<WaveUI>().NextWave();
+        StartCoroutine(NextWaveWait());
+    }
+
+    IEnumerator NextWaveWait()
+    {
+        WaveUI wui = FindObjectOfType<WaveUI>();
+        while (!wui.doneFlashing) 
+        {
+            yield return null;
+        }
+        StartWave();
+    }
+
 
     public void OpenUpgradeMenu()
     {
@@ -69,5 +91,15 @@ public class GameManager : MonoBehaviour
             GameOver.instance.gameObject.SetActive(true);
             GameOver.instance.StartGameOverScreen();
         }
+    }
+
+    public void Startup()
+    {
+        if (player == null)
+        {
+            player = FindObjectOfType<PlayerController>().gameObject;
+        }
+        waveCounter = 0;
+        playerDead = false;
     }
 }

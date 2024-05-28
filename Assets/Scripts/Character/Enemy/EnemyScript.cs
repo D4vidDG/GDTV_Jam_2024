@@ -17,6 +17,8 @@ public class EnemyScript : MonoBehaviour
     float attackCooldownTimer;
     bool attacking;
 
+    public bool hasBeenDeaded;
+
     Health health;
     Animator animator;
     Health player;
@@ -31,6 +33,7 @@ public class EnemyScript : MonoBehaviour
         AI = GetComponent<AIPath>();
         AIDestinationSetter = GetComponent<AIDestinationSetter>();
         model = transform.GetChild(0).gameObject;
+        hasBeenDeaded = false;
     }
 
 
@@ -50,6 +53,11 @@ public class EnemyScript : MonoBehaviour
         if (health.IsDead())
         {
             AI.canMove = false;
+            if (FindObjectOfType<SpawnManager>() != null && !hasBeenDeaded)
+            {
+                hasBeenDeaded = true;
+                FindObjectOfType<SpawnManager>().RemoveEnemyFromList(gameObject);
+            }
             return;
         }
 
