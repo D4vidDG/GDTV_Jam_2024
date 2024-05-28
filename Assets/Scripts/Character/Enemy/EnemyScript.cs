@@ -1,130 +1,97 @@
-using System;
-using ExtensionMethods;
-using Pathfinding;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    [SerializeField] float corpseLifetime;
     [Header("Stats")]
-    [SerializeField] float speed;
-    [SerializeField] float attackDistance;
-    [SerializeField] float damage;
-    [SerializeField] float attackCooldown;
 
-    public float maxHP;
-    public float currentHP;
-
-    float attackCooldownTimer;
-    bool attacking;
+    float corpseTimer;
 
     Health health;
     Animator animator;
-    Health player;
-    AIPath AI;
-    AIDestinationSetter AIDestinationSetter;
-    GameObject model;
+    EnemyMovement movement;
+    EnemyAttack attacker;
+    Collider2D myCollider;
+    CharacterFacer facer;
+
 
     private void Awake()
     {
         health = GetComponent<Health>();
         animator = GetComponentInChildren<Animator>();
-        AI = GetComponent<AIPath>();
-        AIDestinationSetter = GetComponent<AIDestinationSetter>();
-        model = transform.GetChild(0).gameObject;
+        movement = GetComponent<EnemyMovement>();
+        attacker = GetComponent<EnemyAttack>();
+        myCollider = GetComponent<Collider2D>();
+        facer = GetComponent<CharacterFacer>();
     }
 
-
-    void Start()
+    private void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Health>();
-        AIDestinationSetter.target = player.transform;
-        AI.maxSpeed = speed;
-        currentHP = maxHP;
-        attackCooldownTimer = 0;
-
+        GameObject player = GameObject.FindWithTag("Player");
+        facer.SetTarget(player.transform);
+        facer.Enable();
+        movement.SetTarget(player.transform);
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        health.OnDead.AddListener(OnDead);
+    }
+
+    private void OnDisable()
+    {
+        health.OnDead.RemoveListener(OnDead);
+    }
+
     void Update()
     {
-        if (health.IsDead())
+        if (health.IsDead()) return;
+
+        if (attacker.IsPlayerWithinAttackRange() || attacker.IsAttacking())
         {
-            AI.canMove = false;
-            return;
+            movement.Stop();
+        }
+        else
+        {
+            movement.Move();
         }
 
-        attackCooldownTimer += Time.deltaTime;
-        AI.canMove = !PlayerWithinAttackRange();
-        if (PlayerWithinAttackRange() && attackCooldown < attackCooldownTimer && !attacking)
+        if (attacker.CanAttack())
         {
-            StartAttack();
+            attacker.Attack();
         }
-
-        FaceDirection();
     }
 
 
     private void LateUpdate()
     {
-        animator.SetFloat("Speed", AI.canMove ? AI.maxSpeed : 0f);
+        animator.SetBool("Moving", movement.IsMoving());
         animator.SetBool("Dead", health.IsDead());
     }
 
-    public void Attack()
+    private void OnDead()
     {
-        player.TakeDamage(damage);
-        attackCooldownTimer = 0;
-        attacking = false;
+        myCollider.enabled = false;
+        movement.Stop();
+        facer.Disable();
     }
-
-
-    public void UpdateHPBy(float mod)
-    {
-        currentHP += mod;
-
-        if (currentHP <= 0)
-        {
-            Destroy(gameObject);
-        }
-        else if (currentHP > maxHP)
-        {
-            currentHP = maxHP;
-        }
-    }
-
-    private void StartAttack()
-    {
-        attacking = true; ;
-        animator.SetTrigger("Attack");
-    }
-
-    private bool PlayerWithinAttackRange()
-    {
-        float distanceToPlayer = GetDistanceToPlayer();
-        return distanceToPlayer < attackDistance;
-    }
-    private float GetDistanceToPlayer()
-    {
-        return Vector2.Distance(transform.position, player.transform.position);
-    }
-
-    private void FaceDirection()
-    {
-        Vector2 vectorToPlayer = player.transform.position - transform.position;
-        float angle = vectorToPlayer.GetAngle();
-        float xScale = 90 < angle && angle < 270 ? 1 : -1;
-        model.transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
-    }
-
 
     // private void OnDestroy()
     // {
     //     if (SpawnManager.instance != null) SpawnManager.instance.enemyList.Remove(gameObject);
     // }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackDistance);
-    }
+    // public void UpdateHPBy(float mod)
+    // {
+    //     currentHP += mod;
+
+    //     if (currentHP <= 0)
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    //     else if (currentHP > maxHP)
+    //     {
+    //         currentHP = maxHP;
+    //     }
+    // }
 }

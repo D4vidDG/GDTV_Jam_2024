@@ -21,13 +21,14 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.drag = drag;
     }
 
-    private void LateUpdate()
-    {
-        animator.SetFloat("Speed", rigidBody.velocity.magnitude);
-    }
 
     public void ApplyKnockback(float knockback, Vector2 direction)
     {
         rigidBody.AddForce(-direction.normalized * knockback * knockbackSensitivity, ForceMode2D.Impulse);
+    }
+
+    public bool IsMoving()
+    {
+        return rigidBody.velocity.magnitude > 0.1f;
     }
 }

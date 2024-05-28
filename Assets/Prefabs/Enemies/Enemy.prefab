@@ -199,6 +199,9 @@ GameObject:
   - component: {fileID: 5956155339931412646}
   - component: {fileID: 2597027852356608921}
   - component: {fileID: 7884446213886507816}
+  - component: {fileID: 6030932033202375935}
+  - component: {fileID: 6665605245328488242}
+  - component: {fileID: 6547228455750015597}
   - component: {fileID: 8517998560909734065}
   - component: {fileID: 7558870164378928347}
   - component: {fileID: 7093030266599552602}
@@ -340,12 +343,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e105d2716d06ae4ab30f64b30a39cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corpseLifetime: 0
+--- !u!114 &6030932033202375935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115906193322883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c837bc864139f04babdbc4fca94ade3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &6665605245328488242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115906193322883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376a1a283d6a48243b3fca119bb2da07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   attackDistance: 1.8
   damage: 10
   attackCooldown: 2
-  maxHP: 5
-  currentHP: 0
+--- !u!114 &6547228455750015597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115906193322883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d18de34ab09a247a48754d4fef0e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!114 &8517998560909734065
 MonoBehaviour:
   m_ObjectHideFlags: 0

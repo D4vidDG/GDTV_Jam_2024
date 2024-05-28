@@ -1,4 +1,3 @@
-using ExtensionMethods;
 using UnityEngine;
 
 class PlayerController : MonoBehaviour
@@ -10,14 +9,17 @@ class PlayerController : MonoBehaviour
     int currentWeaponIndex;
     public Weapon currentWeapon => weapons[currentWeaponIndex];
 
+    Health health;
     PlayerMovement movement;
-    GameObject model;
-
+    Animator animator;
+    CharacterFacer facer;
 
     private void Awake()
     {
-        model = transform.GetChild(0).gameObject;
         movement = GetComponent<PlayerMovement>();
+        animator = GetComponentInChildren<Animator>();
+        health = GetComponent<Health>();
+        facer = GetComponent<CharacterFacer>();
     }
 
     private void Start()
@@ -50,16 +52,13 @@ class PlayerController : MonoBehaviour
             }
         }
 
-        FaceMouse();
+        facer.FacePoint(Mouse.GetScreenPoint());
     }
 
-    private void FaceMouse()
+    private void LateUpdate()
     {
-        Vector2 vectorToMouse = Mouse.GetVectorToMouse(transform.position);
-        float angle = vectorToMouse.GetAngle();
-        bool isMouseLeft = 90f < angle && angle < 270f;
-        float xScale = isMouseLeft ? 1 : -1;
-        model.transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
+        animator.SetBool("Moving", movement.IsMoving());
+        animator.SetBool("Dead", health.IsDead());
     }
 
     private bool WantsToShoot()
