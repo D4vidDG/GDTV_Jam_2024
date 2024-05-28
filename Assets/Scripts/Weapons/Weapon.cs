@@ -1,3 +1,4 @@
+using System.Collections;
 using ExtensionMethods;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] float fireRate;
     [SerializeField] float reloadTime;
     [SerializeField] float knockback;
-    [SerializeField] int ammo;
+    [SerializeField] int maxAmmo;
     [SerializeField] protected float range;
     [SerializeField] protected float damage;
     [SerializeField] protected Projectile projectile;
@@ -14,6 +15,7 @@ public abstract class Weapon : MonoBehaviour
 
     Vector2 vectorToTarget;
     float shootingTimer;
+    float reloadTimer;
     int currentAmmo;
     bool reloading;
     bool equipped;
@@ -29,8 +31,9 @@ public abstract class Weapon : MonoBehaviour
 
     private void Start()
     {
+        reloadTimer = 0;
         shootingTimer = 0;
-        currentAmmo = ammo;
+        currentAmmo = maxAmmo;
         reloading = false;
     }
 
@@ -73,10 +76,12 @@ public abstract class Weapon : MonoBehaviour
 
     public void Reload()
     {
-        if (reloading) return;
-        reloading = true;
-        Invoke(nameof(ResetAmmo), reloadTime);
+        if (CanReload())
+        {
+            StartCoroutine(ReloadCoroutine());
+        }
     }
+
 
     public float GetKnockback()
     {
@@ -91,6 +96,16 @@ public abstract class Weapon : MonoBehaviour
     public int GetAmmoLeft()
     {
         return currentAmmo;
+    }
+
+    public float GetReloadPercentage()
+    {
+        return (reloadTimer / reloadTime) * 100f;
+    }
+
+    public bool IsReloading()
+    {
+        return reloading;
     }
 
     protected abstract void Fire(Vector2 shootingDirection);
@@ -133,10 +148,30 @@ public abstract class Weapon : MonoBehaviour
         return shootingCooldownElapsed && hasEnoughAmmo && equipped && !reloading;
     }
 
+    private bool CanReload()
+    {
+        return !reloading && currentAmmo < maxAmmo;
+    }
+
+
+    private IEnumerator ReloadCoroutine()
+    {
+        reloading = true;
+        reloadTimer = 0;
+        while (reloadTimer < reloadTime)
+        {
+            reloadTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        reloadTimer = reloadTime;
+        reloading = false;
+        ResetAmmo();
+    }
+
     private void ResetAmmo()
     {
-        currentAmmo = ammo;
-        reloading = false;
+        currentAmmo = maxAmmo;
     }
 
     private Vector2 GetTargetPosition()

@@ -11,10 +11,12 @@ class PlayerController : MonoBehaviour
     public Weapon currentWeapon => weapons[currentWeaponIndex];
 
     PlayerMovement movement;
+    GameObject model;
 
 
     private void Awake()
     {
+        model = transform.GetChild(0).gameObject;
         movement = GetComponent<PlayerMovement>();
     }
 
@@ -57,7 +59,7 @@ class PlayerController : MonoBehaviour
         float angle = vectorToMouse.GetAngle();
         bool isMouseLeft = 90f < angle && angle < 270f;
         float xScale = isMouseLeft ? 1 : -1;
-        transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
+        model.transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
     }
 
     private bool WantsToShoot()

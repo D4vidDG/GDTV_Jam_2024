@@ -132,7 +132,7 @@ MonoBehaviour:
   fireRate: 10
   reloadTime: 4
   knockback: 3
-  ammo: 100
+  maxAmmo: 100
   range: 15
   damage: 5
   projectile: {fileID: 2922320754034976153, guid: 4d868639549942048bf7a84784e0c346, type: 3}
