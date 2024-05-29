@@ -1,5 +1,4 @@
 using System.Collections;
-using ExtensionMethods;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
@@ -13,22 +12,15 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected float damage;
     [SerializeField] protected Projectile projectile;
     [SerializeField] protected Transform gunTip;
+    [SerializeField] float mouseDeadZone;
 
-    Vector2 vectorToTarget;
+    Vector2 shootingDirection;
     float shootingTimer;
     float reloadTimer;
     int currentAmmo;
     bool reloading;
     bool equipped;
 
-    Camera mainCamera;
-    GameObject player;
-
-    void Awake()
-    {
-        mainCamera = Camera.main;
-        player = GameObject.FindWithTag("Player");
-    }
 
     private void Start()
     {
@@ -43,12 +35,12 @@ public abstract class Weapon : MonoBehaviour
     {
         if (controlEnabled)
         {
-            vectorToTarget = Mouse.GetVectorToMouse(gunTip.position);
+            shootingDirection = GetShootingDirection();
             shootingTimer += Time.deltaTime;
 
             if (equipped)
             {
-                FaceDirection(vectorToTarget);
+                FaceDirection(shootingDirection);
             }
         }
     }
@@ -58,7 +50,7 @@ public abstract class Weapon : MonoBehaviour
         if (CanFire())
         {
             shootingTimer = 0;
-            Fire(vectorToTarget);
+            Fire(shootingDirection);
             currentAmmo--;
             return true;
         }
@@ -95,7 +87,7 @@ public abstract class Weapon : MonoBehaviour
 
     public Vector2 GetDirection()
     {
-        return vectorToTarget;
+        return shootingDirection;
     }
 
     public int GetAmmoLeft()
@@ -124,6 +116,11 @@ public abstract class Weapon : MonoBehaviour
                                   null);
         instance.Launch(direction, range);
         instance.OnTargetHit += OnTargetHit;
+    }
+
+    private Vector2 GetShootingDirection()
+    {
+        return Mouse.GetVectorToMouse(gunTip.position).normalized;
     }
 
     private void FaceDirection(Vector2 direction)
@@ -179,10 +176,6 @@ public abstract class Weapon : MonoBehaviour
         currentAmmo = maxAmmo;
     }
 
-    private Vector2 GetTargetPosition()
-    {
-        return (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
-    }
 
     private void OnDrawGizmosSelected()
     {
@@ -193,5 +186,7 @@ public abstract class Weapon : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gunTip.position, range);
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(gunTip.position, mouseDeadZone);
     }
 }

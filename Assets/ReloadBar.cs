@@ -31,7 +31,6 @@ public class ReloadBar : MonoBehaviour
             bar.SetActive(true);
             float reloadFraction = currentWeapon.GetReloadPercentage() / 100f;
             float sliderValue = MathExtensions.Remap(reloadFraction, 0f, 1f, sliderStartValue, sliderEndValue);
-            Debug.Log(sliderValue);
             slider.value = sliderValue;
         }
         else

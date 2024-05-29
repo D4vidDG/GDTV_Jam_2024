@@ -4,7 +4,7 @@ public static class Mouse
 {
     public static Vector2 GetVectorToMouse(Vector2 from)
     {
-        return (GetScreenPoint() - from).normalized;
+        return (GetScreenPoint() - from);
     }
 
     public static Vector2 GetScreenPoint()
