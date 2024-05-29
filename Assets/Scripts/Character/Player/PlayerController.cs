@@ -2,18 +2,21 @@ using UnityEngine;
 
 class PlayerController : MonoBehaviour
 {
-    public bool controlEnabled;
-    [SerializeField] Weapon[] weapons;
-    [SerializeField] Transform gunHoldingPoint;
+
     const KeyCode RELOAD_KEY = KeyCode.R;
     const KeyCode SWITCH_WEAPON_KEY = KeyCode.Z;
-    int currentWeaponIndex;
-    public Weapon currentWeapon => weapons[currentWeaponIndex];
+
+    [SerializeField] Weapon[] weapons;
+    [SerializeField] Transform gunHoldingPoint;
 
     Health health;
     PlayerMovement movement;
     Animator animator;
     CharacterFacer facer;
+
+    int currentWeaponIndex;
+    public Weapon currentWeapon => weapons[currentWeaponIndex];
+    bool controlEnabled;
 
     private void Awake()
     {
@@ -25,7 +28,6 @@ class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        health.OnDead.AddListener(GameManager.instance.PlayerKilled);
         controlEnabled = true;
         currentWeaponIndex = 0;
         currentWeapon.gameObject.SetActive(true);
@@ -34,31 +36,37 @@ class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (controlEnabled)
+        if (!controlEnabled) return;
+        if (health.IsDead()) return;
+
+        if (currentWeapon != null)
         {
-            if (currentWeapon != null)
+            if (WantsToShoot())
             {
-                if (WantsToShoot())
+                if (currentWeapon.TryToFire())
                 {
-                    if (currentWeapon.TryToFire())
-                    {
-                        movement.ApplyKnockback(currentWeapon.GetKnockback(), currentWeapon.GetDirection().normalized);
-                    }
-                }
-
-                if (Input.GetKeyDown(RELOAD_KEY))
-                {
-                    currentWeapon.Reload();
-                }
-
-                if (Input.GetKeyDown(SWITCH_WEAPON_KEY))
-                {
-                    SwitchWeapon();
+                    movement.ApplyKnockback(currentWeapon.GetKnockback(), currentWeapon.GetDirection().normalized);
                 }
             }
 
-            facer.FacePoint(Mouse.GetScreenPoint());
+            if (Input.GetKeyDown(RELOAD_KEY))
+            {
+                currentWeapon.Reload();
+            }
+
+            if (Input.GetKeyDown(SWITCH_WEAPON_KEY))
+            {
+                SwitchWeapon();
+            }
         }
+
+        facer.FacePoint(Mouse.GetScreenPoint());
+
+    }
+
+    public void Enable(bool enabled)
+    {
+        controlEnabled = enabled;
     }
 
     private void LateUpdate()

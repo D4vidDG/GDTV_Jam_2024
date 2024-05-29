@@ -69,4 +69,10 @@ public class Health : MonoBehaviour
         isDead = true;
         OnDead?.Invoke();
     }
+
+    private void OnDestroy()
+    {
+        OnAttacked.RemoveAllListeners();
+        OnDead.RemoveAllListeners();
+    }
 }

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject player;
+    public Health playerHealth;
     public int waveCounter;
     public bool playerDead;
 
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     IEnumerator NextWaveWait()
     {
         WaveUI wui = FindObjectOfType<WaveUI>();
-        while (!wui.doneFlashing) 
+        while (!wui.doneFlashing)
         {
             yield return null;
         }
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         if (!playerDead)
         {
             playerDead = true;
-            if(FindObjectOfType<PauseFunctions>() != null)
+            if (FindObjectOfType<PauseFunctions>() != null)
             {
                 FindObjectOfType<PauseFunctions>().enableInput = false;
             }
@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         if (player == null)
         {
             player = FindObjectOfType<PlayerController>().gameObject;
+            player.GetComponent<Health>().OnDead.AddListener(PlayerKilled);
         }
         waveCounter = 0;
         playerDead = false;
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
     public void ToggleControl(bool toggle)
     {
         PlayerController pc = player.GetComponent<PlayerController>();
-        pc.controlEnabled = toggle;
+        pc.Enable(toggle);
         pc.currentWeapon.GetComponent<Weapon>().controlEnabled = toggle;
     }
 }
