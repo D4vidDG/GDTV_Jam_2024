@@ -11,6 +11,7 @@ public class TimedSound : MonoBehaviour
 
     void Start()
     {
+        RandomDelay();
         soundTimer = 0;
     }
 

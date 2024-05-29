@@ -123,7 +123,7 @@ public class Sound
         m_source.spatialBlend = 0;
         m_source.volume = volume * Random.Range(m_randomVolumeRange.x, m_randomVolumeRange.y);
         m_source.pitch = pitch * Random.Range(m_randomPitchRange.x, m_randomPitchRange.y);
-        m_source.Play();
+        m_source.PlayOneShot(m_source.clip, m_source.volume);
     }
 
     public void Stop()
