@@ -4,13 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] float corpseLifetime;
     public List<AudioClip> noiseClips;
     public float soundDelay, soundTimer;
     public float minDelay, maxDelay;
-    [Header("Stats")]
-
-    float corpseTimer;
 
 
     Health health;

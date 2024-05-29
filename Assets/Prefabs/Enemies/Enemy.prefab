@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 2859497161249791981}
   - component: {fileID: 1485514427238091145}
   - component: {fileID: 3664542059945531116}
+  - component: {fileID: 1107520474063844307}
   - component: {fileID: 1569376472028709495}
   m_Layer: 7
   m_Name: Enemy
@@ -344,7 +345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e105d2716d06ae4ab30f64b30a39cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corpseLifetime: 0
   noiseClips:
   - {fileID: 8300000, guid: d1fda5a01b3e41d4eaa4ce204c147fec, type: 3}
   - {fileID: 8300000, guid: 3b35438680703dd488a8acff0430991a, type: 3}
@@ -598,6 +598,20 @@ MonoBehaviour:
   numberOfCoins: 1
   dropPoint: {fileID: 5956092404750509747}
   coinPrefab: {fileID: 5415718773845451602, guid: 36a47dfbaf8f66649ae54ae36c5a01ee, type: 3}
+--- !u!114 &1107520474063844307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115906193322883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a86f83122f0f4549bd3f73167515150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corpseLifetime: 2
+  corpseDisappearTime: 1
 --- !u!82 &1569376472028709495
 AudioSource:
   m_ObjectHideFlags: 0
