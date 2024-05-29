@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] float corpseLifetime;
     [Header("Stats")]
-
-    float corpseTimer;
 
 
     Health health;
