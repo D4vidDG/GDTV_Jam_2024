@@ -2,13 +2,15 @@ using UnityEngine;
 
 public static class Mouse
 {
+    static Camera mainCamera = Camera.main;
+
     public static Vector2 GetVectorToMouse(Vector2 from)
     {
-        return (GetScreenPoint() - from).normalized;
+        return (GetScreenPoint() - from);
     }
 
     public static Vector2 GetScreenPoint()
     {
-        return (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 }

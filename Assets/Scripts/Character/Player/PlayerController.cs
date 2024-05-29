@@ -60,7 +60,7 @@ class PlayerController : MonoBehaviour
             }
         }
 
-        facer.FacePoint(Mouse.GetScreenPoint());
+        //facer.FacePoint(Mouse.GetScreenPoint());
 
     }
 

@@ -5,7 +5,7 @@ public class CharacterFacer : MonoBehaviour
 {
     [SerializeField] Transform target;
 
-    bool isEnabled;
+    bool isEnabled = true;
     GameObject model;
 
     private void Update()
