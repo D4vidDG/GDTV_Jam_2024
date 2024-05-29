@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241ad5d5e5ba266439e11310112ff6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlEnabled: 0
   fireRate: 10
   reloadTime: 4
   knockback: 3
@@ -137,6 +138,7 @@ MonoBehaviour:
   damage: 5
   projectile: {fileID: 2922320754034976153, guid: 4d868639549942048bf7a84784e0c346, type: 3}
   gunTip: {fileID: 5369293815729384248}
+  mouseDeadZone: 1.5
   maxRandomSpread: 15
 --- !u!4 &5369293815729384248 stripped
 Transform:

@@ -21,6 +21,7 @@ public abstract class Weapon : MonoBehaviour
     bool reloading;
     bool equipped;
 
+    Matrix4x4 gunTipToWeaponSpace;
 
     private void Start()
     {
@@ -29,19 +30,20 @@ public abstract class Weapon : MonoBehaviour
         shootingTimer = 0;
         currentAmmo = maxAmmo;
         reloading = false;
+        gunTipToWeaponSpace = Matrix4x4.Translate(gunTip.localPosition);
     }
 
     void Update()
     {
         if (controlEnabled)
         {
-            shootingDirection = GetShootingDirection();
-            shootingTimer += Time.deltaTime;
-
             if (equipped)
             {
                 FaceDirection(shootingDirection);
             }
+            shootingDirection = GetShootingDirection();
+            shootingTimer += Time.deltaTime;
+
         }
     }
 
@@ -120,7 +122,16 @@ public abstract class Weapon : MonoBehaviour
 
     private Vector2 GetShootingDirection()
     {
-        return Mouse.GetVectorToMouse(gunTip.position).normalized;
+        Vector2 tipToMouse = Mouse.GetVectorToMouse(gunTip.position);
+        if (mouseDeadZone < tipToMouse.magnitude)
+        {
+            return tipToMouse;
+        }
+        else
+        {
+            return shootingDirection;
+        }
+
     }
 
     private void FaceDirection(Vector2 direction)
