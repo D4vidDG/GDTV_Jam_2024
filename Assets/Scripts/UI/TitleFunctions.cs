@@ -1,17 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TitleFunctions : MonoBehaviour
 {
-    public Image play, options, quit;
-    public Sprite playSprite, optionsSprite, quitSprite;
-    public bool playPressed, optionsPressed, quitPressed;
-    public Color flashColor;
-    public float flashDelay, flashTimer;
-    public bool isFlashing, enableInput;
+    [SerializeField] Image play, options, quit;
+    [SerializeField] Sprite playPressedSprite, optionsPressedSprite, quitPressedSprite;
+
+
+    [SerializeField] Color flashColor;
+    [SerializeField] float flashDelay;
+    [SerializeField] bool enableInput;
+
+    [SerializeField] int mainLevelSceneIndex;
+
+    bool playPressed, optionsPressed, quitPressed;
+    float flashTimer;
+    bool isFlashing;
+
+    TitleMenu titleMenu;
+
+    private void Awake()
+    {
+        titleMenu = FindObjectOfType<TitleMenu>();
+    }
 
     private void Start()
     {
@@ -29,7 +42,7 @@ public class TitleFunctions : MonoBehaviour
                 case 0:
                     if (!playPressed && play != null)
                     {
-                        play.overrideSprite = playSprite;
+                        play.overrideSprite = playPressedSprite;
                         playPressed = true;
                         enableInput = false;
                     }
@@ -37,7 +50,7 @@ public class TitleFunctions : MonoBehaviour
                 case 1:
                     if (!optionsPressed && options != null)
                     {
-                        options.overrideSprite = optionsSprite;
+                        options.overrideSprite = optionsPressedSprite;
                         optionsPressed = true;
                         enableInput = false;
                     }
@@ -45,7 +58,7 @@ public class TitleFunctions : MonoBehaviour
                 case 2:
                     if (!quitPressed && quit != null)
                     {
-                        quit.overrideSprite = quitSprite;
+                        quit.overrideSprite = quitPressedSprite;
                         quitPressed = true;
                         enableInput = false;
                     }
@@ -67,7 +80,7 @@ public class TitleFunctions : MonoBehaviour
     public IEnumerator PlayButton(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        SceneManager.LoadScene("EnemyAIStuff");
+        SceneManager.LoadScene(mainLevelSceneIndex);
     }
 
 
@@ -88,7 +101,7 @@ public class TitleFunctions : MonoBehaviour
         options.color = new Color(255, 255, 255, 100);
         isFlashing = false;
         enableInput = true;
-        FindObjectOfType<TitleMenu>().ToggleOptions();//this should only be able to be pressed when the options button is visible
+        titleMenu.ToggleOptions();//this should only be able to be pressed when the options button is visible
     }
 
 

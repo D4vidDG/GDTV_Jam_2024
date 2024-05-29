@@ -1,6 +1,4 @@
-using Pathfinding;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +6,7 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public static GameOver instance;
-    public float gameOverSpeed, backgroundSpeed;
+    public float gameOverFadeInTime, backgroundFadeInTime;
     public Image gameOver, background;
     public Color gameOverStartColor, gameOverEndColor;
     public Color backgroundStartColor, backgroundEndColor;
@@ -93,21 +91,21 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator GameOverRoutine()
     {
-        float tick = 0;
+        float timer = 0;
 
         while (gameOver.color != gameOverEndColor)
         {
-            tick += Time.deltaTime * gameOverSpeed;
-            gameOver.color = Color.Lerp(gameOver.color, gameOverEndColor, tick);
+            timer += Time.deltaTime;
+            gameOver.color = Color.Lerp(gameOver.color, gameOverEndColor, timer / gameOverFadeInTime);
             yield return null;
         }
 
-        tick = 0;
+        timer = 0;
 
         while (background.color != backgroundEndColor)
         {
-            tick += Time.deltaTime * backgroundSpeed;
-            background.color = Color.Lerp(background.color, backgroundEndColor, tick);
+            timer += Time.deltaTime;
+            background.color = Color.Lerp(background.color, backgroundEndColor, timer / backgroundFadeInTime);
             yield return null;
         }
 
