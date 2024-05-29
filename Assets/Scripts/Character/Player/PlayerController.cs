@@ -25,6 +25,7 @@ class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        health.OnDead.AddListener(GameManager.instance.PlayerKilled);
         controlEnabled = true;
         currentWeaponIndex = 0;
         currentWeapon.gameObject.SetActive(true);

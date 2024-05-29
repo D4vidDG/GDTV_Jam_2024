@@ -107,6 +107,11 @@ public class PauseFunctions : MonoBehaviour
         Application.Quit();
     }
 
+    public void ButtonSound(AudioSource audio)
+    {
+        audio.Play();
+    }
+
 
     public void Update()
     {
