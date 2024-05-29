@@ -1,14 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class EnemyScript : MonoBehaviour
 {
-    public List<AudioClip> noiseClips;
-    public float soundDelay, soundTimer;
-    public float minDelay, maxDelay;
-
-
     Health health;
     Animator animator;
     EnemyMovement movement;
@@ -34,8 +28,6 @@ public class EnemyScript : MonoBehaviour
         facer.SetTarget(player.transform);
         facer.Enable();
         movement.SetTarget(player.transform);
-        RandomDelay();
-        soundTimer = 0;
     }
 
     private void OnEnable()
@@ -66,21 +58,6 @@ public class EnemyScript : MonoBehaviour
         {
             attacker.Attack();
         }
-
-        soundTimer += Time.deltaTime;
-
-        if (soundTimer >= soundDelay)
-        {
-            RandomDelay();
-            int i = Random.Range(0, noiseClips.Count);
-            AudioSource.PlayClipAtPoint(noiseClips[i], transform.position);
-            soundTimer = 0;
-        }
-    }
-
-    public void RandomDelay()
-    {
-        soundDelay = Random.Range(minDelay, maxDelay);
     }
 
 

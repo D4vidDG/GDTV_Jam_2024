@@ -2,12 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(AudioSource))]
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth;
-
-    public List<AudioClip> hitSounds, deathSound;
 
     float health;
     bool isDead;
@@ -15,6 +12,7 @@ public class Health : MonoBehaviour
 
     public UnityEvent<float> OnAttacked;
     public UnityEvent OnDead;
+    public SoundName hit, death;
 
 
     private void Start()
@@ -49,12 +47,12 @@ public class Health : MonoBehaviour
 
         if (health == 0)
         {
-            AudioSource.PlayClipAtPoint(deathSound[Random.Range(0, deathSound.Count)], transform.position);
+            AudioManager.instance.PlaySound(death);
             Die();
         }
         else
         {
-            AudioSource.PlayClipAtPoint(hitSounds[Random.Range(0, hitSounds.Count)], transform.position);
+            AudioManager.instance.PlaySound(hit);
         }
     }
 

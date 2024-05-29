@@ -1504,6 +1504,102 @@ MonoBehaviour:
   flashTimer: 0
   isFlashing: 0
   enableInput: 1
+--- !u!1 &897356853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 897356854}
+  - component: {fileID: 897356855}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &897356854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897356853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43460107, y: 0.5373003, z: -0.11170604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &897356855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897356853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e45952adf5f6f4ca82f56755bd7cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sounds:
+  - m_name: 1
+    m_clips:
+    - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
+    - {fileID: 8300000, guid: 06036aacced006e40863b73b3c9fda71, type: 3}
+    - {fileID: 8300000, guid: c8e2c9665adbd564f84ba18e753d47f8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 3
+    m_clips:
+    - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
+    - {fileID: 8300000, guid: 06036aacced006e40863b73b3c9fda71, type: 3}
+    - {fileID: 8300000, guid: c8e2c9665adbd564f84ba18e753d47f8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 2
+    m_clips:
+    - {fileID: 8300000, guid: f7e5722f15c0e974295ba28883de2a96, type: 3}
+    - {fileID: 8300000, guid: 6bf6832b926f4c34ba4ade83655359be, type: 3}
+    - {fileID: 8300000, guid: 53bb4a10ff1182448ab7f93dab7d8bfd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 4
+    m_clips:
+    - {fileID: 8300000, guid: d1fda5a01b3e41d4eaa4ce204c147fec, type: 3}
+    - {fileID: 8300000, guid: 3b35438680703dd488a8acff0430991a, type: 3}
+    - {fileID: 8300000, guid: 679f60d441e181840ae9562c571bdf69, type: 3}
+    - {fileID: 8300000, guid: 94c9fab5c219191418c730b99fbbd5f3, type: 3}
+    - {fileID: 8300000, guid: 493bb3bdb3750f54b8fb09ecbd736045, type: 3}
+    - {fileID: 8300000, guid: b68fe8d81be990d4a85d2b943362ce23, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 0
+    m_clips:
+    - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
 --- !u!1 &960124025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4080,6 +4176,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4181085835563575384, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: hit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181085835563575384, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
       propertyPath: maxHealth
       value: 40
       objectReference: {fileID: 0}
@@ -4244,8 +4344,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1657497225}
-  - {fileID: 288085805}
+  - {fileID: 897356854}
   - {fileID: 1943153196}
+  - {fileID: 288085805}
   - {fileID: 1166277729}
   - {fileID: 1146766723}
   - {fileID: 2012944598}

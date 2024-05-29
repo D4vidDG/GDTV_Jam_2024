@@ -13,13 +13,14 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            Debug.LogError("More than one AudioManager in scene");
-        }
-        else
+        if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
         }
 
         for (int i = 0; i < m_sounds.Length; i++)
@@ -28,7 +29,6 @@ public class AudioManager : MonoBehaviour
             go.transform.SetParent(transform);
             m_sounds[i].SetSource(go.AddComponent<AudioSource>());
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
     private Sound GetSound(SoundName name)
@@ -67,7 +67,6 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            //print("Playing " + name.ToString());
             requestedSound.Play();
         }
     }
@@ -118,7 +117,7 @@ public class Sound
     {
         if (m_clips.Length > 1)
         {
-            int randomClip = Random.Range(0, m_clips.Length - 1);
+            int randomClip = Random.Range(0, m_clips.Length);
             m_source.clip = m_clips[randomClip];
         }
         m_source.spatialBlend = 0;
@@ -136,7 +135,7 @@ public class Sound
     {
         if (m_clips.Length > 1)
         {
-            int randomClip = Random.Range(0, m_clips.Length - 1);
+            int randomClip = Random.Range(0, m_clips.Length);
             m_source.clip = m_clips[randomClip];
         }
         m_source.volume = volume * Random.Range(m_randomVolumeRange.x, m_randomVolumeRange.y);
@@ -152,13 +151,7 @@ public enum SoundName
 {
     PlayerDead,
     PlayerAttacked,
-    PistolShoot,
-    RayShoot,
-    BombExplode,
-    BombShoot,
-    HookThrow,
-    HookCapture,
-    TargetHooked,
-    Button,
-    Checkpoint
+    ZombieDead,
+    ZombieAttacked,
+    ZombieNoises,
 }

@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 3664542059945531116}
   - component: {fileID: 1107520474063844307}
   - component: {fileID: 1569376472028709495}
+  - component: {fileID: 3532648002188449878}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -345,17 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e105d2716d06ae4ab30f64b30a39cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noiseClips:
-  - {fileID: 8300000, guid: d1fda5a01b3e41d4eaa4ce204c147fec, type: 3}
-  - {fileID: 8300000, guid: 3b35438680703dd488a8acff0430991a, type: 3}
-  - {fileID: 8300000, guid: 679f60d441e181840ae9562c571bdf69, type: 3}
-  - {fileID: 8300000, guid: 94c9fab5c219191418c730b99fbbd5f3, type: 3}
-  - {fileID: 8300000, guid: 493bb3bdb3750f54b8fb09ecbd736045, type: 3}
-  - {fileID: 8300000, guid: b68fe8d81be990d4a85d2b943362ce23, type: 3}
-  soundDelay: 0
-  soundTimer: 0
-  minDelay: 7
-  maxDelay: 15
 --- !u!114 &6030932033202375935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,14 +506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  hitSounds:
-  - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
-  - {fileID: 8300000, guid: 06036aacced006e40863b73b3c9fda71, type: 3}
-  - {fileID: 8300000, guid: c8e2c9665adbd564f84ba18e753d47f8, type: 3}
-  deathSound:
-  - {fileID: 8300000, guid: f7e5722f15c0e974295ba28883de2a96, type: 3}
-  - {fileID: 8300000, guid: 6bf6832b926f4c34ba4ade83655359be, type: 3}
-  - {fileID: 8300000, guid: 53bb4a10ff1182448ab7f93dab7d8bfd, type: 3}
   OnAttacked:
     m_PersistentCalls:
       m_Calls:
@@ -566,6 +548,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hit: 3
+  death: 2
 --- !u!114 &1485514427238091145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +692,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3532648002188449878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115906193322883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e228f026b3dac2a40b30fd109d7abd7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: 4
+  soundDelay: 0
+  soundTimer: 0
+  minDelay: 7
+  maxDelay: 15
 --- !u!1 &7639579300832699624
 GameObject:
   m_ObjectHideFlags: 0
