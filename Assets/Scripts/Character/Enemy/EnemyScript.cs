@@ -12,7 +12,7 @@ public class EnemyScript : MonoBehaviour
     Animator animator;
     EnemyMovement movement;
     EnemyAttack attacker;
-    Collider2D myCollider;
+    Collider2D[] colliders;
     CharacterFacer facer;
 
 
@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         movement = GetComponent<EnemyMovement>();
         attacker = GetComponent<EnemyAttack>();
-        myCollider = GetComponent<Collider2D>();
+        colliders = GetComponentsInChildren<Collider2D>();
         facer = GetComponent<CharacterFacer>();
     }
 
@@ -73,7 +73,10 @@ public class EnemyScript : MonoBehaviour
 
     private void OnDead()
     {
-        myCollider.enabled = false;
+        foreach (Collider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
         movement.Stop();
         facer.Disable();
     }
