@@ -154,4 +154,12 @@ public enum SoundName
     ZombieDead,
     ZombieAttacked,
     ZombieNoises,
+    CoinPickup,
+
+    PistolFire,
+    PistolReload,
+    ShotgunFire,
+    ShotgunReload,
+    MGFire,
+    MGReload,
 }

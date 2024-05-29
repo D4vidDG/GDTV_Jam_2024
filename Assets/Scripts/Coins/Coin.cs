@@ -7,7 +7,6 @@ public class Coin : MonoBehaviour
     [SerializeField] float maxLifetime;
     [SerializeField] float timeToBlink;
 
-    public AudioClip clip;
     BlinkAlpha blinkEffect;
     float timer;
 
@@ -42,7 +41,7 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AudioSource.PlayClipAtPoint(clip, transform.position);
+            AudioManager.instance.PlaySound(SoundName.CoinPickup);
             OnCoinCollected?.Invoke();
             Destroy(this.gameObject);
         }

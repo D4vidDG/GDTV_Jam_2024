@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b01f04d879a5e4abd1e72993e22899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlEnabled: 0
   fireRate: 1
   reloadTime: 1.5
   knockback: 20
@@ -129,6 +130,9 @@ MonoBehaviour:
   damage: 50
   projectile: {fileID: 7662410983212318742, guid: 6d865e648fbda6c4a84dd06a2769a502, type: 3}
   gunTip: {fileID: 5551666184989717930}
+  mouseDeadZone: 0
+  fireSound: 6
+  reloadSound: 7
 --- !u!4 &5551666184989717930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2703953164516090302, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}

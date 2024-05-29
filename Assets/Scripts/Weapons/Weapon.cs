@@ -22,6 +22,8 @@ public abstract class Weapon : MonoBehaviour
     bool equipped;
     Coroutine reloadRoutine;
 
+    public SoundName fireSound, reloadSound;
+
     private void Start()
     {
         controlEnabled = true;
@@ -50,6 +52,7 @@ public abstract class Weapon : MonoBehaviour
         if (CanFire())
         {
             shootingTimer = 0;
+            AudioManager.instance.PlaySound(fireSound);
             Fire(shootingDirection);
             currentAmmo--;
             return true;
@@ -76,6 +79,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (CanReload())
         {
+            AudioManager.instance.PlaySound(reloadSound);
             reloadRoutine = StartCoroutine(ReloadCoroutine());
         }
     }
@@ -161,6 +165,7 @@ public abstract class Weapon : MonoBehaviour
         if (reloadRoutine != null)
         {
             StopCoroutine(reloadRoutine);
+            AudioManager.instance.StopSound(reloadSound);
             reloadRoutine = null;
             reloading = false;
             reloadTimer = 0;
