@@ -1,19 +1,19 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
     Health health;
+    Health player;
     Animator animator;
     EnemyMovement movement;
     EnemyAttack attacker;
     Collider2D[] colliders;
     CharacterFacer facer;
 
-
     private void Awake()
     {
         health = GetComponent<Health>();
+        player = GameObject.FindWithTag("Player").GetComponent<Health>();
         animator = GetComponentInChildren<Animator>();
         movement = GetComponent<EnemyMovement>();
         attacker = GetComponent<EnemyAttack>();
@@ -43,7 +43,11 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         if (health.IsDead()) return;
-
+        if (player.IsDead())
+        {
+            movement.Stop();
+            return;
+        }
 
         if (attacker.IsPlayerWithinAttackRange() || attacker.IsAttacking())
         {
