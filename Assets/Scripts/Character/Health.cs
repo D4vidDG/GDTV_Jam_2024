@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth;
+
+    public List<AudioClip> hitSounds, deathSound;
 
     float health;
     bool isDead;
@@ -42,9 +46,15 @@ public class Health : MonoBehaviour
         if (isInvincible) return;
         health = Mathf.Max(0, health - damage);
         OnAttacked?.Invoke(damage);
+
         if (health == 0)
         {
+            AudioSource.PlayClipAtPoint(deathSound[Random.Range(0, deathSound.Count)], transform.position);
             Die();
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(hitSounds[Random.Range(0, hitSounds.Count)], transform.position);
         }
     }
 

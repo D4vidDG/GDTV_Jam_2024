@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Coin : MonoBehaviour
 {
     [SerializeField] float maxLifetime;
     [SerializeField] float timeToBlink;
 
+    public AudioClip clip;
     BlinkAlpha blinkEffect;
     float timer;
 
@@ -40,6 +42,7 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(clip, transform.position);
             OnCoinCollected?.Invoke();
             Destroy(this.gameObject);
         }

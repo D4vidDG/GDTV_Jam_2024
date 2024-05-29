@@ -98,8 +98,9 @@ public class GameManager : MonoBehaviour
         if (player == null)
         {
             player = FindObjectOfType<PlayerController>().gameObject;
-            player.GetComponent<Health>().OnDead.AddListener(PlayerKilled);
         }
+
+        player.GetComponent<Health>().OnDead.AddListener(PlayerKilled);
         waveCounter = 0;
         playerDead = false;
     }
