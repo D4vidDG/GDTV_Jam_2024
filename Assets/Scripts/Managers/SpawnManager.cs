@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -72,7 +71,6 @@ public class SpawnManager : MonoBehaviour
 
         newEnemy.GetComponent<Health>().OnDead.AddListener(() =>
         {
-            Debug.Log("Removing " + newEnemy.name);
             RemoveEnemyFromList(newEnemy);
         });
 

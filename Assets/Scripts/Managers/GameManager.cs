@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject player;
-    public Health playerHealth;
     public int waveCounter;
     public bool playerDead;
 
