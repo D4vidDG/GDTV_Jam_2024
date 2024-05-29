@@ -20,7 +20,7 @@ public abstract class Weapon : MonoBehaviour
     int currentAmmo;
     bool reloading;
     bool equipped;
-
+    Coroutine reloadRoutine;
 
     private void Start()
     {
@@ -67,6 +67,7 @@ public abstract class Weapon : MonoBehaviour
 
     public void UnEquip()
     {
+        if (reloading) CancelReload();
         transform.right = Vector2.right;
         equipped = false;
     }
@@ -75,7 +76,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (CanReload())
         {
-            StartCoroutine(ReloadCoroutine());
+            reloadRoutine = StartCoroutine(ReloadCoroutine());
         }
     }
 
@@ -155,6 +156,17 @@ public abstract class Weapon : MonoBehaviour
         return !reloading && currentAmmo < maxAmmo;
     }
 
+    private void CancelReload()
+    {
+        if (reloadRoutine != null)
+        {
+            StopCoroutine(reloadRoutine);
+            reloadRoutine = null;
+            reloading = false;
+            reloadTimer = 0;
+        }
+    }
+
 
     private IEnumerator ReloadCoroutine()
     {
@@ -169,6 +181,7 @@ public abstract class Weapon : MonoBehaviour
         reloadTimer = reloadTime;
         reloading = false;
         ResetAmmo();
+        reloadRoutine = null;
     }
 
     private void ResetAmmo()
