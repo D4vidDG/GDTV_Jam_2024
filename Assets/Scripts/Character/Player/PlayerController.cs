@@ -2,6 +2,7 @@ using UnityEngine;
 
 class PlayerController : MonoBehaviour
 {
+    public bool controlEnabled;
     [SerializeField] Weapon[] weapons;
     [SerializeField] Transform gunHoldingPoint;
     const KeyCode RELOAD_KEY = KeyCode.R;
@@ -24,6 +25,7 @@ class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        controlEnabled = true;
         currentWeaponIndex = 0;
         currentWeapon.gameObject.SetActive(true);
         currentWeapon.Equip(gunHoldingPoint);
@@ -31,28 +33,31 @@ class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (currentWeapon != null)
+        if (controlEnabled)
         {
-            if (WantsToShoot())
+            if (currentWeapon != null)
             {
-                if (currentWeapon.TryToFire())
+                if (WantsToShoot())
                 {
-                    movement.ApplyKnockback(currentWeapon.GetKnockback(), currentWeapon.GetDirection().normalized);
+                    if (currentWeapon.TryToFire())
+                    {
+                        movement.ApplyKnockback(currentWeapon.GetKnockback(), currentWeapon.GetDirection().normalized);
+                    }
+                }
+
+                if (Input.GetKeyDown(RELOAD_KEY))
+                {
+                    currentWeapon.Reload();
+                }
+
+                if (Input.GetKeyDown(SWITCH_WEAPON_KEY))
+                {
+                    SwitchWeapon();
                 }
             }
 
-            if (Input.GetKeyDown(RELOAD_KEY))
-            {
-                currentWeapon.Reload();
-            }
-
-            if (Input.GetKeyDown(SWITCH_WEAPON_KEY))
-            {
-                SwitchWeapon();
-            }
+            facer.FacePoint(Mouse.GetScreenPoint());
         }
-
-        facer.FacePoint(Mouse.GetScreenPoint());
     }
 
     private void LateUpdate()

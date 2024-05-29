@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    public bool controlEnabled;
     [SerializeField] float fireRate;
     [SerializeField] float reloadTime;
     [SerializeField] float knockback;
@@ -31,6 +32,7 @@ public abstract class Weapon : MonoBehaviour
 
     private void Start()
     {
+        controlEnabled = true;
         reloadTimer = 0;
         shootingTimer = 0;
         currentAmmo = maxAmmo;
@@ -39,12 +41,15 @@ public abstract class Weapon : MonoBehaviour
 
     void Update()
     {
-        vectorToTarget = Mouse.GetVectorToMouse(gunTip.position);
-        shootingTimer += Time.deltaTime;
-
-        if (equipped)
+        if (controlEnabled)
         {
-            FaceDirection(vectorToTarget);
+            vectorToTarget = Mouse.GetVectorToMouse(gunTip.position);
+            shootingTimer += Time.deltaTime;
+
+            if (equipped)
+            {
+                FaceDirection(vectorToTarget);
+            }
         }
     }
 

@@ -32,6 +32,7 @@ public class GameOver : MonoBehaviour
 
     public void StartGameOverScreen()
     {
+        GameManager.instance.ToggleControl(false);
         gameOver.color = gameOverStartColor;
         background.color = backgroundStartColor;
         StartCoroutine(GameOverRoutine());

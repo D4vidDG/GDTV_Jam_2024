@@ -102,4 +102,11 @@ public class GameManager : MonoBehaviour
         waveCounter = 0;
         playerDead = false;
     }
+
+    public void ToggleControl(bool toggle)
+    {
+        PlayerController pc = player.GetComponent<PlayerController>();
+        pc.controlEnabled = toggle;
+        pc.currentWeapon.GetComponent<Weapon>().controlEnabled = toggle;
+    }
 }

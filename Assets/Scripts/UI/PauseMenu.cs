@@ -59,12 +59,14 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1.0f;
             pauseScreen.SetActive(false);
             isPaused = false;
+            GameManager.instance.ToggleControl(true);
         }
         else
         {
             Time.timeScale = 0.0f;
             pauseScreen.SetActive(true);
             isPaused = true;
+            GameManager.instance.ToggleControl(false);
         }
     }
 
