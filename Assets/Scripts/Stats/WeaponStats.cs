@@ -12,10 +12,14 @@ public class WeaponStats : MonoBehaviour
     public Action OnLevelUp;
 
     int currentLevel = 1;
+    private void Awake()
+    {
+        weaponType = GetComponent<Weapon>().GetWeaponType();
+    }
+
 
     private void Start()
     {
-        weaponType = GetComponent<Weapon>().GetWeaponType();
         currentLevel = startingLevel;
     }
 
