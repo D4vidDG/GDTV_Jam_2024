@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e25b7191cd7864783e639d4824565b, type: 3}
+  m_Name: Weapon Progression
+  m_EditorClassIdentifier: 
+  weaponsProgression:
+  - weaponType: 0
+    weaponStats:
+    - stat: 0
+      levels:
+      - 25
+      - 33
+      - 41
+      - 50
+      - 50
+    - stat: 1
+      levels:
+      - 20
+      - 25
+      - 30
+      - 35
+    - stat: 2
+      levels:
+      - 6
+      - 7
+      - 8
+      - 9
+  - weaponType: 1
+    weaponStats:
+    - stat: 0
+      levels:
+      - 10
+      - 12
+      - 15
+      - 20
+    - stat: 1
+      levels:
+      - 40
+      - 45
+      - 50
+      - 55
+    - stat: 2
+      levels:
+      - 5
+      - 6
+      - 7
+      - 8
+  - weaponType: 2
+    weaponStats:
+    - stat: 0
+      levels:
+      - 8
+      - 9
+      - 10
+      - 12.5
+    - stat: 1
+      levels:
+      - 2.5
+      - 4
+      - 5.5
+      - 7
+    - stat: 2
+      levels:
+      - 100
+      - 120
+      - 140
+      - 160

@@ -1,18 +1,21 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 
 public class WeaponStats : MonoBehaviour
 {
 
     [Range(1, 99)][SerializeField] int startingLevel;
-    [SerializeField] WeaponType weaponType;
     [SerializeField] WeaponProgression progressionData = null;
+
+    WeaponType weaponType;
+
+    public Action OnLevelUp;
 
     int currentLevel = 1;
 
     private void Start()
     {
+        weaponType = GetComponent<Weapon>().GetWeaponType();
         currentLevel = startingLevel;
     }
 

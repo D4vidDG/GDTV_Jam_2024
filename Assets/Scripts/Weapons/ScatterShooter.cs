@@ -25,5 +25,22 @@ public class ScatterShooter : FirePattern
 
         return directions;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+
+        float deltaAngle = angleSpread / numberOfBullets;
+        Vector2 right = (Vector2)transform.right;
+        Vector2 oldDirection = right.Rotate((angleSpread + deltaAngle) / 2);
+        Vector2 newDirection;
+
+        for (int i = 0; i < numberOfBullets; i++)
+        {
+            newDirection = oldDirection.Rotate(-deltaAngle);
+            Gizmos.DrawLine(transform.position, (Vector2)transform.position + newDirection * 5);
+            oldDirection = newDirection;
+        }
+    }
 }
 

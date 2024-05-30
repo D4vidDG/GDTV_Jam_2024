@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,13 +9,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] FirePattern firePattern;
     [SerializeField] float fireRate;
     [SerializeField] float reloadTime;
-    [SerializeField] float knockback;
-    [SerializeField] int maxAmmo;
     [SerializeField] float range;
-    [SerializeField] float damage;
     [SerializeField] Projectile projectile;
     [SerializeField] Transform gunTip;
     [SerializeField] float mouseDeadZone;
+    [SerializeField] SoundName fireSound, reloadSound;
 
     Vector2 shootingDirection;
     float shootingTimer;
@@ -24,7 +23,16 @@ public class Weapon : MonoBehaviour
     bool equipped;
     Coroutine reloadRoutine;
 
-    public SoundName fireSound, reloadSound;
+    WeaponStats myStats;
+
+    float damage => myStats.GetStat(WeaponStat.Damage);
+    float knockback => myStats.GetStat(WeaponStat.Knockback);
+    int maxAmmo => (int)myStats.GetStat(WeaponStat.Ammo);
+
+    private void Awake()
+    {
+        myStats = GetComponent<WeaponStats>();
+    }
 
     private void Start()
     {
@@ -33,6 +41,16 @@ public class Weapon : MonoBehaviour
         shootingTimer = 0;
         currentAmmo = maxAmmo;
         reloading = false;
+    }
+
+    private void OnEnable()
+    {
+        myStats.OnLevelUp += OnLevelUp;
+    }
+
+    private void OnDisable()
+    {
+        myStats.OnLevelUp -= OnLevelUp;
     }
 
     void Update()
@@ -201,6 +219,13 @@ public class Weapon : MonoBehaviour
         reloading = false;
         ResetAmmo();
         reloadRoutine = null;
+    }
+
+
+
+    private void OnLevelUp()
+    {
+        ResetAmmo();
     }
 
     private void ResetAmmo()

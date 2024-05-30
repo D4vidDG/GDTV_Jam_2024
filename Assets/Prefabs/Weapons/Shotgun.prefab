@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3385729601472810205, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5729630517083375823, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalScale.x
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: damage
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: gunTip
@@ -58,11 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: fireRate
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: fireSound
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: knockback
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: projectile
@@ -166,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c82956aa234c74e82f48d22dd9a23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfBullets: 7
-  angleSpread: 47.6
+  numberOfBullets: 8
+  angleSpread: 70
 --- !u!4 &3102985667968616923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2703953164516090302, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}

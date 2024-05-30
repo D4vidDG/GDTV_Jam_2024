@@ -74,8 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingLevel: 1
-  weaponType: 0
-  progressionData: {fileID: 0}
+  progressionData: {fileID: 11400000, guid: 55eadfe63951da846a65ab59c9f1dfe8, type: 2}
 --- !u!114 &1927081928552043564
 MonoBehaviour:
   m_ObjectHideFlags: 0
