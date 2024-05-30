@@ -1,17 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     public bool controlEnabled;
+    [SerializeField] WeaponType weaponType;
+    [SerializeField] FirePattern firePattern;
     [SerializeField] float fireRate;
     [SerializeField] float reloadTime;
     [SerializeField] float knockback;
     [SerializeField] int maxAmmo;
-    [SerializeField] protected float range;
-    [SerializeField] protected float damage;
-    [SerializeField] protected Projectile projectile;
-    [SerializeField] protected Transform gunTip;
+    [SerializeField] float range;
+    [SerializeField] float damage;
+    [SerializeField] Projectile projectile;
+    [SerializeField] Transform gunTip;
     [SerializeField] float mouseDeadZone;
 
     Vector2 shootingDirection;
@@ -51,15 +53,13 @@ public abstract class Weapon : MonoBehaviour
     {
         if (CanFire())
         {
-            shootingTimer = 0;
-            AudioManager.instance.PlaySound(fireSound);
-            Fire(shootingDirection);
-            currentAmmo--;
+            Fire();
             return true;
         }
 
         return false;
     }
+
 
     public void Equip(Transform holdingPoint)
     {
@@ -84,6 +84,10 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+    public WeaponType GetWeaponType()
+    {
+        return weaponType;
+    }
 
     public float GetKnockback()
     {
@@ -110,9 +114,19 @@ public abstract class Weapon : MonoBehaviour
         return reloading;
     }
 
-    protected abstract void Fire(Vector2 shootingDirection);
+    private void Fire()
+    {
+        shootingTimer = 0;
+        AudioManager.instance.PlaySound(fireSound);
+        Vector2[] firingDirections = firePattern.GetDirections(shootingDirection);
+        foreach (Vector2 direction in firingDirections)
+        {
+            LaunchProjectle(direction);
+        }
+        currentAmmo--;
+    }
 
-    protected void LaunchProjectle(Vector2 direction)
+    private void LaunchProjectle(Vector2 direction)
     {
         Projectile instance = Instantiate<Projectile>(
                                   projectile,
@@ -196,11 +210,6 @@ public abstract class Weapon : MonoBehaviour
 
 
     private void OnDrawGizmosSelected()
-    {
-        DrawGizmos();
-    }
-
-    protected virtual void DrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gunTip.position, range);

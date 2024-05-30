@@ -89,11 +89,11 @@ MonoBehaviour:
   ammoText: {fileID: 3644119654848902220}
   ammoImage: {fileID: 631742366276445682}
   icons:
-  - weapon: {fileID: 1416794661135790687, guid: da7f03ec87b8aee4984161a5b2cb551b, type: 3}
+  - weaponType: 0
     ammoIcon: {fileID: 21300000, guid: e03d0091e13d1d64b8910e45b89bc16b, type: 3}
-  - weapon: {fileID: 1855286433834106365, guid: 5f3b3b348c02bd9458f177a396a0a872, type: 3}
+  - weaponType: 1
     ammoIcon: {fileID: 21300000, guid: 8d6254b960f43f44bb8c15d379b04657, type: 3}
-  - weapon: {fileID: 1709667104457420121, guid: 0bfa87ad3b0665c478ae17e17febb2a0, type: 3}
+  - weaponType: 2
     ammoIcon: {fileID: 21300000, guid: 8183ad575cd533f43859555247ba37b5, type: 3}
 --- !u!1 &6450017263120916664
 GameObject:

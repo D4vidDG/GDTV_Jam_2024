@@ -11,18 +11,18 @@ public class AmmoUI : MonoBehaviour
     [SerializeField] AmmoIconByWeapon[] icons;
 
     PlayerController player;
-    Dictionary<string, Sprite> iconByWeapon;
+    Dictionary<WeaponType, Sprite> iconByWeapon;
 
 
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        iconByWeapon = new Dictionary<string, Sprite>();
+        iconByWeapon = new Dictionary<WeaponType, Sprite>();
 
         foreach (AmmoIconByWeapon icon in icons)
         {
-            iconByWeapon.Add(GetWeaponID(icon.weapon), icon.ammoIcon);
+            iconByWeapon.Add(icon.weaponType, icon.ammoIcon);
         }
     }
 
@@ -30,19 +30,14 @@ public class AmmoUI : MonoBehaviour
     private void Update()
     {
         ammoText.text = "X" + player.currentWeapon.GetAmmoLeft().ToString();
-        ammoImage.sprite = iconByWeapon[GetWeaponID(player.currentWeapon)];
+        ammoImage.sprite = iconByWeapon[player.currentWeapon.GetWeaponType()];
     }
 
-
-    private string GetWeaponID(Weapon weapon)
-    {
-        return weapon.GetType().Name;
-    }
 
     [Serializable]
     struct AmmoIconByWeapon
     {
-        public Weapon weapon;
+        public WeaponType weaponType;
         public Sprite ammoIcon;
     }
 

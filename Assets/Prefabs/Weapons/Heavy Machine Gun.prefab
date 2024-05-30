@@ -40,6 +40,46 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.261
       objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: maxAmmo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: fireRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: fireSound
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: knockback
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: reloadTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: weaponType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: firePattern
+      value: 
+      objectReference: {fileID: 1709667104457420121}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: reloadSound
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6111204069705934729, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1819999
@@ -104,7 +144,8 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1927081928552043564, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -129,21 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241ad5d5e5ba266439e11310112ff6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlEnabled: 0
-  fireRate: 10
-  reloadTime: 4
-  knockback: 3
-  maxAmmo: 100
-  range: 15
-  damage: 5
-  projectile: {fileID: 2922320754034976153, guid: 4d868639549942048bf7a84784e0c346, type: 3}
-  gunTip: {fileID: 5369293815729384248}
-  mouseDeadZone: 0
-  fireSound: 10
-  reloadSound: 11
+  numberOfBullets: 1
   maxRandomSpread: 15
---- !u!4 &5369293815729384248 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2703953164516090302, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
-  m_PrefabInstance: {fileID: 8000028275479284358}
-  m_PrefabAsset: {fileID: 0}

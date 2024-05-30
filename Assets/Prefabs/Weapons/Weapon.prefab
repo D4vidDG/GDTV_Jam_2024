@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6111204069705934729}
+  - component: {fileID: 6005350922611409539}
+  - component: {fileID: 4072251031965592518}
+  - component: {fileID: 1927081928552043564}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -32,6 +35,59 @@ Transform:
   - {fileID: 5729630517083375823}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6005350922611409539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385729601472810205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a11fff6262e0f41bc964b708327e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlEnabled: 1
+  weaponType: 0
+  firePattern: {fileID: 1927081928552043564}
+  fireRate: 0
+  reloadTime: 0
+  knockback: 40
+  maxAmmo: 0
+  range: 0
+  damage: 0
+  projectile: {fileID: 5368603727079943567, guid: 9c84dc757a419c84190e8e48742b0d27, type: 3}
+  gunTip: {fileID: 2703953164516090302}
+  mouseDeadZone: 0
+  fireSound: 6
+  reloadSound: 7
+--- !u!114 &4072251031965592518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385729601472810205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f4b69bd1a6b4144bb0a4a126a2954c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  weaponType: 0
+  progressionData: {fileID: 0}
+--- !u!114 &1927081928552043564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385729601472810205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b01f04d879a5e4abd1e72993e22899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3835893679810349794
 GameObject:
   m_ObjectHideFlags: 0

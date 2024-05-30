@@ -1,15 +1,14 @@
 using ExtensionMethods;
 using UnityEngine;
-public class ScatterShooter : Weapon
+public class ScatterShooter : FirePattern
 {
-    [SerializeField] int numberOfBullets; // Total bullets show per Shot of the gun
+    [SerializeField][Min(1)] int numberOfBullets; // Total bullets show per Shot of the gun
     [SerializeField] float angleSpread; // Degrees (0-360) to spread the Bullets
 
-    const int SHOTGUN_PENETRATION = 1;
-
-    protected override void Fire(Vector2 shootingDirection)
+    public override Vector2[] GetDirections(Vector2 shootingDirection)
     {
-        if (numberOfBullets < 1 || angleSpread == 0) return;
+        Vector2[] directions = new Vector2[numberOfBullets];
+        if (numberOfBullets < 1 || angleSpread == 0) return directions;
 
         shootingDirection = shootingDirection.normalized;
         float deltaAngle = angleSpread / numberOfBullets;
@@ -20,28 +19,11 @@ public class ScatterShooter : Weapon
         for (int i = 0; i < numberOfBullets; i++)
         {
             newDirection = oldDirection.Rotate(-deltaAngle);
-            Debug.DrawRay(transform.position, newDirection * range, Color.yellow, 0.2f);
-            LaunchProjectle(newDirection);
+            directions[i] = newDirection.normalized;
             oldDirection = newDirection;
         }
-    }
 
-    protected override void DrawGizmos()
-    {
-        base.DrawGizmos();
-        Gizmos.color = Color.blue;
-
-        float deltaAngle = angleSpread / numberOfBullets;
-        Vector2 right = (Vector2)transform.right;
-        Vector2 oldDirection = right.Rotate((angleSpread + deltaAngle) / 2);
-        Vector2 newDirection;
-
-        for (int i = 0; i < numberOfBullets; i++)
-        {
-            newDirection = oldDirection.Rotate(-deltaAngle);
-            Gizmos.DrawLine(gunTip.position, (Vector2)gunTip.position + newDirection * range);
-            oldDirection = newDirection;
-        }
+        return directions;
     }
 }
 

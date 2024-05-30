@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class StraightShooter : Weapon
+public class StraightShooter : FirePattern
 {
-    protected override void Fire(Vector2 shootingDirection)
+    public override Vector2[] GetDirections(Vector2 shootingDirection)
     {
-        LaunchProjectle(shootingDirection);
-        Debug.DrawRay(transform.position, shootingDirection * range, Color.yellow, 0.2f);
+        Vector2[] directions = new Vector2[1];
+        directions[0] = shootingDirection.normalized;
+        return directions;
     }
 }
