@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
+    public AudioMixerGroup sfxAudioMixer;
 
     [SerializeField]
     Sound[] m_sounds;
@@ -28,6 +30,11 @@ public class AudioManager : MonoBehaviour
             GameObject go = new GameObject("Sound_" + i + "_" + m_sounds[i].m_name.ToString());
             go.transform.SetParent(transform);
             m_sounds[i].SetSource(go.AddComponent<AudioSource>());
+            AudioSource audioSource = go.GetComponent<AudioSource>();
+
+            audioSource.outputAudioMixerGroup = sfxAudioMixer;
+            audioSource.spatialBlend = .5f;
+
         }
     }
 
