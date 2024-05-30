@@ -68,7 +68,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 0d6570549605afd47a44e683141c032d
+    name: Master
+  - guid: 49dd3555ec3b42144acb1ab06b91dfe4
+    name: Music
+  - guid: 93158669b2d388c4b8ab04e42d87fe2f
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - 7abf67e941d43e9408c892e1fa50e130
@@ -87,8 +93,8 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 7abf67e941d43e9408c892e1fa50e130
   m_Children:
-  - {fileID: -3178722868188884789}
   - {fileID: -5224206750218692241}
+  - {fileID: -3178722868188884789}
   m_Volume: 0d6570549605afd47a44e683141c032d
   m_Pitch: ecae49d8f7637c94393c5ef27c1e393e
   m_Send: 00000000000000000000000000000000
