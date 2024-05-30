@@ -108,6 +108,5 @@ public class GameManager : MonoBehaviour
     {
         PlayerController pc = player.GetComponent<PlayerController>();
         pc.Enable(toggle);
-        pc.currentWeapon.GetComponent<Weapon>().controlEnabled = toggle;
     }
 }

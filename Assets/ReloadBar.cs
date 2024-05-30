@@ -8,12 +8,12 @@ public class ReloadBar : MonoBehaviour
     [SerializeField] float sliderStartValue;
     [SerializeField] float sliderEndValue;
 
-    PlayerController playerController;
+    WeaponInventory weaponInventory;
     Slider slider;
 
     private void Awake()
     {
-        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        weaponInventory = FindObjectOfType<WeaponInventory>();
         slider = GetComponentInChildren<Slider>();
     }
 
@@ -25,7 +25,9 @@ public class ReloadBar : MonoBehaviour
 
     private void Update()
     {
-        Weapon currentWeapon = playerController.currentWeapon;
+
+        Weapon currentWeapon = weaponInventory.currentWeapon;
+        if (currentWeapon == null) return;
         if (currentWeapon.IsReloading())
         {
             bar.SetActive(true);

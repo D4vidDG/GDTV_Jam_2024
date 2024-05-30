@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2899670607375404609}
   - component: {fileID: 4169075091296536742}
   - component: {fileID: 2404557810668792854}
+  - component: {fileID: 2014314293177687953}
   - component: {fileID: 263513751193575780}
   - component: {fileID: 400167450685010962}
   - component: {fileID: 4181085835563575384}
@@ -152,10 +153,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2538bde3338454ba38a520646e3b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+--- !u!114 &2014314293177687953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184733888416179389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c28bffdd9d18ba4e9892ee2e4b7686c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   gunHoldingPoint: {fileID: 246104570129978374}
 --- !u!114 &263513751193575780
 MonoBehaviour:

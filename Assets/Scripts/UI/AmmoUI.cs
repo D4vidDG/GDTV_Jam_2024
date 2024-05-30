@@ -10,14 +10,14 @@ public class AmmoUI : MonoBehaviour
     [SerializeField] Image ammoImage;
     [SerializeField] AmmoIconByWeapon[] icons;
 
-    PlayerController player;
+    WeaponInventory weaponInventory;
     Dictionary<WeaponType, Sprite> iconByWeapon;
 
 
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        weaponInventory = GameObject.FindWithTag("Player").GetComponent<WeaponInventory>();
         iconByWeapon = new Dictionary<WeaponType, Sprite>();
 
         foreach (AmmoIconByWeapon icon in icons)
@@ -29,8 +29,19 @@ public class AmmoUI : MonoBehaviour
 
     private void Update()
     {
-        ammoText.text = "X" + player.currentWeapon.GetAmmoLeft().ToString();
-        ammoImage.sprite = iconByWeapon[player.currentWeapon.GetWeaponType()];
+        Weapon currentWeapon = weaponInventory.currentWeapon;
+        if (currentWeapon == null)
+        {
+            ammoText.enabled = false;
+            ammoImage.enabled = false;
+        }
+        else
+        {
+            ammoText.enabled = true;
+            ammoImage.enabled = true;
+            ammoText.text = "X" + currentWeapon.GetAmmoLeft().ToString();
+            ammoImage.sprite = iconByWeapon[currentWeapon.GetWeaponType()];
+        }
     }
 
 

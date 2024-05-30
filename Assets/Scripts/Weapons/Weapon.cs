@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public bool controlEnabled;
     [SerializeField] WeaponType weaponType;
     [SerializeField] FirePattern firePattern;
     [SerializeField] float fireRate;
@@ -36,7 +34,6 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        controlEnabled = true;
         reloadTimer = 0;
         shootingTimer = 0;
         currentAmmo = maxAmmo;
@@ -55,15 +52,12 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (controlEnabled)
-        {
-            shootingDirection = GetShootingDirection();
-            shootingTimer += Time.deltaTime;
+        shootingDirection = GetShootingDirection();
+        shootingTimer += Time.deltaTime;
 
-            if (equipped)
-            {
-                FaceDirection(shootingDirection);
-            }
+        if (equipped)
+        {
+            FaceDirection(shootingDirection);
         }
     }
 

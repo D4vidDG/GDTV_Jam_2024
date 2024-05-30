@@ -3,12 +3,13 @@ using UnityEngine;
 public class CoinWallet : MonoBehaviour
 {
     [SerializeField] int maxCoins;
+    [SerializeField] int startCoins = 0;
 
     int coinsCollected;
 
     private void Start()
     {
-        coinsCollected = 0;
+        coinsCollected = startCoins;
     }
 
     public int GetCoinsCollected()
@@ -18,7 +19,7 @@ public class CoinWallet : MonoBehaviour
 
     public void Spend(int amount)
     {
-        if (amount < coinsCollected) coinsCollected -= amount;
+        if (amount <= coinsCollected) coinsCollected -= amount;
     }
 
     public void Reset()

@@ -6,16 +6,12 @@ class PlayerController : MonoBehaviour
     const KeyCode RELOAD_KEY = KeyCode.R;
     const KeyCode SWITCH_WEAPON_KEY = KeyCode.Z;
 
-    [SerializeField] Weapon[] weapons;
-    [SerializeField] Transform gunHoldingPoint;
-
     Health health;
     PlayerMovement movement;
     Animator animator;
     CharacterFacer facer;
+    WeaponInventory weaponInventory;
 
-    int currentWeaponIndex;
-    public Weapon currentWeapon => weapons[currentWeaponIndex];
     bool controlEnabled;
 
     private void Awake()
@@ -24,21 +20,30 @@ class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         health = GetComponent<Health>();
         facer = GetComponent<CharacterFacer>();
+        weaponInventory = GetComponent<WeaponInventory>();
     }
 
     private void Start()
     {
         controlEnabled = true;
-        currentWeaponIndex = 0;
-        currentWeapon.gameObject.SetActive(true);
-        currentWeapon.Equip(gunHoldingPoint);
     }
 
     void Update()
     {
-        if (!controlEnabled) return;
+        if (!controlEnabled)
+        {
+            if (weaponInventory.currentWeapon != null) weaponInventory.currentWeapon.enabled = false;
+            return;
+        }
+        else
+        {
+            if (weaponInventory.currentWeapon != null) weaponInventory.currentWeapon.enabled = true;
+        }
+
         if (health.IsDead()) return;
 
+
+        Weapon currentWeapon = weaponInventory.currentWeapon;
         if (currentWeapon != null)
         {
             if (WantsToShoot())
@@ -56,7 +61,7 @@ class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(SWITCH_WEAPON_KEY))
             {
-                SwitchWeapon();
+                weaponInventory.SwitchToNextWeapon();
             }
         }
 
@@ -78,20 +83,6 @@ class PlayerController : MonoBehaviour
     private bool WantsToShoot()
     {
         return Input.GetMouseButton(0);
-    }
-
-    private void SwitchWeapon()
-    {
-        if (weapons.Length > 0)
-        {
-            currentWeapon.UnEquip();
-            currentWeapon.gameObject.SetActive(false);
-
-            currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
-
-            currentWeapon.gameObject.SetActive(true);
-            currentWeapon.Equip(gunHoldingPoint);
-        }
     }
 
 }
