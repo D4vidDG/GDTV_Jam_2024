@@ -9,8 +9,8 @@ public class WaveUI : MonoBehaviour
     public TextMeshProUGUI waveNumberText;
     public Color startColor, flashColor;
     public int flashCount;
-    public float speed;
-    public bool doneFlashing;
+    public float flashDelay;
+    public bool isFlashing, doneFlashing;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,49 +19,32 @@ public class WaveUI : MonoBehaviour
     
     public void NextWave()
     {
-        Debug.Log("who is calling me???");
         doneFlashing = false;
+        isFlashing = false;
         StartCoroutine(IncreaseWaveNumber());
     }
 
     IEnumerator IncreaseWaveNumber()
     {
-        float tick = 0f;
-        for (int i = 0; i < flashCount; i++) 
+        for (int i = 0; i < flashCount; i++)
         {
-            tick = 0f;
-            while (waveNumberText.color != flashColor)
+            yield return new WaitForSeconds(flashDelay);
+
+            if (isFlashing)
             {
-                tick += Time.deltaTime * speed;
-                waveNumberText.color = Color.Lerp(startColor, flashColor, tick);
-                yield return null;
+                waveNumberText.color = startColor;
+                isFlashing = false;
             }
-
-            tick = 0;
-
-            while (waveNumberText.color != startColor)
+            else
             {
-                tick += Time.deltaTime * speed;
-                waveNumberText.color = Color.Lerp(flashColor, startColor, tick);
-                yield return null;
+                waveNumberText.color = flashColor;
+                isFlashing = true;
             }
         }
 
-        tick = 0f;
-        while (waveNumberText.color != flashColor)
+        if (isFlashing)
         {
-            tick += Time.deltaTime * speed;
-            waveNumberText.color = Color.Lerp(startColor, flashColor, tick);
-            yield return null;
-        }
-
-        tick = 0;
-
-        while (waveNumberText.color != startColor)
-        {
-            tick += Time.deltaTime * speed;
-            waveNumberText.color = Color.Lerp(flashColor, startColor, tick);
-            yield return null;
+            waveNumberText.color = startColor;
         }
 
         waveNumberText.text = (GameManager.instance.waveCounter + 1).ToString();
