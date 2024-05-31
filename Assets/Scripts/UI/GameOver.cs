@@ -13,10 +13,7 @@ public class GameOver : MonoBehaviour
 
     public Image retry, quit;
     public Sprite retrySprite, quitSprite;
-    public bool retryPressed, quitPressed;
-    public Color flashColor;
-    public float flashDelay, flashTimer;
-    public bool isFlashing, enableInput;
+    public bool enableInput;
 
 
     private void Awake()
@@ -35,46 +32,8 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
-        flashTimer = 0;
-        isFlashing = false;
         enableInput = true;
         gameObject.SetActive(false);
-    }
-
-
-    public void Update()
-    {
-        flashTimer += Time.unscaledDeltaTime;
-
-        if (flashTimer >= flashDelay)
-        {
-            if (retryPressed)
-            {
-                if (isFlashing)
-                {
-                    retry.color = flashColor;
-                }
-                else
-                {
-                    retry.color = new Color(255, 255, 255, 100);
-                }
-            }
-            else if (quitPressed)
-            {
-                if (isFlashing)
-                {
-                    quit.color = flashColor;
-                }
-                else
-                {
-                    quit.color = new Color(255, 255, 255, 100);
-                }
-            }
-
-            isFlashing = !isFlashing;
-
-            flashTimer = 0;
-        }
     }
 
 
@@ -113,30 +72,9 @@ public class GameOver : MonoBehaviour
         quit.gameObject.SetActive(true);
     }
 
-    public void ButtonChange(int clicked)
+    public void ToggleInput(bool toggle)
     {
-        if (enableInput)
-        {
-            switch (clicked)
-            {
-                case 0:
-                    if (!retryPressed && retry != null)
-                    {
-                        retry.overrideSprite = retrySprite;
-                        retryPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-                case 1:
-                    if (!quitPressed && quit != null)
-                    {
-                        quit.overrideSprite = quitSprite;
-                        quitPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-            }
-        }
+        enableInput = toggle;
     }
 
 
@@ -144,6 +82,7 @@ public class GameOver : MonoBehaviour
     {
         if (enableInput)
         {
+            retry.overrideSprite = retrySprite;
             StartCoroutine(RetryButton(delay));
         }
     }
@@ -151,7 +90,7 @@ public class GameOver : MonoBehaviour
     public IEnumerator RetryButton(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        instance.gameObject.SetActive(true);
+        instance.gameObject.SetActive(true); //why did i make this again
         Time.timeScale = 1;
         SceneManager.LoadScene("MergedScene");//this should set to the current scene name instead
     }
@@ -161,6 +100,7 @@ public class GameOver : MonoBehaviour
     {
         if (enableInput)
         {
+            quit.overrideSprite = quitSprite;
             StartCoroutine(QuitButton(delay));
         }
     }

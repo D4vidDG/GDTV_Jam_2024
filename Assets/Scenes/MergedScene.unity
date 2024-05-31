@@ -735,6 +735,7 @@ GameObject:
   - component: {fileID: 253983972}
   - component: {fileID: 253983971}
   - component: {fileID: 253983974}
+  - component: {fileID: 253983975}
   m_Layer: 5
   m_Name: GO Quit
   m_TagString: Untagged
@@ -813,19 +814,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 788856304}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: ButtonChange
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -840,6 +829,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 253983975}
+        m_TargetAssemblyTypeName: FlashingComponent, Assembly-CSharp
+        m_MethodName: ToggleEffect
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &253983972
 MonoBehaviour:
@@ -908,6 +909,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &253983975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253983969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c83a452377f729498564d87847eecd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 0
+  flashDelay: 0.2
+  initialColor: {r: 1, g: 1, b: 1, a: 1}
+  flashColor: {r: 0.42352942, g: 0.42352942, b: 0.42352942, a: 1}
+  textMeshPro: {fileID: 0}
+  image: {fileID: 253983972}
+  isFlashing: 0
 --- !u!1 &264393270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,12 +2024,6 @@ MonoBehaviour:
   quit: {fileID: 253983972}
   retrySprite: {fileID: 21300000, guid: 711ac61a360a69d42ba5c126abdd0cbc, type: 3}
   quitSprite: {fileID: 21300000, guid: 9fa78ff6de95b1546a174aad46e0f2b1, type: 3}
-  retryPressed: 0
-  quitPressed: 0
-  flashColor: {r: 0.42352942, g: 0.42352942, b: 0.42352942, a: 1}
-  flashDelay: 0.2
-  flashTimer: 0
-  isFlashing: 0
   enableInput: 1
 --- !u!1 &879309413
 GameObject:
@@ -3291,6 +3305,7 @@ GameObject:
   - component: {fileID: 1077402513}
   - component: {fileID: 1077402512}
   - component: {fileID: 1077402515}
+  - component: {fileID: 1077402516}
   m_Layer: 5
   m_Name: GO Retry
   m_TagString: Untagged
@@ -3369,19 +3384,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 788856304}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: ButtonChange
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -3396,6 +3399,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1077402516}
+        m_TargetAssemblyTypeName: FlashingComponent, Assembly-CSharp
+        m_MethodName: ToggleEffect
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1077402513
 MonoBehaviour:
@@ -3464,6 +3479,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1077402516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077402510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c83a452377f729498564d87847eecd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 0
+  flashDelay: 0.2
+  initialColor: {r: 1, g: 1, b: 1, a: 1}
+  flashColor: {r: 0.42352942, g: 0.42352942, b: 0.42352942, a: 1}
+  textMeshPro: {fileID: 0}
+  image: {fileID: 1077402513}
+  isFlashing: 0
 --- !u!1 &1084121492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5404,7 +5438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1686725730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5442,6 +5476,7 @@ MonoBehaviour:
   initialColor: {r: 0.43529412, g: 1, b: 0.39215687, a: 1}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   textMeshPro: {fileID: 1686725732}
+  image: {fileID: 0}
   isFlashing: 0
 --- !u!114 &1686725732
 MonoBehaviour:

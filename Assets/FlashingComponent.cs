@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlashingComponent : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class FlashingComponent : MonoBehaviour
     public float flashDelay;
     public Color initialColor, flashColor;
     public TextMeshProUGUI textMeshPro;
+    public Image image;
     public bool isFlashing;
 
     private void OnEnable()
@@ -33,12 +35,26 @@ public class FlashingComponent : MonoBehaviour
 
                 if (isFlashing)
                 {
-                    textMeshPro.color = initialColor;
+                    if (textMeshPro != null)
+                    {
+                        textMeshPro.color = initialColor;
+                    }
+                    else if(image != null)
+                    {
+                        image.color = initialColor;
+                    }
                     isFlashing = false;
                 }
                 else
                 {
-                    textMeshPro.color = flashColor;
+                    if (textMeshPro != null)
+                    {
+                        textMeshPro.color = flashColor;
+                    }
+                    else if(image != null)
+                    {
+                        image.color = flashColor;
+                    }
                     isFlashing = true;
                 }
             }
