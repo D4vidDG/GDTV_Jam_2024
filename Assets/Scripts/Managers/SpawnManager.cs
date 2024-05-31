@@ -15,8 +15,7 @@ public class SpawnManager : MonoBehaviour
     public float spawnTimer;
 
     [Header("Distance Settings")]
-    public float minDistance;
-    public float maxDistance;
+    public float distanceRandomness;
 
     [Header("Misc")]
     public bool shouldSpawn;
@@ -80,24 +79,34 @@ public class SpawnManager : MonoBehaviour
 
     public Vector2 RandomLocation()
     {
-        float x, y;
+        Camera cam = Camera.main;
+        float x = 0, y = 0;
 
-        float roll = Random.Range(0, 2);
-        if (roll == 0) // rolls for positive or negative number
+        float xyRoll = Random.Range(0, 3);//0 = use x, 1 = use y, 2 = use x and y
+        float numberRoll;// rolls for positive or negative number
+
+        if (xyRoll == 0 || xyRoll == 2)
         {
-            roll = -1;
+            numberRoll = Random.Range(0, 2);
+            if (numberRoll == 0) 
+            {
+                numberRoll = -1;
+            }
+            x = cam.transform.position.x + cam.orthographicSize * cam.aspect * numberRoll + Random.Range(0, distanceRandomness) * numberRoll;
         }
-        x = GameManager.instance.player.transform.position.x * roll + Random.Range(minDistance, maxDistance) * roll;
 
-        roll = Random.Range(0, 2);
-        if (roll == 0)
+        if (xyRoll == 1 || xyRoll == 2)
         {
-            roll = -1;
+            numberRoll = Random.Range(0, 2);
+            if (numberRoll == 0)
+            {
+                numberRoll = -1;
+            }
+            y = cam.transform.position.y + cam.orthographicSize * numberRoll + Random.Range(0, distanceRandomness) * numberRoll;
         }
-        y = GameManager.instance.player.transform.position.y * roll + Random.Range(minDistance, maxDistance) * roll;
 
 
-        Vector2 location = new Vector2(x, y);
+        Vector2 location = new(x, y);
 
         return location;
     }

@@ -610,8 +610,8 @@ MonoBehaviour:
   soundName: 4
   soundDelay: 0
   soundTimer: 0
-  minDelay: 7
-  maxDelay: 15
+  minDelay: 5
+  maxDelay: 30
 --- !u!1 &7639579300832699624
 GameObject:
   m_ObjectHideFlags: 0

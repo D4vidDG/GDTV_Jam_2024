@@ -6,10 +6,8 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public static GameOver instance;
-    public float gameOverFadeInTime, backgroundFadeInTime;
     public Image gameOver, background;
-    public Color gameOverStartColor, gameOverEndColor;
-    public Color backgroundStartColor, backgroundEndColor;
+    public float delay1, delay2;
 
     public Image retry, quit;
     public Sprite retrySprite, quitSprite;
@@ -40,33 +38,19 @@ public class GameOver : MonoBehaviour
     public void StartGameOverScreen()
     {
         GameManager.instance.ToggleControl(false);
-        gameOver.gameObject.SetActive(true);
-        gameOver.color = gameOverStartColor;
-        background.gameObject.SetActive(true);
-        background.color = backgroundStartColor;
         StartCoroutine(GameOverRoutine());
     }
 
 
     public IEnumerator GameOverRoutine()
     {
-        float timer = 0;
+        background.gameObject.SetActive(true);
 
-        while (gameOver.color != gameOverEndColor)
-        {
-            timer += Time.deltaTime;
-            gameOver.color = Color.Lerp(gameOver.color, gameOverEndColor, timer / gameOverFadeInTime);
-            yield return null;
-        }
+        yield return new WaitForSecondsRealtime(delay1);
 
-        timer = 0;
+        gameOver.gameObject.SetActive(true);
 
-        while (background.color != backgroundEndColor)
-        {
-            timer += Time.deltaTime;
-            background.color = Color.Lerp(background.color, backgroundEndColor, timer / backgroundFadeInTime);
-            yield return null;
-        }
+        yield return new WaitForSecondsRealtime(delay2);
 
         retry.gameObject.SetActive(true);
         quit.gameObject.SetActive(true);
