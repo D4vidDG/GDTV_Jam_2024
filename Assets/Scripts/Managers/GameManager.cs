@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public WeaponShop weaponShop;
     public GameObject player;
     public int waveCounter;
     public bool playerDead;
@@ -66,7 +67,13 @@ public class GameManager : MonoBehaviour
 
     public void OpenUpgradeMenu()
     {
-        Debug.Log("menu here");
+        if (weaponShop == null)
+        {
+            weaponShop = FindObjectOfType<WeaponShop>();
+        }
+
+        weaponShop.gameObject.SetActive(true);
+        weaponShop.Open();
     }
 
     public void IncreaseDifficulty()

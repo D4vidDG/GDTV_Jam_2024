@@ -70,6 +70,12 @@ public class WeaponShop : MonoBehaviour
         opened = false;
     }
 
+
+    public void NextWaveSignal()
+    {
+        GameManager.instance.NextWave();
+    }
+
     private void OnItemSold(ShopItem item)
     {
         Weapon weaponPrefab = lookUpTable[item];
