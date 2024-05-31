@@ -32,7 +32,7 @@ public class WavingComponent : MonoBehaviour
         {
             while (true)
             {
-                yield return new WaitForSeconds(waveDelay);
+                yield return new WaitForSecondsRealtime(waveDelay);
 
                 if (isGoingUp)
                 {

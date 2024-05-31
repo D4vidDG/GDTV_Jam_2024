@@ -75,6 +75,17 @@ public class GameOver : MonoBehaviour
     public void ToggleInput(bool toggle)
     {
         enableInput = toggle;
+
+        if (!enableInput)
+        {
+            retry.GetComponent<Button>().enabled = false;
+            quit.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            retry.GetComponent<Button>().enabled = true;
+            quit.GetComponent<Button>().enabled = true;
+        }
     }
 
 
@@ -114,6 +125,9 @@ public class GameOver : MonoBehaviour
 
     public void ButtonSound(AudioSource audio)
     {
-        audio.Play();
+        if (enableInput)
+        {
+            audio.Play();
+        }
     }
 }

@@ -31,7 +31,7 @@ public class FlashingComponent : MonoBehaviour
         {
             while (true)
             {
-                yield return new WaitForSeconds(flashDelay);
+                yield return new WaitForSecondsRealtime(flashDelay);
 
                 if (isFlashing)
                 {

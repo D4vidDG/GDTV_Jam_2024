@@ -7,48 +7,28 @@ public class PauseFunctions : MonoBehaviour
 {
     public Image retry, options, quit;
     public Sprite retrySprite, optionsSprite, quitSprite;
-    public bool retryPressed, optionsPressed, quitPressed;
-    public Color flashColor;
-    public float flashDelay, flashTimer;
-    public bool isFlashing, enableInput;
+    public bool  enableInput;
 
     private void Start()
     {
-        flashTimer = 0;
-        isFlashing = false;
         enableInput = true;
     }
 
-    public void ButtonChange(int clicked)
+    public void ToggleInput(bool toggle)
     {
-        if (enableInput) { 
-            switch (clicked)
-            {
-                case 0:
-                    if (!retryPressed && retry != null)
-                    {
-                        retry.overrideSprite = retrySprite;
-                        retryPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-                case 1:
-                    if (!optionsPressed && options != null)
-                    {
-                        options.overrideSprite = optionsSprite;
-                        optionsPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-                case 2:
-                    if (!quitPressed && quit != null)
-                    {
-                        quit.overrideSprite = quitSprite;
-                        quitPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-            }
+        enableInput = toggle;
+
+        if (!enableInput)
+        {
+            retry.GetComponent<Button>().enabled = false;
+            options.GetComponent<Button>().enabled = false;
+            quit.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            retry.GetComponent<Button>().enabled = true;
+            options.GetComponent<Button>().enabled = true;
+            quit.GetComponent<Button>().enabled = true;
         }
     }
 
@@ -57,6 +37,7 @@ public class PauseFunctions : MonoBehaviour
     {
         if (enableInput)
         {
+            retry.overrideSprite = retrySprite;
             StartCoroutine(RetryButton(delay));
         }
     }
@@ -75,6 +56,7 @@ public class PauseFunctions : MonoBehaviour
     {
         if (enableInput)
         {
+            options.overrideSprite = optionsSprite;
             StartCoroutine(OptionsButton(delay));
         }
     }
@@ -84,9 +66,7 @@ public class PauseFunctions : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(delay);
         options.overrideSprite = null;
-        optionsPressed = false;
         options.color = new Color(255, 255, 255, 100);
-        isFlashing = false;
         enableInput = true;
         PauseMenu.instance.ToggleOptions();//this should only be able to be pressed when the options button is visible
     }
@@ -96,6 +76,7 @@ public class PauseFunctions : MonoBehaviour
     {
         if (enableInput)
         {
+            quit.overrideSprite = quitSprite;
             StartCoroutine(QuitButton(delay));
         }
     }
@@ -109,57 +90,9 @@ public class PauseFunctions : MonoBehaviour
 
     public void ButtonSound(AudioSource audio)
     {
-        audio.Play();
-    }
-
-
-    public void Update()
-    {
-        if (PauseMenu.instance.isPaused)
+        if (enableInput)
         {
-            flashTimer += Time.unscaledDeltaTime;
-
-            if (flashTimer >= flashDelay)
-            {
-                if (retryPressed)
-                {
-                    if (isFlashing)
-                    {
-                        retry.color = flashColor;
-                    }
-                    else
-                    {
-                        retry.color = new Color(255, 255, 255, 100);
-                    }
-                }
-                else if (optionsPressed)
-                {
-                    if (isFlashing)
-                    {
-                        options.color = flashColor;
-                    }
-                    else
-                    {
-                        options.color = new Color(255, 255, 255, 100);
-                    }
-
-                }
-                else if (quitPressed)
-                {
-                    if (isFlashing)
-                    {
-                        quit.color = flashColor;
-                    }
-                    else
-                    {
-                        quit.color = new Color(255, 255, 255, 100);
-                    }
-                }
-
-                isFlashing = !isFlashing;
-
-                flashTimer = 0;
-            }
+            audio.Play();
         }
     }
 }
