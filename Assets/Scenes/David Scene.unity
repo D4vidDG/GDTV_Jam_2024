@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2023132491}
-  lookAheadDistance: 2.5
+  lookAheadDistance: 3
 --- !u!4 &424177043
 Transform:
   m_ObjectHideFlags: 0
@@ -913,6 +913,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1416794661135790687, guid: da7f03ec87b8aee4984161a5b2cb551b, type: 3}
+      propertyPath: mouseDeadZone
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4342171879430435741, guid: da7f03ec87b8aee4984161a5b2cb551b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.747
@@ -957,6 +961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Revolver
       objectReference: {fileID: 0}
+    - target: {fileID: 5076017247228893385, guid: da7f03ec87b8aee4984161a5b2cb551b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -981,9 +989,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1855286433834106365, guid: 5f3b3b348c02bd9458f177a396a0a872, type: 3}
+      propertyPath: mouseDeadZone
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2335922588249515192, guid: 5f3b3b348c02bd9458f177a396a0a872, type: 3}
       propertyPath: m_Name
       value: Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2335922588249515192, guid: 5f3b3b348c02bd9458f177a396a0a872, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6510236578522976236, guid: 5f3b3b348c02bd9458f177a396a0a872, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1921,6 +1937,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1709667104457420121, guid: 0bfa87ad3b0665c478ae17e17febb2a0, type: 3}
+      propertyPath: mouseDeadZone
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4308419742076005647, guid: 0bfa87ad3b0665c478ae17e17febb2a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1819999
@@ -1964,6 +1984,10 @@ PrefabInstance:
     - target: {fileID: 4753910557475194459, guid: 0bfa87ad3b0665c478ae17e17febb2a0, type: 3}
       propertyPath: m_Name
       value: Heavy Machine Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753910557475194459, guid: 0bfa87ad3b0665c478ae17e17febb2a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2961,6 +2985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1653040372879373150, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2173727887093528520, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2985,6 +3013,10 @@ PrefabInstance:
       propertyPath: weapons.Array.data[2]
       value: 
       objectReference: {fileID: 1369717719}
+    - target: {fileID: 3094364272628612999, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3113746152847609872, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.92
@@ -3033,6 +3065,22 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 5214049754188994960, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237429649312218889, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572708650899854138, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6841204948417997938, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6863973247190865376, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3044,6 +3092,22 @@ PrefabInstance:
     - target: {fileID: 6863973247190865376, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902956145845180804, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075414803503537861, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204384208222806397, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856725510032451274, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

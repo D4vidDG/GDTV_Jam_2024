@@ -147,7 +147,16 @@ public class Weapon : MonoBehaviour
 
     private Vector2 GetShootingDirection()
     {
-        return Mouse.GetVectorToMouse(gunTip.position).normalized;
+        Vector2 tipToMouse = Mouse.GetVectorToMouse(gunTip.position);
+        if (mouseDeadZone < tipToMouse.magnitude)
+        {
+            return tipToMouse;
+        }
+        else
+        {
+            return shootingDirection;
+        }
+
     }
 
     private void FaceDirection(Vector2 direction)
