@@ -21,7 +21,6 @@ public abstract class Weapon : MonoBehaviour
     bool reloading;
     bool equipped;
 
-    Matrix4x4 gunTipToWeaponSpace;
 
     private void Start()
     {
@@ -30,7 +29,6 @@ public abstract class Weapon : MonoBehaviour
         shootingTimer = 0;
         currentAmmo = maxAmmo;
         reloading = false;
-        gunTipToWeaponSpace = Matrix4x4.Translate(gunTip.localPosition);
     }
 
     void Update()
