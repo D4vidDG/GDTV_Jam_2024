@@ -3,42 +3,62 @@ using UnityEngine;
 
 public class WeaponInventory : MonoBehaviour
 {
+    [SerializeField] Weapon initialWeapon;
     [SerializeField] Transform gunHoldingPoint;
 
     int currentWeaponIndex;
-    List<Weapon> weapons;
     public Weapon currentWeapon => _currentWeapon;
     Weapon _currentWeapon = null;
+    Dictionary<WeaponType, Weapon> weaponsDict;
+    List<Weapon> weapons;
 
     private void Awake()
     {
+        weaponsDict = new Dictionary<WeaponType, Weapon>();
         weapons = new List<Weapon>();
+    }
+
+    private void Start()
+    {
+        if (initialWeapon != null) AddWeapon(initialWeapon);
     }
 
     public void AddWeapon(Weapon weapon)
     {
+        if (HasWeapon(weapon.GetWeaponType())) return;
+        weaponsDict.Add(weapon.GetWeaponType(), weapon);
         weapons.Add(weapon);
     }
 
-    public void EquipWeapon(Weapon weapon)
+    public Weapon GetWeapon(WeaponType weaponType)
     {
-        if (HasWeapon(weapon))
+        if (!HasWeapon(weaponType)) return null;
+
+        return weaponsDict[weaponType];
+    }
+
+    public void EquipWeapon(WeaponType weaponType)
+    {
+        if (HasWeapon(weaponType))
         {
             if (_currentWeapon != null)
             {
                 _currentWeapon.UnEquip();
                 currentWeapon.gameObject.SetActive(false);
             }
-            weapon.gameObject.SetActive(true);
-            weapon.Equip(gunHoldingPoint);
-            currentWeaponIndex = weapons.IndexOf(weapon);
+
+            Weapon weaponObject = weaponsDict[weaponType];
+            weaponObject.gameObject.SetActive(true);
+            weaponObject.Equip(gunHoldingPoint);
+
+            currentWeaponIndex = weapons.IndexOf(weaponObject);
             _currentWeapon = weapons[currentWeaponIndex];
         }
     }
 
-    public bool HasWeapon(Weapon weapon)
+    public bool HasWeapon(WeaponType weaponType)
     {
-        return weapons.Contains(weapon);
+        return weaponsDict.ContainsKey(weaponType);
     }
 
     public void SwitchToNextWeapon()

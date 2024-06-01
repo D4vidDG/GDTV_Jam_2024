@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform gunTip;
     [SerializeField] float mouseDeadZone;
     [SerializeField] SoundName fireSound, reloadSound;
+    public WeaponStats stats;
 
     Vector2 shootingDirection;
     float shootingTimer;
@@ -21,16 +22,11 @@ public class Weapon : MonoBehaviour
     bool equipped;
     Coroutine reloadRoutine;
 
-    WeaponStats myStats;
 
-    float damage => myStats.GetStat(WeaponStat.Damage);
-    float knockback => myStats.GetStat(WeaponStat.Knockback);
-    int maxAmmo => (int)myStats.GetStat(WeaponStat.Ammo);
+    float damage => stats.GetStat(WeaponStat.Damage);
+    float knockback => stats.GetStat(WeaponStat.Knockback);
+    int maxAmmo => (int)stats.GetStat(WeaponStat.Ammo);
 
-    private void Awake()
-    {
-        myStats = GetComponent<WeaponStats>();
-    }
 
     private void Start()
     {
@@ -42,12 +38,12 @@ public class Weapon : MonoBehaviour
 
     private void OnEnable()
     {
-        myStats.OnLevelUp += OnLevelUp;
+        stats.OnLevelUp += OnLevelUp;
     }
 
     private void OnDisable()
     {
-        myStats.OnLevelUp -= OnLevelUp;
+        stats.OnLevelUp -= OnLevelUp;
     }
 
     void Update()

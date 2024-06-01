@@ -47,20 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a11fff6262e0f41bc964b708327e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlEnabled: 1
   weaponType: 0
   firePattern: {fileID: 1927081928552043564}
   fireRate: 0
   reloadTime: 0
-  knockback: 40
-  maxAmmo: 0
   range: 0
-  damage: 0
   projectile: {fileID: 5368603727079943567, guid: 9c84dc757a419c84190e8e48742b0d27, type: 3}
   gunTip: {fileID: 2703953164516090302}
   mouseDeadZone: 0
   fireSound: 6
   reloadSound: 7
+  stats: {fileID: 4072251031965592518}
 --- !u!114 &4072251031965592518
 MonoBehaviour:
   m_ObjectHideFlags: 0

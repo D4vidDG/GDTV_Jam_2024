@@ -81,6 +81,6 @@ public class WeaponShop : MonoBehaviour
         Weapon weaponPrefab = lookUpTable[item];
         Weapon weaponInstance = Instantiate<Weapon>(weaponPrefab);
         weaponInventory.AddWeapon(weaponInstance);
-        weaponInventory.EquipWeapon(weaponInstance);
+        weaponInventory.EquipWeapon(weaponInstance.GetWeaponType());
     }
 }

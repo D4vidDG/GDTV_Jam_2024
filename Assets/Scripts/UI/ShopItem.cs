@@ -4,13 +4,14 @@ using UnityEngine;
 public class ShopItem : MonoBehaviour
 {
     const string SOLD_TAG = "Sold";
-    [SerializeField] int price;
+    [SerializeField] protected int price;
+    [SerializeField] bool sellIndefinitely;
 
-    ShopButton shopButton;
-    CoinWallet coinWallet;
+    protected ShopButton shopButton;
+    protected CoinWallet coinWallet;
 
     public Action<ShopItem> OnItemSold;
-    bool itemSold;
+    protected bool itemSold;
 
     private void Awake()
     {
@@ -27,10 +28,13 @@ public class ShopItem : MonoBehaviour
 
     public void SellItem()
     {
-        itemSold = true;
-        shopButton.SetPriceTag(SOLD_TAG);
-        shopButton.Disable();
         coinWallet.Spend(price);
+        if (!sellIndefinitely)
+        {
+            itemSold = true;
+            shopButton.SetPriceTag(SOLD_TAG);
+            shopButton.Disable();
+        }
         OnItemSold?.Invoke(this);
     }
 

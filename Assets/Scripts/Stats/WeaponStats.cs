@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponStats : MonoBehaviour
@@ -7,6 +8,7 @@ public class WeaponStats : MonoBehaviour
     [Range(1, 99)][SerializeField] int startingLevel;
     [SerializeField] WeaponProgression progressionData = null;
 
+    Dictionary<WeaponStat, int> statLevels;
     WeaponType weaponType;
 
     public Action OnLevelUp;
@@ -14,6 +16,11 @@ public class WeaponStats : MonoBehaviour
     int currentLevel = 1;
     private void Awake()
     {
+        statLevels = new Dictionary<WeaponStat, int>();
+        foreach (WeaponStat stat in Enum.GetValues(typeof(WeaponStat)))
+        {
+            statLevels[stat] = startingLevel;
+        }
         weaponType = GetComponent<Weapon>().GetWeaponType();
     }
 
@@ -25,7 +32,7 @@ public class WeaponStats : MonoBehaviour
 
     public float GetStat(WeaponStat stat)
     {
-        return progressionData.GetStat(stat, weaponType, currentLevel);
+        return progressionData.GetStat(stat, weaponType, statLevels[stat]);
     }
 
     public float GeStatAtLevel(WeaponStat stat, int level)
@@ -33,19 +40,19 @@ public class WeaponStats : MonoBehaviour
         return progressionData.GetStat(stat, weaponType, level);
     }
 
-    public int GetLevel()
+    public int GetStatLevel(WeaponStat stat)
     {
-        return currentLevel;
+        return statLevels[stat];
     }
 
-    public void IncreaseLevel()
+    public void IncreaseStatLevel(WeaponStat stat)
     {
-        currentLevel++;
+        statLevels[stat]++;
     }
 
-    public void DecreaseLevel()
+    public void DecreaseStatLevel(WeaponStat stat)
     {
-        currentLevel--;
+        statLevels[stat]++;
     }
 }
 
