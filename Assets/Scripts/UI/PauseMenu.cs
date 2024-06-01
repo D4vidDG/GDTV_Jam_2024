@@ -77,12 +77,14 @@ public class PauseMenu : MonoBehaviour
             pauseScreen.SetActive(true);
             optionsMenu.SetActive(false);
             isOnOptions = false;
+            transform.GetComponentInChildren<PauseFunctions>().ToggleInput(true);
         }
         else
         {
             pauseScreen.SetActive(false);
             optionsMenu.SetActive(true);
             isOnOptions = true;
+            transform.GetComponentInChildren<PauseFunctions>().ToggleInput(false);
         }
     }
 }

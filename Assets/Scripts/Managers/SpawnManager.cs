@@ -51,6 +51,7 @@ public class SpawnManager : MonoBehaviour
     public void EndWave()
     {
         shouldSpawn = false;
+        GameManager.instance.EndWave();
     }
 
     public void SpawnBatch()

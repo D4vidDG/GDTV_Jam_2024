@@ -6,6 +6,8 @@ using static TMPro.TMP_Dropdown;
 
 public class UpgradeShop : MonoBehaviour
 {
+    [SerializeField] bool canAccessShop;
+    public GameObject reminderGO;
     [SerializeField] WeaponOptionData[] weaponOptionsData;
     [SerializeField] TMP_Dropdown dropdown;
     [SerializeField] TextMeshProUGUI noWeaponsText;
@@ -50,10 +52,15 @@ public class UpgradeShop : MonoBehaviour
         weaponInventory = FindObjectOfType<WeaponInventory>();
     }
 
+    private void Start()
+    {
+        ToggleAccess(false);
+    }
+
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && canAccessShop)
         {
             if (opened) Close();
             else Open();
@@ -76,15 +83,33 @@ public class UpgradeShop : MonoBehaviour
         }
     }
 
+    public void ToggleAccess(bool toggle)
+    {
+        canAccessShop = toggle;
+
+        if(canAccessShop)
+        {
+            reminderGO.SetActive(true);
+        }
+        else
+        {
+            reminderGO.SetActive(false);
+            Close();
+        }
+    }
+
     public void Open()
     {
+        GameManager.instance.ToggleControl(false);
         UpdateDisplay();
         opened = true;
         panel.SetActive(true);
+        reminderGO.SetActive(false);
     }
 
     public void Close()
     {
+        GameManager.instance.ToggleControl(true);
         opened = false;
         panel.SetActive(false);
     }

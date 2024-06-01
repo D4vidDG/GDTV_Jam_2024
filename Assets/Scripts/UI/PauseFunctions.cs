@@ -67,6 +67,7 @@ public class PauseFunctions : MonoBehaviour
         yield return new WaitForSecondsRealtime(delay);
         options.overrideSprite = null;
         options.color = new Color(255, 255, 255, 100);
+        options.gameObject.GetComponent<FlashingComponent>().ToggleEffect(false);
         enableInput = true;
         PauseMenu.instance.ToggleOptions();//this should only be able to be pressed when the options button is visible
     }

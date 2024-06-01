@@ -72,7 +72,14 @@ public class FlashingComponent : MonoBehaviour
         }
         else
         {
-            textMeshPro.color = initialColor;
+            if (textMeshPro != null)
+            {
+                textMeshPro.color = initialColor;
+            }
+            else if (image != null)
+            {
+                image.color = initialColor;
+            }
             StopCoroutine(Flash());
         }
     }

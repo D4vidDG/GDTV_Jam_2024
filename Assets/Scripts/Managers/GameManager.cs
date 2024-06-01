@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public float timeBetweenWaves;
+    public UpgradeShop upgradeShop;
     public WeaponShop weaponShop;
     public GameObject player;
     public int waveCounter;
@@ -27,6 +29,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (weaponShop == null)
+        {
+            weaponShop = FindObjectOfType<WeaponShop>();
+        }
+        if(upgradeShop == null)
+        {
+            upgradeShop = FindObjectOfType<UpgradeShop>();
+        }
         Startup();
         StartWave();
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -43,37 +53,35 @@ public class GameManager : MonoBehaviour
 
     public void StartWave()
     {
+        upgradeShop.ToggleAccess(false);
+        weaponShop.ToggleAccess(false);
         IncreaseDifficulty();
         FindObjectOfType<SpawnManager>().NewWave();
+    }
+
+    public void EndWave()
+    {
+        upgradeShop.ToggleAccess(true);
+        weaponShop.ToggleAccess(true);
     }
 
     public void NextWave()
     {
         waveCounter++;
-        FindObjectOfType<WaveUI>().NextWave();
         StartCoroutine(NextWaveWait());
     }
 
     IEnumerator NextWaveWait()
     {
+        yield return new WaitForSeconds(timeBetweenWaves);
         WaveUI wui = FindObjectOfType<WaveUI>();
+        wui.NextWave();
+
         while (!wui.doneFlashing)
         {
             yield return null;
         }
         StartWave();
-    }
-
-
-    public void OpenUpgradeMenu()
-    {
-        if (weaponShop == null)
-        {
-            weaponShop = FindObjectOfType<WeaponShop>();
-        }
-
-        weaponShop.gameObject.SetActive(true);
-        weaponShop.Open();
     }
 
     public void IncreaseDifficulty()

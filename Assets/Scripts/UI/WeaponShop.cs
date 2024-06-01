@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponShop : MonoBehaviour
 {
+    [SerializeField] bool canAccessShop;
+    public GameObject reminderGO;
     [SerializeField] WeaponByShopItem[] weaponsByItem;
     [SerializeField] GameObject panel;
     WeaponInventory weaponInventory;
@@ -29,7 +31,7 @@ public class WeaponShop : MonoBehaviour
 
     private void Start()
     {
-        Close();
+        ToggleAccess(false);
     }
 
     private void OnEnable()
@@ -49,9 +51,24 @@ public class WeaponShop : MonoBehaviour
         }
     }
 
+    public void ToggleAccess(bool toggle)
+    {
+        canAccessShop = toggle;
+
+        if (canAccessShop)
+        {
+            reminderGO.SetActive(true);
+        }
+        else
+        {
+            reminderGO.SetActive(false);
+            Close();
+        }
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && canAccessShop)
         {
             if (opened) Close();
             else Open();
@@ -60,12 +77,15 @@ public class WeaponShop : MonoBehaviour
 
     public void Open()
     {
+        GameManager.instance.ToggleControl(false);
         panel.SetActive(true);
         opened = true;
+        reminderGO.SetActive(false);
     }
 
     public void Close()
     {
+        GameManager.instance.ToggleControl(true);
         panel.SetActive(false);
         opened = false;
     }
