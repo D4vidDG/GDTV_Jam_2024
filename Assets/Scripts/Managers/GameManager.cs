@@ -53,16 +53,16 @@ public class GameManager : MonoBehaviour
 
     public void StartWave()
     {
-        upgradeShop.ToggleAccess(false);
-        weaponShop.ToggleAccess(false);
+        //upgradeShop.ToggleAccess(false);
+        //weaponShop.ToggleAccess(false);
         IncreaseDifficulty();
         FindObjectOfType<SpawnManager>().NewWave();
     }
 
     public void EndWave()
     {
-        upgradeShop.ToggleAccess(true);
-        weaponShop.ToggleAccess(true);
+        //upgradeShop.ToggleAccess(true);
+        //weaponShop.ToggleAccess(true);
     }
 
     public void NextWave()

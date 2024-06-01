@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponShop : MonoBehaviour
 {
     [SerializeField] bool canAccessShop;
-    public GameObject reminderGO;
+    public UpgradeShop upgradeShop;
+    //public GameObject reminderGO;
     [SerializeField] WeaponByShopItem[] weaponsByItem;
     [SerializeField] GameObject panel;
     WeaponInventory weaponInventory;
@@ -54,21 +55,11 @@ public class WeaponShop : MonoBehaviour
     public void ToggleAccess(bool toggle)
     {
         canAccessShop = toggle;
-
-        if (canAccessShop)
-        {
-            reminderGO.SetActive(true);
-        }
-        else
-        {
-            reminderGO.SetActive(false);
-            Close();
-        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && canAccessShop)
+        if (Input.GetKeyDown(KeyCode.W) && canAccessShop && !upgradeShop.GetIsOpened())
         {
             if (opened) Close();
             else Open();
@@ -80,7 +71,7 @@ public class WeaponShop : MonoBehaviour
         GameManager.instance.ToggleControl(false);
         panel.SetActive(true);
         opened = true;
-        reminderGO.SetActive(false);
+        //reminderGO.SetActive(false);
     }
 
     public void Close()
@@ -88,6 +79,7 @@ public class WeaponShop : MonoBehaviour
         GameManager.instance.ToggleControl(true);
         panel.SetActive(false);
         opened = false;
+        //reminderGO.SetActive(true);
     }
 
 
@@ -102,5 +94,10 @@ public class WeaponShop : MonoBehaviour
         Weapon weaponInstance = Instantiate<Weapon>(weaponPrefab);
         weaponInventory.AddWeapon(weaponInstance);
         weaponInventory.EquipWeapon(weaponInstance.GetWeaponType());
+    }
+
+    public bool GetIsOpened()
+    {
+        return opened;
     }
 }

@@ -7,7 +7,8 @@ using static TMPro.TMP_Dropdown;
 public class UpgradeShop : MonoBehaviour
 {
     [SerializeField] bool canAccessShop;
-    public GameObject reminderGO;
+    public WeaponShop weaponShop;
+    //public GameObject reminderGO;
     [SerializeField] WeaponOptionData[] weaponOptionsData;
     [SerializeField] TMP_Dropdown dropdown;
     [SerializeField] TextMeshProUGUI noWeaponsText;
@@ -60,7 +61,7 @@ public class UpgradeShop : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && canAccessShop)
+        if (Input.GetKeyDown(KeyCode.Q) && canAccessShop && !weaponShop.GetIsOpened())
         {
             if (opened) Close();
             else Open();
@@ -86,16 +87,6 @@ public class UpgradeShop : MonoBehaviour
     public void ToggleAccess(bool toggle)
     {
         canAccessShop = toggle;
-
-        if(canAccessShop)
-        {
-            reminderGO.SetActive(true);
-        }
-        else
-        {
-            reminderGO.SetActive(false);
-            Close();
-        }
     }
 
     public void Open()
@@ -104,7 +95,7 @@ public class UpgradeShop : MonoBehaviour
         UpdateDisplay();
         opened = true;
         panel.SetActive(true);
-        reminderGO.SetActive(false);
+        //reminderGO.SetActive(false);
     }
 
     public void Close()
@@ -112,6 +103,7 @@ public class UpgradeShop : MonoBehaviour
         GameManager.instance.ToggleControl(true);
         opened = false;
         panel.SetActive(false);
+        //reminderGO.SetActive(true);
     }
 
     private void OnUpgradeSold(ShopItem item)
@@ -218,5 +210,9 @@ public class UpgradeShop : MonoBehaviour
         return weaponTypeByOption[optionObject];
     }
 
+    public bool GetIsOpened()
+    {
+        return opened;
+    }
 }
 
