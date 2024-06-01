@@ -5,6 +5,8 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu instance;
+    public WeaponShop WeaponShop;
+    public UpgradeShop upgradeShop;
     public GameObject pauseScreen, optionsMenu;
     public bool disablePauseMenu, isPaused, isOnOptions;
     // Start is called before the first frame update
@@ -39,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !upgradeShop.GetIsOpened() && !WeaponShop.GetIsOpened())
         {
             if (!isOnOptions)
             {

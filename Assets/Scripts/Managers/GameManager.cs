@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public UpgradeShop upgradeShop;
     public WeaponShop weaponShop;
     public GameObject player;
+    public WaveOver waveOver;
     public int waveCounter;
     public bool playerDead;
 
@@ -57,12 +58,14 @@ public class GameManager : MonoBehaviour
         //weaponShop.ToggleAccess(false);
         IncreaseDifficulty();
         FindObjectOfType<SpawnManager>().NewWave();
+        waveOver.ToggleWaveText(false);
     }
 
     public void EndWave()
     {
         //upgradeShop.ToggleAccess(true);
         //weaponShop.ToggleAccess(true);
+        waveOver.ToggleWaveText(true);
     }
 
     public void NextWave()
@@ -125,6 +128,8 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Health>().OnDead.AddListener(PlayerKilled);
         waveCounter = 0;
         playerDead = false;
+
+        waveOver = FindObjectOfType<WaveOver>();
     }
 
     public void ToggleControl(bool toggle)
