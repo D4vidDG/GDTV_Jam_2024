@@ -165,6 +165,8 @@ public class UpgradeShop : MonoBehaviour
 
     void UpdateStatDisplay()
     {
+        if (dropdown.options.Count < 1) return;
+
         Weapon weaponObject = null;
         WeaponType weaponSelected = GetWeaponSelected();
 
