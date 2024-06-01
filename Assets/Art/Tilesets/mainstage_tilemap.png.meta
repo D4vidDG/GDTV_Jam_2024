@@ -1,0 +1,4307 @@
+fileFormatVersion: 2
+guid: dc05eb7f9a11d0142b28967dd595e6d2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: exterior
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9507ae07c19d04eaad60d77bdfa1fd
+      internalID: -1393985477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_2
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 591
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36beca1f8ddcc6046b4ff3dabff73ccf
+      internalID: 322682074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_3
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 594
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285bcecf14a7f5041b73195cbe9ea993
+      internalID: -631262531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_4
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 623
+        width: 35
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef077832271f0c43adc5a079fb6f9ae
+      internalID: 1376256728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 2511
+        y: 623
+        width: 98
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e56fed72b333a4e809255fcd3ba9fc
+      internalID: -2065538244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_10
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 619
+        width: 50
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab861eaabdf651488215eea8616a521
+      internalID: -1620323223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_11
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 623
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e3e19dbb8d20241b06fc43e702ab1e
+      internalID: -1500900472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_12
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 594
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac653d99c8b4e34482813e415e3c35a
+      internalID: -610949913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_13
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 591
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d38456c467bb06449247769af5aa1c2
+      internalID: -1493138210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_14
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 535
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2462cfc15177b054d9623dfa91736533
+      internalID: 1185242783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_15
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 594
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3c7b97c1fee214f96cc96184a7cffe
+      internalID: 156167909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_16
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 591
+        width: 98
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5681b05ee5893f4db4d2720ed7c4ce8
+      internalID: 90409571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_17
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 594
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eeac6077a34bec4ca6b5fd28cce4b80
+      internalID: -1440162549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_18
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 594
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438b0614dc161d440947818e62cf2179
+      internalID: -778023385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_19
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 591
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96edbe284128dd74abfe64e26e3a705d
+      internalID: 1947327213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_20
+      rect:
+        serializedVersion: 2
+        x: 2619
+        y: 591
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d185ceef821da044d9ec7095a1b777a1
+      internalID: 1146748570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_21
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 545
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c96477b103372248a73229edb0fc52c
+      internalID: 2109467090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_22
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 545
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a037f18124d7604d80876488fec85aa
+      internalID: 603032767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_23
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 567
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0baeb61065323744ad359195c85222e
+      internalID: 1367746974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_24
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 567
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bab349beaf778f42baaf4706f07ee03
+      internalID: 917407238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_25
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 560
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436b7232aa24b6f459cff38885e220b4
+      internalID: -1663962849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_26
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 417
+        width: 50
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620249cd5b879e04b96104b990cfd9c2
+      internalID: 518133181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_27
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 560
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d22a6bbda9afa4b958c59fe54ab55d
+      internalID: -106502436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_28
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 488
+        width: 26
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df29338d140a80747b1f22da8ddaf831
+      internalID: 1813589531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_29
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 560
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc1499610ec17648b3633ce12046990
+      internalID: 842245722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_30
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 488
+        width: 26
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5399d236baf04b94fb3f9f51ff78b7b4
+      internalID: -1618149898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_31
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 560
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c6b3f66cba7ae40af223bf4fb7b86d
+      internalID: 1199954170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_32
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 567
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fdcc01cf9a2ca4790e43df2b10919f
+      internalID: 1590379936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_33
+      rect:
+        serializedVersion: 2
+        x: 2646
+        y: 567
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a8dc2edac77114580d4984e346efd0
+      internalID: -1754364222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_34
+      rect:
+        serializedVersion: 2
+        x: 2767
+        y: 440
+        width: 50
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00bc98da761fa948a07507712f0cc2e
+      internalID: -1817890908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_35
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 440
+        width: 33
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc841613808d8b44b0a7a9694cef1d0
+      internalID: -1224852914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_36
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 498
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7a40df89c361d428f99e33d5c56d06
+      internalID: 181242430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_37
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 498
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a6927c59bcc8c4c8ab0a3749d6d0db
+      internalID: -36028757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_38
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 528
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d2e4a7d64ae1e4eb8eabdf131b2a58
+      internalID: -120659925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_39
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 528
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e4f0f02cf5e9e41bd32d28f4b51070
+      internalID: 542701439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_40
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 512
+        width: 9
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987a6e2f0637aad42a9498544af82601
+      internalID: 680591283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_41
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 512
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996177f924f59364a90501d62d3b8b5e
+      internalID: 1862228255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_42
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 496
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6599ff1730129ec47b98728e59dcef4b
+      internalID: -1388636253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_43
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 496
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68d80aae433adb4282ebc4b10aad73a
+      internalID: -354513497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_44
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 440
+        width: 17
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1dc0de43a23cc4bb298eed0e39ea82
+      internalID: 181354889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_45
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 450
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f49c0a150468bb41b336ff8f2a52a9d
+      internalID: 224360062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_46
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 450
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b989e024dafaa0944b04ade025a7605d
+      internalID: -518714956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_47
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 440
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94f00964d51fd6448dd10b741882049
+      internalID: -619626981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_48
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 463
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a4d8ef5c9ffaa4ca1ffdf59ca5c749
+      internalID: -258516947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_49
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 440
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4289996cab6bbc24bbb1e44df31e1f56
+      internalID: 545491190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_50
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 463
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9b3a2d666334940a89ce50f808a4eb
+      internalID: 1206054349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_51
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 401
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8580e36e09e7b6f49a4a2dfbb5ec9e86
+      internalID: 2048996662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_52
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 401
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad98d642584ecb145b5f8d810fbfd331
+      internalID: -440921354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_53
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 416
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975c36ff2d3750c49b01dbeab2b6072c
+      internalID: -1312516191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_54
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 416
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326ae78c7aceee6499f4b52dbd6061b8
+      internalID: -226076418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_55
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 400
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45add02ef889c946b6ba49234204606
+      internalID: -739087137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_56
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 400
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970d298cb5c61e14fac285aad5b4fd70
+      internalID: -683199896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_57
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 344
+        width: 26
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b602c24943f3db042b73ce6ea538c618
+      internalID: 1572195475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_58
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 416
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6713c9cba41bd264b95253d742ef1740
+      internalID: 1026675223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_59
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 344
+        width: 26
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed7ce7a3a05e834db7001f1e5da60ec
+      internalID: -1743701211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_60
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 416
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1a7c7667bb2d64e89cd874141d8769
+      internalID: 1911406361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_61
+      rect:
+        serializedVersion: 2
+        x: 2794
+        y: 407
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6e8933d7a94b742adc8991f0eacd5d
+      internalID: -1156958566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_62
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 354
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee32488312bf7a04daa867c748693ea5
+      internalID: 373699626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_63
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 354
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d968fef986551644eb07ee945e24e3c8
+      internalID: 1805726946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_64
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 328
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9485c5f04d78db84da79b45fa20c05f9
+      internalID: 1339868266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_65
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 353
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e059ecb5889a6143a646bc63a8d700e
+      internalID: -1230701388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_66
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 353
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6b2f14939464241a4041be9989a1c1
+      internalID: 559417712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_67
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 340
+        width: 18
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d2b8355b859154f86402dcf0efaf45
+      internalID: -1575418812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_68
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 368
+        width: 9
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8008aa94391067042bd566ce3896b608
+      internalID: 445405226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_69
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 368
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f18dd3569b9bc478683c121b3189a9
+      internalID: -510006676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_70
+      rect:
+        serializedVersion: 2
+        x: 2543
+        y: 365
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4e185f4142e944ba98115396970745
+      internalID: -725960070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_71
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 367
+        width: 35
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbc5356f66b10d409bafed9b0a5b783
+      internalID: -1169282611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_72
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 335
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23386917b8064442b07135daf899cf0
+      internalID: -1621144770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_73
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 335
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b469f6a9e73f6b4438e596151161b9ef
+      internalID: 1100474231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_74
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 335
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036eec95e6a159140bbcf7d1889ef34c
+      internalID: 1000354614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_75
+      rect:
+        serializedVersion: 2
+        x: 2161
+        y: 340
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb465f1b56a71c743847ef6f726dde33
+      internalID: -847132770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_76
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 296
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06202f28624411b4394f3de6b7a5bf72
+      internalID: 1071102466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_77
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 319
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c84ffdc5ca52e246b0f0545acfb2bee
+      internalID: 872161835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_78
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 296
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ef209a8de32334b8d18369d11843d3
+      internalID: -1486960220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_79
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 319
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f187c289ac7f34da7e00c516939217
+      internalID: -1100926033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_80
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 306
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e12491566d36e439eb54d507f5df8a
+      internalID: -1023583938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_81
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 306
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40123ee566746a245898a7cf22b40c68
+      internalID: -2084718015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_82
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 248
+        width: 17
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211c0d9fa83c8c646b21416875d6d3cb
+      internalID: -1005203703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_83
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 273
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c77e383977ec74681ced139e9c037c
+      internalID: 2095003392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_84
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 273
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f50e12c54dedb42b5d4c4da4e920b0
+      internalID: 798607509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_85
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 263
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f00a0479b998294aaa90ca54de3cf84
+      internalID: 1380192346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_86
+      rect:
+        serializedVersion: 2
+        x: 2554
+        y: 281
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4d099beac958e4a8ce14cdf2e1eba9
+      internalID: 1986686070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_87
+      rect:
+        serializedVersion: 2
+        x: 2763
+        y: 200
+        width: 33
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae652fdb1454984da397abad35281ce
+      internalID: 135086694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_88
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 200
+        width: 33
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d1a232594a1d941834753c07b82259
+      internalID: -1232601953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_89
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 258
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda26e4b5e7c84b4e946e3ffabad84c0
+      internalID: -1100018938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_90
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 258
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2c79445f88bfb4e9819165fa989665
+      internalID: 1019683327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_91
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 271
+        width: 50
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33dbbec373db27740a857ce8dcfb4ed8
+      internalID: -1444827699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_92
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 248
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2d7ef1f582314459d5662ae4338eab
+      internalID: -1030881538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_93
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 272
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7150c0000d518448fe0803e3e14287
+      internalID: -643092429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_94
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 248
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2070937fd16f945a1b7f8f1a556cbf
+      internalID: -2005882534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_95
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 272
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5f8dc60a972244d9800b75f02978fa
+      internalID: -1820573645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_96
+      rect:
+        serializedVersion: 2
+        x: 2517
+        y: 271
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f4a3fed9adbf04d98c56de2751d201
+      internalID: 1749494291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_97
+      rect:
+        serializedVersion: 2
+        x: 2554
+        y: 253
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a592fea90dadf214e9663275e76d9976
+      internalID: 598885258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_98
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 271
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ca541cf168ecb46be354ced801b20c
+      internalID: 898179086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_99
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 240
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d94020ee488a2742a01a4744b678c89
+      internalID: -148695810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_100
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 240
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4756e6eb356ccb43ab6dad42ce00ea9
+      internalID: 209570170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_101
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 181
+        width: 19
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba7c9f0d1b704b42a0d95ce8ed0d6db
+      internalID: -109572663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_102
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 210
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e3ab381ddbb0e4fb4201a6faa26792
+      internalID: -1390673083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_103
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 210
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315a7715ec6fb4f4d944cb33f3783ffd
+      internalID: 321393447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_104
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 184
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c4bbf2a27500f418e1f62de80e75d1
+      internalID: 1975955267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_105
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 207
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6043bf57baf1eed4bb100ef1589cc520
+      internalID: 268346199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_106
+      rect:
+        serializedVersion: 2
+        x: 2383
+        y: 207
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99470ab0d8b770b48b64582eed21eb0e
+      internalID: -807798898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_107
+      rect:
+        serializedVersion: 2
+        x: 2431
+        y: 207
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f5408381121f74f96a8ef79e4d2631
+      internalID: -2001496483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_108
+      rect:
+        serializedVersion: 2
+        x: 2639
+        y: 207
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d5f504ad4a30e4d959526015aacb9b
+      internalID: -894697102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_109
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 176
+        width: 48
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b811b7db324c54098585dae0b613d4
+      internalID: -1829091445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_110
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 176
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711e28c37a6cdbd4b8db7f96f6c84a2b
+      internalID: 1150091460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_111
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 176
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c0e031481e5ef47bacd113b7fca488
+      internalID: 313138420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_112
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 176
+        width: 49
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f679e532a3cd54bb9d7e458a4e46dd
+      internalID: -1643682445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_113
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 158
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b5f464eed5ef44ba98c5a4e1308937
+      internalID: 320650714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_114
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 135
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e770c8bbf5477a4daa33d1a5e6ee0f5
+      internalID: 1664562601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_115
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 135
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df926fe22771f25408e0d39e67abb2e1
+      internalID: 51916949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_116
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 135
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2209301876698874081e8af7d284d7ee
+      internalID: -356233912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_117
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 79
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd7484d4784c0046b6366e70cfd535c
+      internalID: 535578394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_118
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 53
+        width: 50
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d757cf28b0b35a6489548bf0c93835e6
+      internalID: -2011380970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_119
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 96
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a561438932984f9408bcaa562680254e
+      internalID: -242670277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_120
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 66
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4f697e44b2af64f8623415ba93d38d
+      internalID: 1142282023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_121
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 66
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56bd80b51181a27459a2e366edd2414d
+      internalID: 1042634879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_122
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 66
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2a27f11c2853d4994d6ad666a3e3e7
+      internalID: -2088980498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_123
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 111
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee83bea3f5eb8342872012906dfccb2
+      internalID: 332411193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_124
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 111
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f14a6060ffb6c041ba4ead7f7ea52f9
+      internalID: 1812812873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_125
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 111
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7378f442602dd1d4b9740686c3e3c821
+      internalID: 17959798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_126
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 63
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7d71bf674c44542ae366d22e312b6c
+      internalID: 816868852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_127
+      rect:
+        serializedVersion: 2
+        x: 2161
+        y: 68
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545cf6e3fc9dfad4d9d7fa773daf368d
+      internalID: -221417540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_128
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 72
+        width: 19
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae42b38a1f1ab242a2bde8351870a53
+      internalID: 1959175062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_129
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 81
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6989a4354403940b441ca8cc6fdd33
+      internalID: -2029168582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_130
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 56
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e33441f9633214bb8c09361ee6d017
+      internalID: -1848065974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_131
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 81
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed47b687d7e4054ba1bdb85ee1bb543
+      internalID: -592348658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_132
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 56
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc809b9a6e02d0468217df311974e7f
+      internalID: 993964692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_133
+      rect:
+        serializedVersion: 2
+        x: 2547
+        y: 81
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c717c79d57e67b9408d7fb0c10c98d5e
+      internalID: -1969655520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_134
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 56
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f11bb648d2de74e81d19c56dcdecb1
+      internalID: 994360790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_135
+      rect:
+        serializedVersion: 2
+        x: 2610
+        y: 81
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5757fc6edafc0e44ab7eaa4fd1c8b1c5
+      internalID: 2078465411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_136
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 58
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 650424cfd92de1747b312b2ba191413f
+      internalID: -1389650550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_137
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 63
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868fb7f449017524f9a0df64bf7b0842
+      internalID: -2047163796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_138
+      rect:
+        serializedVersion: 2
+        x: 2063
+        y: 53
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de390d37a9f9688488af328d7659fd3e
+      internalID: 1771009556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_139
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 53
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9408751f79653ba4b913185d0c4b7566
+      internalID: 1886789741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainstage_tilemap_140
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 53
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538e1d26f63f6ed42a21738094640904
+      internalID: -226117283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom_floor
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86dcea1f43532484cbdc1606ebd814f8
+      internalID: 2010978190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1edb4554839e074bb1a10ad9650ccc3
+      internalID: -1801265261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b348b2fe1a57009449a6b2e6cd124b78
+      internalID: 1899857014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf1e19b23d2e9e46bdfce9a96103169
+      internalID: -189812295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b2ffe864175504e98b880f30a4fe71
+      internalID: -823180873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_right
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 475
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abfc651ff8098944b00f6e2b2353c03
+      internalID: 728943405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_left
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b65449082be6b4a9b4d16f8e6c8b31
+      internalID: -418741449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_bl_corner
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b351159ea7b1c614eb536ff80f5221fe
+      internalID: -728950269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_bottom
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505005bbafeb5054b8c4603ecd892f4e
+      internalID: 1424987064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_top
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5117b06c09a73d498f17b78525a32cb
+      internalID: 2039231462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_tl_corner
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91eb1930c567ea6488349f00d25fb5bd
+      internalID: 1870159044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_tr_corner
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632959624eb49214fbd4aac0ab0255f3
+      internalID: -972121741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_br_corner
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53aa27dbb8996e04a9775c39623bb66c
+      internalID: -110584082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_carpet_br_corner
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039d6ec6aa1cb714098f9ac5bf513422
+      internalID: -1552749471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_bl_corner
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbe0b6220e468d448b464035b1c1bc1
+      internalID: -477203811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_tl_corner
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66064b6ae80826d4a89fef653668bb51
+      internalID: -384629567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_tr_corner
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39397b037cc5fca4ca01a12bb29611d9
+      internalID: -104934393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carpet_center
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5eeb202d43e2cb42b717527070f99e0
+      internalID: -1258521644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_center
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e1e2b0db48d7e419e1874110cc1db2
+      internalID: 285884437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_right
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c30a97c8310df6428ec53e89054adc1
+      internalID: 1544850598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_bottom
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1abd555dfea384abc97492fd73d786
+      internalID: -505609506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_top
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169cccc5662827f4daaa7b55edb8b2cf
+      internalID: 699294097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bcarpet_left
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75db53226ed093649a064bd54a78d460
+      internalID: -1176384732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8555d8647b43966468320d551f158b33
+      internalID: 1268904624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_front
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 16
+        width: 16
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -24}
+        - {x: -8, y: -5}
+        - {x: 8, y: -5}
+        - {x: 8, y: -24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e401fa8a3efc2a14cb4a24173ac76a09
+      internalID: -2087885718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_bl_corner
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 16
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 24}
+        - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: -5}
+        - {x: -1, y: -5}
+        - {x: -1, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff02f22707bc9424796dbd2b55b67d3a
+      internalID: 2119319333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_left
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1, y: -8}
+        - {x: -1, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -7.9486113}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0434af149bee8cb4888598b48a229d57
+      internalID: 480534753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_tl_corner
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 608
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 24}
+        - {x: -8, y: -23.708788}
+        - {x: -1, y: -24}
+        - {x: -1, y: 7}
+        - {x: 8, y: 7}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfada0f530efd7e449d296554220dd23
+      internalID: -360692209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_back
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 608
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 24}
+        - {x: -8, y: 7}
+        - {x: 8, y: 7}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600379cefa3fed94ebe0f8e9a9f64630
+      internalID: -1466564819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_br_corner
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 16
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: 24}
+        - {x: 1, y: -5}
+        - {x: -8, y: -5}
+        - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed817c1e1ec24df4ea79384cfc19199e
+      internalID: 1131731230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_tr_corner
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 608
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 24}
+        - {x: -8, y: 8}
+        - {x: 1, y: 8}
+        - {x: 1, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5657eda0db925a5429956b9a6948bc4a
+      internalID: 1607431024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_right
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: 8}
+        - {x: 1, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd89f173e3410e94c8554a7cfe4446e7
+      internalID: -203297746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_left_intersection
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 192
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1, y: 24}
+        - {x: -8, y: 24}
+        - {x: -8, y: -23.845844}
+        - {x: 8, y: -23.845844}
+        - {x: 8, y: -8}
+        - {x: -1, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1c379ee542c1c4db40da2046183e6e
+      internalID: -763927925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_righ_intersection
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 192
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1, y: -24}
+        - {x: -1, y: 24}
+        - {x: -8, y: 24}
+        - {x: -8, y: -24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f45438ff15be148986b489b854c403
+      internalID: 578543399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_bl_intersetion
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 608
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 24}
+        - {x: -8, y: -24}
+        - {x: -1, y: -24}
+        - {x: -1, y: 8}
+        - {x: 8, y: 8}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e5c594ae4a2de498af0c9ff0c1ec8f
+      internalID: 942768038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_interior
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 192
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: -8}
+        - {x: -8, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed090d3471e87a4eb8af6d8548cad4b
+      internalID: 1551259058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_right_intersection_2
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 144
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: 24}
+        - {x: 1, y: -8}
+        - {x: -8, y: -8}
+        - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4887b251813371f4f8a59831c03c888b
+      internalID: 1986720027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_br_intersection
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 608
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 24}
+        - {x: -8, y: 8}
+        - {x: 1, y: 8}
+        - {x: 1, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70090cabbaf5aca45aacf960354e658a
+      internalID: -2133159742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_fr_intersection
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 192
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: 24}
+        - {x: 1, y: -9}
+        - {x: -8, y: -9}
+        - {x: -8, y: -24}
+        - {x: 8, y: -23.845844}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf07faadb3587d64680c1b6df084887c
+      internalID: 1466560678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_fl_intersection
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 16
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 24}
+        - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: 24}
+      physicsShape:
+      - - {x: -8, y: 24}
+        - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe86145c59e747944b2ce07249d79957
+      internalID: 1656892694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_big_left
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 352
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2, y: -8}
+        - {x: 2, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e546b087a8a8d49a26ea7cbdaea958
+      internalID: -1397746424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_big_int
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 352
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -8}
+        - {x: -7.9374847, y: -23.571754}
+        - {x: 8, y: -23.571754}
+        - {x: 8, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623d7d335ec60434589631222cecc4ba
+      internalID: 501388224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_big_right
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 352
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -8}
+        - {x: -8, y: -24}
+        - {x: -1, y: -24}
+        - {x: -1, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31de0a222145364286a7253b771a059
+      internalID: -1280023134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_door_front_right
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 16
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: -8}
+        - {x: -8, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316ea84762d8aff438adc2fd820e9380
+      internalID: 596421550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_front_right
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 16
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: 24}
+        - {x: 3.687542, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: 24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03f8dcbc9b7c89409c05b42af5945fb
+      internalID: 204788439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_door_front_left
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 16
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -24}
+        - {x: 8, y: -24}
+        - {x: 8, y: -8}
+        - {x: -8, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687bb27320ba3c04bb3708b11509275c
+      internalID: 1389869162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_front_left
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 16
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3.8749504, y: 24}
+        - {x: -8, y: 24}
+        - {x: -8, y: -24}
+        - {x: -4, y: -24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4275d75f9edf82745be44199af204890
+      internalID: -144230970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_left_top
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 107
+        width: 24
+        height: 64
+      alignment: 9
+      pivot: {x: 0.3478261, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.800049, y: 32}
+        - {x: -10.900024, y: -32}
+        - {x: 12, y: -32}
+        - {x: 12, y: 11.972748}
+        - {x: -3.7601318, y: 12.059998}
+        - {x: -3.7390137, y: 32}
+      physicsShape:
+      - - {x: -11.906227, y: 32}
+        - {x: -11.906227, y: -28.982876}
+        - {x: -10.468727, y: -31.86082}
+        - {x: 12, y: -31.86082}
+        - {x: 12, y: 12}
+        - {x: -4, y: 12}
+        - {x: -4, y: 32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd70b177ca269e489692162c0b78d4c
+      internalID: 1170237169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bathroom_floor: 2010978190
+      bcarpet_bl_corner: -477203811
+      bcarpet_bottom: -505609506
+      bcarpet_center: 285884437
+      bcarpet_left: -1176384732
+      bcarpet_right: 1544850598
+      bcarpet_tl_corner: -384629567
+      bcarpet_top: 699294097
+      bcarpet_tr_corner: -104934393
+      blue_carpet_br_corner: 699294097
+      carpet_bl_corner: -728950269
+      carpet_bottom: 1424987064
+      carpet_br_corner: -110584082
+      carpet_center: -1258521644
+      carpet_left: -418741449
+      carpet_right: 728943405
+      carpet_tl_corner: 1870159044
+      carpet_top: 2039231462
+      carpet_tr_corner: -972121741
+      door_front_left: -144230970
+      door_front_right: 204788439
+      door_left_top: 1170237169
+      efosf: 1140133972
+      exterior: -1393985477
+      floor_1: -1801265261
+      floor_2: 1899857014
+      floor_3: -189812295
+      floor_4: -823180873
+      floor_5: 1268904624
+      mainstage_tilemap_10: -1620323223
+      mainstage_tilemap_100: 209570170
+      mainstage_tilemap_101: -109572663
+      mainstage_tilemap_102: -1390673083
+      mainstage_tilemap_103: 321393447
+      mainstage_tilemap_104: 1975955267
+      mainstage_tilemap_105: 268346199
+      mainstage_tilemap_106: -807798898
+      mainstage_tilemap_107: -2001496483
+      mainstage_tilemap_108: -894697102
+      mainstage_tilemap_109: -1829091445
+      mainstage_tilemap_11: -1500900472
+      mainstage_tilemap_110: 1150091460
+      mainstage_tilemap_111: 313138420
+      mainstage_tilemap_112: -1643682445
+      mainstage_tilemap_113: 320650714
+      mainstage_tilemap_114: 1664562601
+      mainstage_tilemap_115: 51916949
+      mainstage_tilemap_116: -356233912
+      mainstage_tilemap_117: 535578394
+      mainstage_tilemap_118: -2011380970
+      mainstage_tilemap_119: -242670277
+      mainstage_tilemap_12: -610949913
+      mainstage_tilemap_120: 1142282023
+      mainstage_tilemap_121: 1042634879
+      mainstage_tilemap_122: -2088980498
+      mainstage_tilemap_123: 332411193
+      mainstage_tilemap_124: 1812812873
+      mainstage_tilemap_125: 17959798
+      mainstage_tilemap_126: 816868852
+      mainstage_tilemap_127: -221417540
+      mainstage_tilemap_128: 1959175062
+      mainstage_tilemap_129: -2029168582
+      mainstage_tilemap_13: -1493138210
+      mainstage_tilemap_130: -1848065974
+      mainstage_tilemap_131: -592348658
+      mainstage_tilemap_132: 993964692
+      mainstage_tilemap_133: -1969655520
+      mainstage_tilemap_134: 994360790
+      mainstage_tilemap_135: 2078465411
+      mainstage_tilemap_136: -1389650550
+      mainstage_tilemap_137: -2047163796
+      mainstage_tilemap_138: 1771009556
+      mainstage_tilemap_139: 1886789741
+      mainstage_tilemap_14: 1185242783
+      mainstage_tilemap_140: -226117283
+      mainstage_tilemap_15: 156167909
+      mainstage_tilemap_16: 90409571
+      mainstage_tilemap_17: -1440162549
+      mainstage_tilemap_18: -778023385
+      mainstage_tilemap_19: 1947327213
+      mainstage_tilemap_2: 322682074
+      mainstage_tilemap_20: 1146748570
+      mainstage_tilemap_21: 2109467090
+      mainstage_tilemap_22: 603032767
+      mainstage_tilemap_23: 1367746974
+      mainstage_tilemap_24: 917407238
+      mainstage_tilemap_25: -1663962849
+      mainstage_tilemap_26: 518133181
+      mainstage_tilemap_27: -106502436
+      mainstage_tilemap_28: 1813589531
+      mainstage_tilemap_29: 842245722
+      mainstage_tilemap_3: -631262531
+      mainstage_tilemap_30: -1618149898
+      mainstage_tilemap_31: 1199954170
+      mainstage_tilemap_32: 1590379936
+      mainstage_tilemap_33: -1754364222
+      mainstage_tilemap_34: -1817890908
+      mainstage_tilemap_35: -1224852914
+      mainstage_tilemap_36: 181242430
+      mainstage_tilemap_37: -36028757
+      mainstage_tilemap_38: -120659925
+      mainstage_tilemap_39: 542701439
+      mainstage_tilemap_4: 1376256728
+      mainstage_tilemap_40: 680591283
+      mainstage_tilemap_41: 1862228255
+      mainstage_tilemap_42: -1388636253
+      mainstage_tilemap_43: -354513497
+      mainstage_tilemap_44: 181354889
+      mainstage_tilemap_45: 224360062
+      mainstage_tilemap_46: -518714956
+      mainstage_tilemap_47: -619626981
+      mainstage_tilemap_48: -258516947
+      mainstage_tilemap_49: 545491190
+      mainstage_tilemap_5: 261406096
+      mainstage_tilemap_50: 1206054349
+      mainstage_tilemap_51: 2048996662
+      mainstage_tilemap_52: -440921354
+      mainstage_tilemap_53: -1312516191
+      mainstage_tilemap_54: -226076418
+      mainstage_tilemap_55: -739087137
+      mainstage_tilemap_56: -683199896
+      mainstage_tilemap_57: 1572195475
+      mainstage_tilemap_58: 1026675223
+      mainstage_tilemap_59: -1743701211
+      mainstage_tilemap_6: 1799159086
+      mainstage_tilemap_60: 1911406361
+      mainstage_tilemap_61: -1156958566
+      mainstage_tilemap_62: 373699626
+      mainstage_tilemap_63: 1805726946
+      mainstage_tilemap_64: 1339868266
+      mainstage_tilemap_65: -1230701388
+      mainstage_tilemap_66: 559417712
+      mainstage_tilemap_67: -1575418812
+      mainstage_tilemap_68: 445405226
+      mainstage_tilemap_69: -510006676
+      mainstage_tilemap_7: -2065538244
+      mainstage_tilemap_70: -725960070
+      mainstage_tilemap_71: -1169282611
+      mainstage_tilemap_72: -1621144770
+      mainstage_tilemap_73: 1100474231
+      mainstage_tilemap_74: 1000354614
+      mainstage_tilemap_75: -847132770
+      mainstage_tilemap_76: 1071102466
+      mainstage_tilemap_77: 872161835
+      mainstage_tilemap_78: -1486960220
+      mainstage_tilemap_79: -1100926033
+      mainstage_tilemap_8: -1379254229
+      mainstage_tilemap_80: -1023583938
+      mainstage_tilemap_81: -2084718015
+      mainstage_tilemap_82: -1005203703
+      mainstage_tilemap_83: 2095003392
+      mainstage_tilemap_84: 798607509
+      mainstage_tilemap_85: 1380192346
+      mainstage_tilemap_86: 1986686070
+      mainstage_tilemap_87: 135086694
+      mainstage_tilemap_88: -1232601953
+      mainstage_tilemap_89: -1100018938
+      mainstage_tilemap_9: -2112578593
+      mainstage_tilemap_90: 1019683327
+      mainstage_tilemap_91: -1444827699
+      mainstage_tilemap_92: -1030881538
+      mainstage_tilemap_93: -643092429
+      mainstage_tilemap_94: -2005882534
+      mainstage_tilemap_95: -1820573645
+      mainstage_tilemap_96: 1749494291
+      mainstage_tilemap_97: 598885258
+      mainstage_tilemap_98: 898179086
+      mainstage_tilemap_99: -148695810
+      wall_back: -1466564819
+      wall_big_int: 501388224
+      wall_big_left: -1397746424
+      wall_big_right: -1280023134
+      wall_bl_corner: 1970512373
+      wall_bl_intersetion: 942768038
+      wall_br_corner: 1131731230
+      wall_br_intersection: -2133159742
+      wall_door_front_left: 1389869162
+      wall_door_front_right: 596421550
+      wall_fl_intersection: 1656892694
+      wall_fr_intersection: 1466560678
+      wall_front: -2087885718
+      wall_interior: -58269165
+      wall_left: 480534753
+      wall_left_intersection: -763927925
+      wall_righ_intersection: 578543399
+      wall_right: -203297746
+      wall_right_intersection_2: 1986720027
+      wall_tl_corner: -360692209
+      wall_tr_corner: 1607431024
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -109,34 +109,34 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 3387232779562359063}
     m_ColliderPaths:
-    - - X: 7980000
-        Y: 3620000
-      - X: -8519999
-        Y: 3620000
-      - X: -8519999
-        Y: -9980000
-      - X: 7980000
-        Y: -9980000
+    - - X: 5979995
+        Y: 3069999
+      - X: -6520004
+        Y: 3069999
+      - X: -6520004
+        Y: -7930000
+      - X: 5979995
+        Y: -7930000
   - m_Collider: {fileID: 9158091195192196161}
     m_ColliderPaths:
-    - - X: 7250001
-        Y: 9750000
-      - X: -2149998
-        Y: 9750000
-      - X: -2149998
-        Y: 2050000
-      - X: 7250001
-        Y: 2050000
+    - - X: 6009999
+        Y: 8329994
+      - X: -2190000
+        Y: 8329994
+      - X: -2190000
+        Y: 2729995
+      - X: 6009999
+        Y: 2729995
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.7979707, y: -0.998}
-      - {x: 0.7979707, y: 0.36200002}
-      - {x: 0.7250001, y: 0.3620294}
-      - {x: 0.7249708, y: 0.975}
-      - {x: -0.21499981, y: 0.9749707}
-      - {x: -0.21502921, y: 0.36200002}
-      - {x: -0.85199994, y: 0.3619707}
-      - {x: -0.8519706, y: -0.998}
+    - - {x: 0.5979702, y: -0.793}
+      - {x: 0.5980289, y: 0.2729995}
+      - {x: 0.6009999, y: 0.2730288}
+      - {x: 0.6009706, y: 0.8329994}
+      - {x: -0.219, y: 0.8329701}
+      - {x: -0.2190294, y: 0.3069999}
+      - {x: -0.6520004, y: 0.3069706}
+      - {x: -0.6519711, y: -0.793}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28bffdd9d18ba4e9892ee2e4b7686c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialWeapon: {fileID: 0}
   gunHoldingPoint: {fileID: 246104570129978374}
 --- !u!114 &263513751193575780
 MonoBehaviour:
@@ -267,6 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCoins: 999
+  startCoins: 0
 --- !u!1 &3094364272628612999
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 5214049754188994960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.255, y: 0.59, z: 0}
+  m_LocalPosition: {x: 0.191, y: 0.553, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -373,7 +375,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94, y: 0.77}
+  m_Size: {x: 0.82, y: 0.56}
   m_EdgeRadius: 0
 --- !u!1 &7902956145845180804
 GameObject:
@@ -434,7 +436,7 @@ Transform:
   m_GameObject: {fileID: 8075414803503537861}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.027, y: -0.318, z: 0}
+  m_LocalPosition: {x: -0.027, y: -0.243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -483,7 +485,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.65, y: 1.36}
+  m_Size: {x: 1.25, y: 1.1}
   m_EdgeRadius: 0
 --- !u!1 &8204384208222806397
 GameObject:
@@ -514,7 +516,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 246104570129978374}
@@ -720,6 +722,10 @@ PrefabInstance:
     - target: {fileID: 7361050391410230013, guid: 93fba7947d7b7564386546f9adc750a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639449737576593879, guid: 93fba7947d7b7564386546f9adc750a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 8659340261158995542, guid: 93fba7947d7b7564386546f9adc750a9, type: 3}
       propertyPath: m_Name

@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 911042077
+    locked: 0
+  - name: Walls
+    uniqueID: 732393547
+    locked: 0
+  - name: Props
+    uniqueID: 2317570895
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: World_UI
+    uniqueID: 637631107
     locked: 0
