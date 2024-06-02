@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 7
-  numberOfCoins: 1
+  numberOfCoins: 2
   dropPoint: {fileID: 5956092404750509747}
   coinPrefab: {fileID: 5415718773845451602, guid: 36a47dfbaf8f66649ae54ae36c5a01ee, type: 3}
 --- !u!114 &1107520474063844307
