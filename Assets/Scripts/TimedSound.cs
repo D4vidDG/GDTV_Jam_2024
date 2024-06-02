@@ -19,7 +19,7 @@ public class TimedSound : MonoBehaviour
     {
         soundTimer += Time.deltaTime;
 
-        if (soundTimer >= soundDelay)
+        if (soundTimer >= soundDelay && !GameManager.instance.playerDead)
         {
             RandomDelay();
             AudioManager.instance.PlaySound(soundName);
