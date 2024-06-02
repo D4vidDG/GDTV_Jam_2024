@@ -59,12 +59,14 @@ public class TitleMenu : MonoBehaviour
             menuScreen.SetActive(true);
             optionsMenu.SetActive(false);
             isOnOptions = false;
+            transform.GetComponentInChildren<TitleFunctions>(true).ToggleInput(true);
         }
         else
         {
             menuScreen.SetActive(false);
             optionsMenu.SetActive(true);
             isOnOptions = true;
+            transform.GetComponentInChildren<TitleFunctions>(true).ToggleInput(false);
         }
     }
 }

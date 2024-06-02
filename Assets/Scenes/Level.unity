@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835a5de6092825f44a42691b255c9103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainLevelSceneIndex: 0
+  mainLevelSceneIndex: 1
   retry: {fileID: 64999366}
   options: {fileID: 1894188986}
   quit: {fileID: 1525528990}

@@ -5,82 +5,51 @@ using UnityEngine.UI;
 
 public class TitleFunctions : MonoBehaviour
 {
-    [SerializeField] Image play, options, quit;
-    [SerializeField] Sprite playPressedSprite, optionsPressedSprite, quitPressedSprite;
-
-
-    [SerializeField] Color flashColor;
-    [SerializeField] float flashDelay;
-    [SerializeField] bool enableInput;
-
+    public TitleMenu titleMenu;
     [SerializeField] int mainLevelSceneIndex;
-
-    bool playPressed, optionsPressed, quitPressed;
-    float flashTimer;
-    bool isFlashing;
-
-    TitleMenu titleMenu;
-
-    private void Awake()
-    {
-        titleMenu = FindObjectOfType<TitleMenu>();
-    }
+    public Image start, options, quit;
+    public Sprite startSprite, optionsSprite, quitSprite;
+    public bool enableInput;
 
     private void Start()
     {
-        flashTimer = 0;
-        isFlashing = false;
         enableInput = true;
     }
 
-    public void ButtonChange(int clicked)
+    public void ToggleInput(bool toggle)
     {
-        if (enableInput)
-        {
-            switch (clicked)
-            {
-                case 0:
-                    if (!playPressed && play != null)
-                    {
-                        play.overrideSprite = playPressedSprite;
-                        playPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-                case 1:
-                    if (!optionsPressed && options != null)
-                    {
-                        options.overrideSprite = optionsPressedSprite;
-                        optionsPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-                case 2:
-                    if (!quitPressed && quit != null)
-                    {
-                        quit.overrideSprite = quitPressedSprite;
-                        quitPressed = true;
-                        enableInput = false;
-                    }
-                    break;
-            }
-        }
-    }
+        enableInput = toggle;
 
-    //might be better to merge the button press functions into 1 instead
-    public void PressPlayButton(float delay)
-    {
-        if (enableInput)
+        if (!enableInput)
         {
-            StartCoroutine(PlayButton(delay));
+            start.GetComponent<Button>().enabled = false;
+            options.GetComponent<Button>().enabled = false;
+            quit.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            start.GetComponent<Button>().enabled = true;
+            options.GetComponent<Button>().enabled = true;
+            quit.GetComponent<Button>().enabled = true;
         }
     }
 
 
-    public IEnumerator PlayButton(float delay)
+    public void PressStartButton(float delay)
+    {
+        if (enableInput)
+        {
+            start.overrideSprite = startSprite;
+            StartCoroutine(StartButton(delay));
+        }
+    }
+
+
+    public IEnumerator StartButton(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        SceneManager.LoadScene(mainLevelSceneIndex);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(mainLevelSceneIndex);//this should set to the current scene name instead
     }
 
 
@@ -88,6 +57,7 @@ public class TitleFunctions : MonoBehaviour
     {
         if (enableInput)
         {
+            options.overrideSprite = optionsSprite;
             StartCoroutine(OptionsButton(delay));
         }
     }
@@ -97,9 +67,8 @@ public class TitleFunctions : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(delay);
         options.overrideSprite = null;
-        optionsPressed = false;
         options.color = new Color(255, 255, 255, 100);
-        isFlashing = false;
+        options.gameObject.GetComponent<FlashingComponent>().ToggleEffect(false);
         enableInput = true;
         titleMenu.ToggleOptions();//this should only be able to be pressed when the options button is visible
     }
@@ -109,6 +78,7 @@ public class TitleFunctions : MonoBehaviour
     {
         if (enableInput)
         {
+            quit.overrideSprite = quitSprite;
             StartCoroutine(QuitButton(delay));
         }
     }
@@ -120,51 +90,11 @@ public class TitleFunctions : MonoBehaviour
         Application.Quit();
     }
 
-
-    public void Update()
+    public void ButtonSound(AudioSource audio)
     {
-        flashTimer += Time.unscaledDeltaTime;
-
-        if (flashTimer >= flashDelay)
+        if (enableInput)
         {
-            if (playPressed)
-            {
-                if (isFlashing)
-                {
-                    play.color = flashColor;
-                }
-                else
-                {
-                    play.color = new Color(255, 255, 255, 100);
-                }
-            }
-            else if (optionsPressed)
-            {
-                if (isFlashing)
-                {
-                    options.color = flashColor;
-                }
-                else
-                {
-                    options.color = new Color(255, 255, 255, 100);
-                }
-
-            }
-            else if (quitPressed)
-            {
-                if (isFlashing)
-                {
-                    quit.color = flashColor;
-                }
-                else
-                {
-                    quit.color = new Color(255, 255, 255, 100);
-                }
-            }
-
-            isFlashing = !isFlashing;
-
-            flashTimer = 0;
+            audio.Play();
         }
     }
 }
