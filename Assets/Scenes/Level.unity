@@ -8605,6 +8605,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Layout
       objectReference: {fileID: 0}
+    - target: {fileID: 6257750417542138001, guid: 20f86578ed6bfa543b676bbb0747a6dd, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[46].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257750417542138001, guid: 20f86578ed6bfa543b676bbb0747a6dd, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[90].m_Data
+      value: 
+      objectReference: {fileID: -293170984, guid: 1cd059b8fc2d70d4fbdae861287f15cc, type: 3}
+    - target: {fileID: 6257750417542138001, guid: 20f86578ed6bfa543b676bbb0747a6dd, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[46].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257750417542138001, guid: 20f86578ed6bfa543b676bbb0747a6dd, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[90].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257750417542138001, guid: 20f86578ed6bfa543b676bbb0747a6dd, type: 3}
+      propertyPath: m_Tiles.Array.data[25].second.m_TileSpriteIndex
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
