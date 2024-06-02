@@ -135,14 +135,8 @@ public class SpawnManager : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(location, radiusForCollisionCheck, obstaclesLayer);
         if (hit != null)
         {
-            Debug.Log("failed collider test");
-
             return false;
         }
-
-        Debug.Log(" not failed collider test");
-
-
         return true;
     }
 
