@@ -31,6 +31,7 @@ public class UpgradeShop : UIShop
         foreach (StatText statText in statsTexts)
         {
             statTextLookUpTable.Add(statText.stat, statText);
+            statText.diff.enabled = false;
         }
 
         weaponTypeByOption = new Dictionary<OptionData, WeaponType>();
@@ -55,32 +56,27 @@ public class UpgradeShop : UIShop
         Upgrade upgrade = item as Upgrade;
         if (upgrade != null)
         {
-            WeaponType weaponSelected = GetWeaponSelected();
             WeaponStat targetStat = upgrade.GetTargetStat();
-            WeaponStats weaponStats = weaponInventory.GetWeapon(weaponSelected).stats;
-            weaponStats.IncreaseStatLevel(targetStat);
-            UpdateStatDisplay();
+            WeaponStats stats = GetSelectedWeaponStats();
+            stats.IncreaseStatLevel(targetStat);
+            UpdateDisplay();
         }
     }
 
     public void OnPointerEnterUpgrade(Upgrade upgrade)
     {
-        WeaponType weaponSelected = GetWeaponSelected();
         WeaponStat targetStat = upgrade.GetTargetStat();
-
-        WeaponStats stats = weaponInventory.GetWeapon(weaponSelected).stats;
-        int currentStatLevel = stats.GetStatLevel(targetStat);
-
+        WeaponStats stats = GetSelectedWeaponStats();
         StatText statText = statTextLookUpTable[targetStat];
-        float statDifference = stats.GeStatAtLevel(targetStat, currentStatLevel + 1)
-        - stats.GeStatAtLevel(targetStat, currentStatLevel);
-
-        statText.diff.text = "+" + statDifference.ToString();
         statText.diff.enabled = true;
+        UpdateStatTextDiff(targetStat, stats);
     }
+
+
 
     public void OnPointerExitUpgrade(Upgrade upgrade)
     {
+        WeaponStats stats = GetSelectedWeaponStats();
         WeaponStat targetStat = upgrade.GetTargetStat();
         StatText statText = statTextLookUpTable[targetStat];
         statText.diff.enabled = false;
@@ -89,25 +85,43 @@ public class UpgradeShop : UIShop
     public void UpdateDisplay()
     {
         UpdateDropdown();
-        UpdateStatDisplay();
 
-        if (AnyWeaponsUnlocked())
+        if (AnyDropdownItems())
+        {
+            content.SetActive(true);
+            noWeaponsText.gameObject.SetActive(false);
+            UpdateStatDisplay();
+            UpdateUpgrades();
+        }
+        else
         {
             content.SetActive(false);
             noWeaponsText.gameObject.SetActive(true);
             return;
         }
-        else
+    }
+
+    private void UpdateUpgrades()
+    {
+        foreach (ShopItem item in items)
         {
-            content.SetActive(true);
-            noWeaponsText.gameObject.SetActive(false);
+            Upgrade upgrade = item as Upgrade;
+            if (upgrade == null) continue;
+            WeaponStats weaponStats = GetSelectedWeaponStats();
+            if (weaponStats.IsAtMaxLevel(upgrade.GetTargetStat()))
+            {
+                upgrade.DisableSelling();
+            }
+            else
+            {
+                upgrade.EnableSelling();
+            }
         }
     }
 
-
-    private bool AnyWeaponsUnlocked()
+    private bool AnyDropdownItems()
     {
-        return dropdown.options.Count < 1;
+        return dropdown.options.Count > 0;
     }
 
     private void UpdateDropdown()
@@ -126,25 +140,39 @@ public class UpgradeShop : UIShop
 
     void UpdateStatDisplay()
     {
-        if (dropdown.options.Count < 1) return;
-
-        Weapon weaponObject = null;
-        WeaponType weaponSelected = GetWeaponSelected();
-
-        if (weaponInventory.HasWeapon(weaponSelected))
-        {
-            weaponObject = weaponInventory.GetWeapon(weaponSelected);
-        }
-        else
-        {
-            return;
-        }
+        WeaponStats stats = GetSelectedWeaponStats();
 
         foreach (WeaponStat weaponStat in Enum.GetValues(typeof(WeaponStat)))
         {
-            float statValue = weaponObject.stats.GetStat(weaponStat);
+            float statValue = stats.GetStat(weaponStat);
             statTextLookUpTable[weaponStat].value.text = statValue.ToString();
+            UpdateStatTextDiff(weaponStat, stats);
         }
+
+    }
+
+    private void UpdateStatTextDiff(WeaponStat stat, WeaponStats weaponStats)
+    {
+        StatText statText = statTextLookUpTable[stat];
+        bool isStatAtMaxLevel = weaponStats.IsAtMaxLevel(stat);
+        if (!isStatAtMaxLevel)
+        {
+            int currentStatLevel = weaponStats.GetStatLevel(stat);
+
+            float statDifference = weaponStats.GeStatAtLevel(stat, currentStatLevel + 1)
+            - weaponStats.GeStatAtLevel(stat, currentStatLevel);
+
+            statText.diff.text = "+" + statDifference.ToString();
+        }
+        else
+        {
+            statText.diff.text = "MAX";
+        }
+    }
+
+    private WeaponStats GetSelectedWeaponStats()
+    {
+        return weaponInventory.GetWeapon(GetWeaponSelected()).stats;
     }
 
     private WeaponType GetWeaponSelected()

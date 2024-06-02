@@ -47,12 +47,25 @@ public class WeaponStats : MonoBehaviour
 
     public void IncreaseStatLevel(WeaponStat stat)
     {
-        statLevels[stat]++;
+        if (!IsAtMaxLevel(stat))
+        {
+            statLevels[stat]++;
+        }
     }
 
     public void DecreaseStatLevel(WeaponStat stat)
     {
-        statLevels[stat]++;
+        if (GetStatLevel(stat) - 1 > 0)
+        {
+            statLevels[stat]++;
+        }
+    }
+
+    public bool IsAtMaxLevel(WeaponStat stat)
+    {
+        int nextLevel = GetStatLevel(stat) + 1;
+        float value = progressionData.GetStat(stat, weaponType, nextLevel);
+        return value < 0;
     }
 }
 

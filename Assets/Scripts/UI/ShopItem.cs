@@ -5,14 +5,13 @@ public class ShopItem : MonoBehaviour
 {
     const string SOLD_TAG = "Sold";
     [SerializeField] protected int price;
-    [SerializeField] bool sellIndefinitely;
     [SerializeField] bool soldOnStart;
 
     protected ShopButton shopButton;
     protected CoinWallet coinWallet;
 
     public Action<ShopItem> OnItemSold;
-    protected bool itemSold;
+    protected bool collectCoins;
 
     private void Awake()
     {
@@ -25,32 +24,29 @@ public class ShopItem : MonoBehaviour
     {
         if (soldOnStart)
         {
-            itemSold = true;
+            collectCoins = true;
             shopButton.SetPriceTag(SOLD_TAG);
             shopButton.Disable();
         }
         else
         {
-            itemSold = false;
+            collectCoins = false;
             shopButton.SetPriceTag(price.ToString());
         }
     }
 
-    public void SellItem()
+    public virtual void SellItem()
     {
         coinWallet.Spend(price);
-        if (!sellIndefinitely)
-        {
-            itemSold = true;
-            shopButton.SetPriceTag(SOLD_TAG);
-            shopButton.Disable();
-        }
+        collectCoins = true;
+        shopButton.SetPriceTag(SOLD_TAG);
+        shopButton.Disable();
         OnItemSold?.Invoke(this);
     }
 
     private void Update()
     {
-        if (itemSold) return;
+        if (collectCoins) return;
         int coinsCollected = coinWallet.GetCoinsCollected();
         if (price <= coinsCollected)
         {
