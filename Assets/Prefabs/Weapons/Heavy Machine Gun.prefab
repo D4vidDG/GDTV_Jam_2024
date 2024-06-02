@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: reloadTime
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: weaponType
