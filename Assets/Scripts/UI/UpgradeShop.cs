@@ -4,15 +4,11 @@ using TMPro;
 using UnityEngine;
 using static TMPro.TMP_Dropdown;
 
-public class UpgradeShop : MonoBehaviour
+public class UpgradeShop : UIShop
 {
-    [SerializeField] bool canAccessShop;
-    public WeaponShop weaponShop;
-    //public GameObject reminderGO;
     [SerializeField] WeaponOptionData[] weaponOptionsData;
     [SerializeField] TMP_Dropdown dropdown;
     [SerializeField] TextMeshProUGUI noWeaponsText;
-    [SerializeField] GameObject panel;
     [SerializeField] GameObject content;
     [SerializeField] StatText[] statsTexts;
 
@@ -22,9 +18,6 @@ public class UpgradeShop : MonoBehaviour
     Dictionary<WeaponType, OptionData> optionByWeaponType;
     Dictionary<OptionData, WeaponType> weaponTypeByOption;
     Upgrade[] upgrades;
-
-    bool opened = false;
-
 
     [Serializable]
     struct WeaponOptionData
@@ -53,21 +46,6 @@ public class UpgradeShop : MonoBehaviour
         weaponInventory = FindObjectOfType<WeaponInventory>();
     }
 
-    private void Start()
-    {
-        ToggleAccess(false);
-    }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q) && canAccessShop && !weaponShop.GetIsOpened())
-        {
-            if (opened) Close();
-            else Open();
-        }
-    }
-
     private void OnEnable()
     {
         foreach (Upgrade upgrade in upgrades)
@@ -84,26 +62,10 @@ public class UpgradeShop : MonoBehaviour
         }
     }
 
-    public void ToggleAccess(bool toggle)
+    public override void Open()
     {
-        canAccessShop = toggle;
-    }
-
-    public void Open()
-    {
-        GameManager.instance.ToggleControl(false);
+        base.Open();
         UpdateDisplay();
-        opened = true;
-        panel.SetActive(true);
-        //reminderGO.SetActive(false);
-    }
-
-    public void Close()
-    {
-        GameManager.instance.ToggleControl(true);
-        opened = false;
-        panel.SetActive(false);
-        //reminderGO.SetActive(true);
     }
 
     private void OnUpgradeSold(ShopItem item)
@@ -210,9 +172,6 @@ public class UpgradeShop : MonoBehaviour
         return weaponTypeByOption[optionObject];
     }
 
-    public bool GetIsOpened()
-    {
-        return opened;
-    }
+
 }
 

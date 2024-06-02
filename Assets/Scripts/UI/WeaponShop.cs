@@ -2,13 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponShop : MonoBehaviour
+public class WeaponShop : UIShop
 {
-    [SerializeField] bool canAccessShop;
-    public UpgradeShop upgradeShop;
-    //public GameObject reminderGO;
     [SerializeField] WeaponByShopItem[] weaponsByItem;
-    [SerializeField] GameObject panel;
     WeaponInventory weaponInventory;
     [Serializable]
     struct WeaponByShopItem
@@ -18,7 +14,6 @@ public class WeaponShop : MonoBehaviour
     }
 
     Dictionary<ShopItem, Weapon> lookUpTable;
-    bool opened;
 
     private void Awake()
     {
@@ -28,11 +23,6 @@ public class WeaponShop : MonoBehaviour
             lookUpTable.Add(item.shopItem, item.weaponPrefab);
         }
         weaponInventory = FindObjectOfType<WeaponInventory>();
-    }
-
-    private void Start()
-    {
-        ToggleAccess(false);
     }
 
     private void OnEnable()
@@ -52,37 +42,6 @@ public class WeaponShop : MonoBehaviour
         }
     }
 
-    public void ToggleAccess(bool toggle)
-    {
-        canAccessShop = toggle;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W) && canAccessShop && !upgradeShop.GetIsOpened())
-        {
-            if (opened) Close();
-            else Open();
-        }
-    }
-
-    public void Open()
-    {
-        GameManager.instance.ToggleControl(false);
-        panel.SetActive(true);
-        opened = true;
-        //reminderGO.SetActive(false);
-    }
-
-    public void Close()
-    {
-        GameManager.instance.ToggleControl(true);
-        panel.SetActive(false);
-        opened = false;
-        //reminderGO.SetActive(true);
-    }
-
-
     public void NextWaveSignal()
     {
         GameManager.instance.NextWave();
@@ -94,10 +53,5 @@ public class WeaponShop : MonoBehaviour
         Weapon weaponInstance = Instantiate<Weapon>(weaponPrefab);
         weaponInventory.AddWeapon(weaponInstance);
         weaponInventory.EquipWeapon(weaponInstance.GetWeaponType());
-    }
-
-    public bool GetIsOpened()
-    {
-        return opened;
     }
 }

@@ -20,8 +20,11 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
-        if (initialWeapon != null) AddWeapon(initialWeapon);
-        EquipWeapon(initialWeapon.GetWeaponType());
+        if (initialWeapon != null)
+        {
+            AddWeapon(initialWeapon);
+            EquipWeapon(initialWeapon.GetWeaponType());
+        }
     }
 
     public void AddWeapon(Weapon weapon)

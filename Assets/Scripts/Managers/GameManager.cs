@@ -6,8 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public float timeBetweenWaves;
-    public UpgradeShop upgradeShop;
-    public WeaponShop weaponShop;
     public GameObject player;
     public WaveOver waveOver;
     public int waveCounter;
@@ -30,14 +28,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (weaponShop == null)
-        {
-            weaponShop = FindObjectOfType<WeaponShop>();
-        }
-        if(upgradeShop == null)
-        {
-            upgradeShop = FindObjectOfType<UpgradeShop>();
-        }
         Startup();
         StartWave();
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -105,7 +95,7 @@ public class GameManager : MonoBehaviour
             {
                 FindObjectOfType<PauseFunctions>().ToggleInput(false);
             }
-            if(FindObjectOfType<WaveUI>() != null)
+            if (FindObjectOfType<WaveUI>() != null)
             {
                 FindObjectOfType<WaveUI>().transform.parent.gameObject.SetActive(false);//very roundabout way for disabling the HUD
             }
