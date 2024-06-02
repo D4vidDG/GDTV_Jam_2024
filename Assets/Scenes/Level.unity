@@ -2095,9 +2095,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3077663190437241920, guid: 3593407aecbc7564a97a64eadad80d38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 552741075}
-    - targetCorrespondingSourceObject: {fileID: 3077663190437241920, guid: 3593407aecbc7564a97a64eadad80d38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 552741074}
   m_SourcePrefab: {fileID: 100100000, guid: 3593407aecbc7564a97a64eadad80d38, type: 3}
 --- !u!114 &520502716 stripped
 MonoBehaviour:
@@ -2376,26 +2373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &552741074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552741070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42832947d6794d41bab9d26ce42beba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnabled: 1
-  waveDelay: 0.5
-  initialPosition: {x: 0, y: 0, z: 0}
-  wavePositionUp: {x: 0, y: 0.5, z: 0}
-  wavePositionDown: {x: 0, y: -0.5, z: 0}
-  textMeshPro: {fileID: 552741072}
-  isGoingUp: 0
-  positionIndex: 0
 --- !u!114 &552741075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2729,9 +2706,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3077663190437241920, guid: 1c8cef95346324447a7e1a39090def40, type: 3}
       insertIndex: -1
       addedObject: {fileID: 621138404}
-    - targetCorrespondingSourceObject: {fileID: 3077663190437241920, guid: 1c8cef95346324447a7e1a39090def40, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 621138403}
   m_SourcePrefab: {fileID: 100100000, guid: 1c8cef95346324447a7e1a39090def40, type: 3}
 --- !u!114 &621138400 stripped
 MonoBehaviour:
@@ -2760,26 +2734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &621138403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621138401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42832947d6794d41bab9d26ce42beba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnabled: 1
-  waveDelay: 0.5
-  initialPosition: {x: 0, y: 0, z: 0}
-  wavePositionUp: {x: 0, y: 0.5, z: 0}
-  wavePositionDown: {x: 0, y: -0.5, z: 0}
-  textMeshPro: {fileID: 621138402}
-  isGoingUp: 0
-  positionIndex: 0
 --- !u!114 &621138404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3378,9 +3332,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3077663190437241920, guid: 4ed2e2663cf84f841b7ed367fe8b3431, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1036014574}
-    - targetCorrespondingSourceObject: {fileID: 3077663190437241920, guid: 4ed2e2663cf84f841b7ed367fe8b3431, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1036014573}
   m_SourcePrefab: {fileID: 100100000, guid: 4ed2e2663cf84f841b7ed367fe8b3431, type: 3}
 --- !u!114 &910126865 stripped
 MonoBehaviour:
@@ -4439,26 +4390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1036014573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036014569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42832947d6794d41bab9d26ce42beba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnabled: 1
-  waveDelay: 0.5
-  initialPosition: {x: 0, y: 0, z: 0}
-  wavePositionUp: {x: 0, y: 0.5, z: 0}
-  wavePositionDown: {x: 0, y: -0.5, z: 0}
-  textMeshPro: {fileID: 1036014571}
-  isGoingUp: 0
-  positionIndex: 0
 --- !u!114 &1036014574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9188,6 +9119,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1908861450615610094, guid: 20f86578ed6bfa543b676bbb0747a6dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488107644784688947, guid: 20f86578ed6bfa543b676bbb0747a6dd, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
