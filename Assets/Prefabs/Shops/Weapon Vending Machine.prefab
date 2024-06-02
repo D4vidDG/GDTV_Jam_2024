@@ -94,11 +94,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 183258389590871890, guid: d2c05eef2ca29b94c9cd56350e48f7bf, type: 3}
   m_PrefabInstance: {fileID: 2694937163437210295}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3554591928803535690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1455266951128568317, guid: d2c05eef2ca29b94c9cd56350e48f7bf, type: 3}
-  m_PrefabInstance: {fileID: 2694937163437210295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5849632073348101019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,10 +234,6 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8152914302404508010, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
-      propertyPath: indicator
-      value: 
-      objectReference: {fileID: 3554591928803535690}
     - target: {fileID: 9091439315130993038, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_Name
       value: Reminder
