@@ -6,15 +6,21 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] int levelIndex;
+    public bool enableInput;
 
+    [Header("Images")]
     public static GameOver instance;
     public Image gameOver, background;
     public float delay1, delay2;
 
+    [Header("Buttons")]
     public Image retry, quit;
     public Sprite retrySprite, quitSprite;
-    public bool enableInput;
 
+    [Header("Audio")]
+    public GameObject SFX;
+    public AudioSource BGM;
+    public float soundVolume;
 
     private void Awake()
     {
@@ -40,6 +46,7 @@ public class GameOver : MonoBehaviour
     public void StartGameOverScreen()
     {
         GameManager.instance.ToggleControl(false);
+        BGM.volume = soundVolume;
         StartCoroutine(GameOverRoutine());
     }
 
@@ -51,6 +58,7 @@ public class GameOver : MonoBehaviour
         yield return new WaitForSecondsRealtime(delay1);
 
         gameOver.gameObject.SetActive(true);
+        SFX.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(delay2);
 
