@@ -16,7 +16,12 @@ public class WaveUI : MonoBehaviour
     {
         waveNumberText.text = (GameManager.instance.waveCounter + 1).ToString();
     }
-    
+
+    public void NextWaveInmmediate()
+    {
+
+    }
+
     public void NextWave()
     {
         doneFlashing = false;

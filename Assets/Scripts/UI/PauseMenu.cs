@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu instance;
-    public WeaponShop weaponShop;
-    public UpgradeShop upgradeShop;
     public GameObject pauseScreen, optionsMenu;
     public bool disablePauseMenu, isPaused, isOnOptions;
+
+    public static Action OnPause;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,7 +40,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !upgradeShop.IsOpened() && !weaponShop.IsOpened())
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isOnOptions)
             {
@@ -69,6 +68,7 @@ public class PauseMenu : MonoBehaviour
             pauseScreen.SetActive(true);
             isPaused = true;
             GameManager.instance.ToggleControl(false);
+            OnPause?.Invoke();
         }
     }
 

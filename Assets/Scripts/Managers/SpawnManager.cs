@@ -1,18 +1,22 @@
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    const int MAX_ITERATIONS = 100;
+    [SerializeField] LayerMask obstaclesLayer;
+    [SerializeField] float radiusForCollisionCheck;
     [Header("Number Settings")]
     public int maxEnemyAtOnce;
     public int enemyPerBatch;
     public int enemyPerWave;
-    public int enemyLeftToSpawn;
+    int enemyLeftToSpawn;
     //for some reason i have to seperate them like this so it shows up correctly under the header
 
     [Header("Timer Settings")]
     public float spawnDelay;
-    public float spawnTimer;
+    float spawnTimer;
 
     [Header("Distance Settings")]
     public float distanceRandomness;
@@ -22,7 +26,19 @@ public class SpawnManager : MonoBehaviour
     public GameObject Enemy;
     public List<GameObject> enemyList = new List<GameObject>();
 
+    Camera mainCamera;
+    int iterations; //make sure code doesn't iterate infinitely looking for a location
+    ContactFilter2D filterForLocation;
 
+    private void Start()
+    {
+        mainCamera = Camera.main;
+        iterations = 0;
+        filterForLocation = new ContactFilter2D();
+        filterForLocation.ClearDepth();
+        filterForLocation.SetLayerMask(obstaclesLayer);
+        filterForLocation.useLayerMask = true;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -67,8 +83,22 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        GameObject newEnemy = Instantiate(Enemy, RandomLocation(), Quaternion.identity);
+        GameObject newEnemy = Instantiate(Enemy, Vector2.zero, Quaternion.identity);
+        Vector2 randomLocation = RandomLocation();
 
+        iterations = 0;
+        while (!IsLocationValid(randomLocation, newEnemy))
+        {
+            iterations++;
+            if (iterations > MAX_ITERATIONS)
+            {
+                Debug.LogWarning("Too many iterations while looking for spawning location");
+                return;
+            }
+            randomLocation = RandomLocation();
+        }
+
+        newEnemy.transform.position = randomLocation;
         newEnemy.GetComponent<Health>().OnDead.AddListener(() =>
         {
             RemoveEnemyFromList(newEnemy);
@@ -80,36 +110,40 @@ public class SpawnManager : MonoBehaviour
 
     public Vector2 RandomLocation()
     {
-        Camera cam = Camera.main;
-        float x = 0, y = 0;
+        Vector2 xDirection = Random.value > 0.5f ? Vector2.right : Vector2.left;
+        Vector2 yDirection = Random.value > 0.5f ? Vector2.up : Vector2.down;
 
-        float xyRoll = Random.Range(0, 3);//0 = use x, 1 = use y, 2 = use x and y
-        float numberRoll;// rolls for positive or negative number
+        float xDelta = (mainCamera.orthographicSize * mainCamera.aspect)
+            + Random.Range(0, distanceRandomness);
+        float yDelta = mainCamera.orthographicSize
+            + Random.Range(0, distanceRandomness);
 
-        if (xyRoll == 0 || xyRoll == 2)
+        Vector2 location = (Vector2)mainCamera.transform.position
+            + (xDirection * xDelta) + (yDirection * yDelta);
+
+        Debug.DrawLine((Vector2)mainCamera.transform.position, location, Color.blue, 2f);
+        NNInfo nodeInfo = AstarPath.active.GetNearest(location);
+        return (Vector2)(Vector3)nodeInfo.node.position;
+
+    }
+
+    private bool IsLocationValid(Vector2 location, GameObject enemyInstance)
+    {
+        NNInfo nodeInfo = AstarPath.active.GetNearest(location);
+        if (!nodeInfo.node.Walkable) return false;
+        Collider2D[] results = new Collider2D[2];
+        Collider2D hit = Physics2D.OverlapCircle(location, radiusForCollisionCheck, obstaclesLayer);
+        if (hit != null)
         {
-            numberRoll = Random.Range(0, 2);
-            if (numberRoll == 0) 
-            {
-                numberRoll = -1;
-            }
-            x = cam.transform.position.x + cam.orthographicSize * cam.aspect * numberRoll + Random.Range(0, distanceRandomness) * numberRoll;
+            Debug.Log("failed collider test");
+
+            return false;
         }
 
-        if (xyRoll == 1 || xyRoll == 2)
-        {
-            numberRoll = Random.Range(0, 2);
-            if (numberRoll == 0)
-            {
-                numberRoll = -1;
-            }
-            y = cam.transform.position.y + cam.orthographicSize * numberRoll + Random.Range(0, distanceRandomness) * numberRoll;
-        }
+        Debug.Log(" not failed collider test");
 
 
-        Vector2 location = new(x, y);
-
-        return location;
+        return true;
     }
 
     public void RemoveEnemyFromList(GameObject self)
@@ -121,5 +155,18 @@ public class SpawnManager : MonoBehaviour
             EndWave();
             GameManager.instance.NextWave();
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Camera mainCam = Camera.main;
+        Vector2 cameraPos = (Vector2)Camera.main.transform.position;
+        float xDistance = (mainCam.orthographicSize * mainCam.aspect) + distanceRandomness;
+        float yDistance = mainCam.orthographicSize + distanceRandomness;
+        Gizmos.DrawLine(cameraPos, cameraPos + Vector2.right * xDistance);
+        Gizmos.DrawLine(cameraPos, cameraPos + Vector2.left * xDistance);
+        Gizmos.DrawLine(cameraPos, cameraPos + Vector2.up * yDistance);
+        Gizmos.DrawLine(cameraPos, cameraPos + Vector2.down * yDistance);
     }
 }

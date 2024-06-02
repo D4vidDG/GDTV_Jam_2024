@@ -6,6 +6,7 @@ public class ShopItem : MonoBehaviour
     const string SOLD_TAG = "Sold";
     [SerializeField] protected int price;
     [SerializeField] bool sellIndefinitely;
+    [SerializeField] bool soldOnStart;
 
     protected ShopButton shopButton;
     protected CoinWallet coinWallet;
@@ -22,8 +23,17 @@ public class ShopItem : MonoBehaviour
 
     private void Start()
     {
-        itemSold = false;
-        shopButton.SetPriceTag(price.ToString());
+        if (soldOnStart)
+        {
+            itemSold = true;
+            shopButton.SetPriceTag(SOLD_TAG);
+            shopButton.Disable();
+        }
+        else
+        {
+            itemSold = false;
+            shopButton.SetPriceTag(price.ToString());
+        }
     }
 
     public void SellItem()

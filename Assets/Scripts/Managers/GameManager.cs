@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int waveCounter;
     public bool playerDead;
 
+    bool inBetweenWaves = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -35,10 +37,20 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MergedScene")
+        if (scene.buildIndex == 1)
         {
             Startup();
             StartWave();
+        }
+    }
+
+    private void Update()
+    {
+        if (inBetweenWaves && Input.GetKeyDown(KeyCode.Space))
+        {
+            StopAllCoroutines();
+            inBetweenWaves = false;
+            StartCoroutine(NewWaveIntro());
         }
     }
 
@@ -66,7 +78,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator NextWaveWait()
     {
+        inBetweenWaves = true;
         yield return new WaitForSeconds(timeBetweenWaves);
+        inBetweenWaves = false;
+        StartCoroutine(NewWaveIntro());
+    }
+
+    private IEnumerator NewWaveIntro()
+    {
+        waveOver.ToggleWaveText(false);
         WaveUI wui = FindObjectOfType<WaveUI>();
         wui.NextWave();
 

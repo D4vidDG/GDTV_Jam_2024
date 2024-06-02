@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: b9c7f71ed9b7e564397dea1793f80db4
   - enabled: 1
-    path: Assets/Scenes/MergedScene.unity
+    path: Assets/Scenes/Level.unity
     guid: b9dda123f06720048a38861ffdc90e54
   m_configObjects: {}
