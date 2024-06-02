@@ -134,6 +134,12 @@ MonoBehaviour:
   startSpeed: 30
   penetration: 1
   model: {fileID: 1854939270621555429}
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  obstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &7315677798914582597
 Rigidbody2D:
   serializedVersion: 4

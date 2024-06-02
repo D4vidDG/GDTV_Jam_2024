@@ -1,4 +1,6 @@
+
 using System;
+using ExtensionMethods;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -6,6 +8,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] float startSpeed;
     [SerializeField] int penetration;
     [SerializeField] GameObject model;
+    [SerializeField] LayerMask enemiesLayer;
+    [SerializeField] LayerMask obstaclesLayer;
 
     Rigidbody2D rigidBody;
     Collider2D collider2d;
@@ -62,13 +66,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<Health>(out Health health))
+        if (LayerMaskExtensions.IsInLayerMask(enemiesLayer, other.gameObject)
+                && other.TryGetComponent<Health>(out Health health))
         {
             OnTargetHit?.Invoke(health);
             targetsHit++;
         }
 
-        if (targetsHit >= penetration)
+        if (targetsHit >= penetration ||
+                LayerMaskExtensions.IsInLayerMask(obstaclesLayer, other.gameObject))
         {
             Destroy();
         }
