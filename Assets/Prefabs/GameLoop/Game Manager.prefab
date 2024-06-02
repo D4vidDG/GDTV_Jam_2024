@@ -45,8 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenWaves: 10
-  upgradeShop: {fileID: 0}
-  weaponShop: {fileID: 0}
   player: {fileID: 0}
   waveOver: {fileID: 0}
   waveCounter: 0

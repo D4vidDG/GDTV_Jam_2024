@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
+    [SerializeField] int levelIndex;
+
     public static GameOver instance;
     public Image gameOver, background;
     public float delay1, delay2;
@@ -87,7 +89,7 @@ public class GameOver : MonoBehaviour
         yield return new WaitForSecondsRealtime(delay);
         instance.gameObject.SetActive(true); //why did i make this again
         Time.timeScale = 1;
-        SceneManager.LoadScene("MergedScene");//this should set to the current scene name instead
+        SceneManager.LoadScene(levelIndex);//this should set to the current scene name instead
     }
 
 

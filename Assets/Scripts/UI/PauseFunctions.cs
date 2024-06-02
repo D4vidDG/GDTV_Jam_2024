@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class PauseFunctions : MonoBehaviour
 {
+    [SerializeField] int mainLevelSceneIndex;
     public Image retry, options, quit;
     public Sprite retrySprite, optionsSprite, quitSprite;
-    public bool  enableInput;
+    public bool enableInput;
 
     private void Start()
     {
@@ -48,7 +49,7 @@ public class PauseFunctions : MonoBehaviour
         yield return new WaitForSecondsRealtime(delay);
         GameOver.instance.gameObject.SetActive(true);
         Time.timeScale = 1;
-        SceneManager.LoadScene("MergedScene");//this should set to the current scene name instead
+        SceneManager.LoadScene(mainLevelSceneIndex);//this should set to the current scene name instead
     }
 
 

@@ -17,7 +17,6 @@ public class UpgradeShop : UIShop
     Dictionary<WeaponStat, StatText> statTextLookUpTable;
     Dictionary<WeaponType, OptionData> optionByWeaponType;
     Dictionary<OptionData, WeaponType> weaponTypeByOption;
-    Upgrade[] upgrades;
 
     [Serializable]
     struct WeaponOptionData
@@ -26,7 +25,7 @@ public class UpgradeShop : UIShop
         public OptionData dropDownOption;
     }
 
-    private void Awake()
+    protected override void Initialize()
     {
         statTextLookUpTable = new Dictionary<WeaponStat, StatText>();
         foreach (StatText statText in statsTexts)
@@ -42,24 +41,7 @@ public class UpgradeShop : UIShop
             optionByWeaponType.Add(weaponOption.weaponType, weaponOption.dropDownOption);
         }
 
-        upgrades = GetComponentsInChildren<Upgrade>(true);
         weaponInventory = FindObjectOfType<WeaponInventory>();
-    }
-
-    private void OnEnable()
-    {
-        foreach (Upgrade upgrade in upgrades)
-        {
-            upgrade.OnItemSold += OnUpgradeSold;
-        }
-    }
-
-    private void OnDisable()
-    {
-        foreach (Upgrade upgrade in upgrades)
-        {
-            upgrade.OnItemSold -= OnUpgradeSold;
-        }
     }
 
     public override void Open()
@@ -68,7 +50,7 @@ public class UpgradeShop : UIShop
         UpdateDisplay();
     }
 
-    private void OnUpgradeSold(ShopItem item)
+    protected override void OnItemSold(ShopItem item)
     {
         Upgrade upgrade = item as Upgrade;
         if (upgrade != null)

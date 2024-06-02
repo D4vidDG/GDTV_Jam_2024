@@ -19,7 +19,11 @@ public class CoinWallet : MonoBehaviour
 
     public void Spend(int amount)
     {
-        if (amount <= coinsCollected) coinsCollected -= amount;
+        if (amount <= coinsCollected)
+        {
+            AudioManager.instance.PlaySound(SoundName.CoinSpend);
+            coinsCollected -= amount;
+        }
     }
 
     public void Reset()

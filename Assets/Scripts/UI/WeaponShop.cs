@@ -15,7 +15,7 @@ public class WeaponShop : UIShop
 
     Dictionary<ShopItem, Weapon> lookUpTable;
 
-    private void Awake()
+    protected override void Initialize()
     {
         lookUpTable = new Dictionary<ShopItem, Weapon>();
         foreach (WeaponByShopItem item in weaponsByItem)
@@ -25,29 +25,8 @@ public class WeaponShop : UIShop
         weaponInventory = FindObjectOfType<WeaponInventory>();
     }
 
-    private void OnEnable()
-    {
-        foreach (WeaponByShopItem item in weaponsByItem)
-        {
-            item.shopItem.OnItemSold += OnItemSold;
-        }
-    }
 
-    private void OnDisable()
-    {
-
-        foreach (WeaponByShopItem item in weaponsByItem)
-        {
-            item.shopItem.OnItemSold -= OnItemSold;
-        }
-    }
-
-    public void NextWaveSignal()
-    {
-        GameManager.instance.NextWave();
-    }
-
-    private void OnItemSold(ShopItem item)
+    protected override void OnItemSold(ShopItem item)
     {
         Weapon weaponPrefab = lookUpTable[item];
         Weapon weaponInstance = Instantiate<Weapon>(weaponPrefab);

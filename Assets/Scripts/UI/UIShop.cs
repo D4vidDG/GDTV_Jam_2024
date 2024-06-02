@@ -7,7 +7,46 @@ public abstract class UIShop : MonoBehaviour
 
     bool opened;
 
-    private void Start()
+    protected ShopItem[] items;
+
+    private void Awake()
+    {
+        items = GetComponentsInChildren<ShopItem>(true);
+        Initialize();
+    }
+
+    protected abstract void Initialize();
+
+    protected void OnEnable()
+    {
+        PauseMenu.OnPause += OnPause;
+
+        foreach (ShopItem item in items)
+        {
+            item.OnItemSold += OnItemSold;
+        }
+    }
+
+    protected void OnDisable()
+    {
+        PauseMenu.OnPause -= OnPause;
+
+        foreach (ShopItem item in items)
+        {
+            item.OnItemSold -= OnItemSold;
+        }
+    }
+
+    private void OnPause()
+    {
+        if (opened)
+        {
+            opened = false;
+            panel.SetActive(false);
+        }
+    }
+
+    protected void Start()
     {
         opened = false;
         ToggleAccess(true);
@@ -28,6 +67,8 @@ public abstract class UIShop : MonoBehaviour
         opened = false;
         panel.SetActive(false);
     }
+
+    protected abstract void OnItemSold(ShopItem item);
 
     public bool IsOpened()
     {

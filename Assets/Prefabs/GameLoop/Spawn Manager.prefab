@@ -44,13 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8761d223e7119e4a96bb521c53d0d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  radiusForCollisionCheck: 1
   maxEnemyAtOnce: 20
   enemyPerBatch: 3
   enemyPerWave: 1
-  enemyLeftToSpawn: 0
   spawnDelay: 5
-  spawnTimer: 0
-  distanceRandomness: 10
+  distanceRandomness: 6.63
   shouldSpawn: 1
   Enemy: {fileID: 5115906193322883588, guid: e3a7d47e7f5c23448a3f9291ab7e68ed, type: 3}
   enemyList: []

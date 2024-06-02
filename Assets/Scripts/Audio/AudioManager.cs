@@ -169,4 +169,5 @@ public enum SoundName
     ShotgunReload,
     MGFire,
     MGReload,
+    CoinSpend,
 }
