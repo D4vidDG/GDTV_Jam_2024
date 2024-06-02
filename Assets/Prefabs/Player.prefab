@@ -109,34 +109,34 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 3387232779562359063}
     m_ColliderPaths:
-    - - X: 2680000
-        Y: -330000
-      - X: -3219999
-        Y: -330000
-      - X: -3219999
-        Y: -7730000
-      - X: 2680000
-        Y: -7730000
+    - - X: 2412000
+        Y: -297004
+      - X: -2897999
+        Y: -297004
+      - X: -2897999
+        Y: -6957004
+      - X: 2412000
+        Y: -6957004
   - m_Collider: {fileID: 9158091195192196161}
     m_ColliderPaths:
-    - - X: 2810000
-        Y: 7779995
-      - X: 2209999
-        Y: 7779995
-      - X: 2209999
-        Y: 6679995
-      - X: 2810000
-        Y: 6679995
+    - - X: 2528999
+        Y: 7001997
+      - X: 1988999
+        Y: 7001997
+      - X: 1988999
+        Y: 6011997
+      - X: 2528999
+        Y: 6011997
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.2809707, y: 0.6679995}
-      - {x: 0.2809707, y: 0.7779995}
-      - {x: 0.2209999, y: 0.7779702}
-      - {x: 0.2210292, y: 0.6679995}
-    - - {x: 0.2679707, y: -0.773}
-      - {x: 0.2679707, y: -0.033}
-      - {x: -0.3219999, y: -0.0330293}
-      - {x: -0.3219706, y: -0.773}
+    - - {x: 0.2528706, y: 0.6011997}
+      - {x: 0.2528706, y: 0.7001997}
+      - {x: 0.1988999, y: 0.7001704}
+      - {x: 0.1989292, y: 0.6011997}
+    - - {x: 0.2411707, y: -0.6957004}
+      - {x: 0.2411707, y: -0.0297004}
+      - {x: -0.2897999, y: -0.0297297}
+      - {x: -0.2897706, y: -0.6957004}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c2d5c9b5852e34b8baec541469dfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 40
   OnAttacked:
     m_PersistentCalls:
       m_Calls:
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCoins: 999
-  startCoins: 0
+  startCoins: 999
 --- !u!1 &3094364272628612999
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,8 +561,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1602864157
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1199821215, guid: cef387f420fb00c498ec06f383e3a014, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

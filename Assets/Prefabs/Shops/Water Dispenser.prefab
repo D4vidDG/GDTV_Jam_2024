@@ -101,11 +101,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 259725117347979985, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 259725117347979985, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 259725117347979985, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7177233730671026006, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_text
+      value: Coming soon...
+      objectReference: {fileID: 0}
     - target: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_Name
       value: Water Dispenser
@@ -178,10 +182,48 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6856525579489666647, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3644648178751345443}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8905902611369793499, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 383455285680022035}
   m_SourcePrefab: {fileID: 100100000, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
 --- !u!224 &1011432839901173196 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6856525579489666647, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
   m_PrefabInstance: {fileID: 5849632073348101019}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3077663190437241920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8905902611369793499, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+  m_PrefabInstance: {fileID: 5849632073348101019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &383455285680022035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3077663190437241920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c83a452377f729498564d87847eecd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  flashDelay: 0.66
+  initialColor: {r: 0.19215687, g: 0.19215687, b: 0.19215687, a: 1}
+  flashColor: {r: 1, g: 0.07450981, b: 0.07450981, a: 1}
+  textMeshPro: {fileID: 3653749079470255309}
+  image: {fileID: 0}
+  isFlashing: 0
+--- !u!114 &3653749079470255309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7177233730671026006, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+  m_PrefabInstance: {fileID: 5849632073348101019}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3077663190437241920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
