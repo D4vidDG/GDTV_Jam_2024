@@ -186,10 +186,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4848869969704625883, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4904163055384046010, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1
@@ -197,6 +193,42 @@ PrefabInstance:
     - target: {fileID: 4904163055384046010, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842131529377743393, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6622467988064548181, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_Sprite
@@ -213,10 +245,6 @@ PrefabInstance:
     - target: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_Name
       value: Weapon Vending Machine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8026241809916042869, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_fontSize
@@ -245,9 +273,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2877034466176464357}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6543808250230064555}
     - targetCorrespondingSourceObject: {fileID: 8905902611369793499, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1787868376492538409}
@@ -292,53 +317,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3786712924899290848 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
-  m_PrefabInstance: {fileID: 5849632073348101019}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &6543808250230064555
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3786712924899290848}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.75, y: 2.92}
-  m_EdgeRadius: 0
