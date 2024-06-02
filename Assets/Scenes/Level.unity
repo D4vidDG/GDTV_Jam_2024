@@ -4601,7 +4601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd8549fee2166f4f8997a38a01f7920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 0
+  levelIndex: 1
   gameOver: {fileID: 857096226}
   background: {fileID: 124960667}
   delay1: 1
@@ -5220,8 +5220,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1752004530}
   - {fileID: 1317506493}
+  - {fileID: 1752004530}
   - {fileID: 1766837981}
   - {fileID: 960124026}
   m_Father: {fileID: 0}
@@ -6730,7 +6730,7 @@ MonoBehaviour:
   radiusForCollisionCheck: 0
   maxEnemyAtOnce: 20
   enemyPerBatch: 3
-  enemyPerWave: 1
+  enemyPerWave: 7
   spawnDelay: 5
   distanceRandomness: 10
   shouldSpawn: 1

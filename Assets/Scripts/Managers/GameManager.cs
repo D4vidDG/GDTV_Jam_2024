@@ -111,17 +111,22 @@ public class GameManager : MonoBehaviour
         if (!playerDead)
         {
             playerDead = true;
+            //this whole part is a very roundabout way for disabling the HUD
             if (FindObjectOfType<PauseFunctions>() != null)
             {
                 FindObjectOfType<PauseFunctions>().ToggleInput(false);
             }
             if (FindObjectOfType<WaveUI>() != null)
             {
-                FindObjectOfType<WaveUI>().transform.parent.gameObject.SetActive(false);//very roundabout way for disabling the HUD
+                FindObjectOfType<WaveUI>().transform.parent.gameObject.SetActive(false);
             }
             if (FindObjectOfType<MouseLookAheadTarget>() != null)
             {
                 FindObjectOfType<MouseLookAheadTarget>().transform.parent.gameObject.SetActive(false);
+            }
+            if (FindObjectOfType<QuestPointer>() != null)
+            {
+                FindObjectOfType<QuestPointer>().transform.parent.gameObject.SetActive(false);
             }
             GameOver.instance.gameObject.SetActive(true);
             GameOver.instance.StartGameOverScreen();
