@@ -61,6 +61,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7662410983212318742, guid: 6d865e648fbda6c4a84dd06a2769a502, type: 3}
+    - target: {fileID: 6005350922611409539, guid: dd2e42901bb9dbc469ed61a69f7efeca, type: 3}
       propertyPath: reloadTime
       value: 1.5
       objectReference: {fileID: 0}
