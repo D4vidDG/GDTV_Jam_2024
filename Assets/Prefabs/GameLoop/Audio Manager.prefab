@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8174601192847767171
+--- !u!1 &6112799917002101386
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2433673794959572023}
-  - component: {fileID: 9119053076239096777}
+  - component: {fileID: 8178202327285982203}
+  - component: {fileID: 4014828926272944925}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2433673794959572023
+--- !u!4 &8178202327285982203
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8174601192847767171}
+  m_GameObject: {fileID: 6112799917002101386}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.43460107, y: 0.5373003, z: -0.11170604}
@@ -32,25 +32,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9119053076239096777
+--- !u!114 &4014828926272944925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8174601192847767171}
+  m_GameObject: {fileID: 6112799917002101386}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56e45952adf5f6f4ca82f56755bd7cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxAudioMixer: {fileID: -5224206750218692241, guid: 1c02bc5aed780bf4f87682b39eda5703, type: 2}
   m_sounds:
   - m_name: 1
     m_clips:
     - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
     - {fileID: 8300000, guid: 06036aacced006e40863b73b3c9fda71, type: 3}
     - {fileID: 8300000, guid: c8e2c9665adbd564f84ba18e753d47f8, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 0.5, y: 0.5}
@@ -60,7 +61,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
     - {fileID: 8300000, guid: 06036aacced006e40863b73b3c9fda71, type: 3}
     - {fileID: 8300000, guid: c8e2c9665adbd564f84ba18e753d47f8, type: 3}
-    volume: 1
+    volume: 0.25
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 0.5, y: 0.5}
@@ -70,7 +71,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f7e5722f15c0e974295ba28883de2a96, type: 3}
     - {fileID: 8300000, guid: 6bf6832b926f4c34ba4ade83655359be, type: 3}
     - {fileID: 8300000, guid: 53bb4a10ff1182448ab7f93dab7d8bfd, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 0.5, y: 0.5}
@@ -83,7 +84,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 94c9fab5c219191418c730b99fbbd5f3, type: 3}
     - {fileID: 8300000, guid: 493bb3bdb3750f54b8fb09ecbd736045, type: 3}
     - {fileID: 8300000, guid: b68fe8d81be990d4a85d2b943362ce23, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 0.5, y: 0.5}
@@ -91,7 +92,66 @@ MonoBehaviour:
   - m_name: 0
     m_clips:
     - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
-    volume: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 0.5, y: 0.5}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 5
+    m_clips:
+    - {fileID: 8300000, guid: 3096d32a595de6e4c96c7a2d5279b984, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 0.5, y: 0.5}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 6
+    m_clips:
+    - {fileID: 8300000, guid: bacd4469903f10e4cbd075a21d53220f, type: 3}
+    - {fileID: 8300000, guid: b7c2b47adefc372458b1128de462e2ae, type: 3}
+    - {fileID: 8300000, guid: 822e4e850e7a4e7459ba363bc57badd1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 0.5, y: 0.5}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 7
+    m_clips:
+    - {fileID: 8300000, guid: fd18d91a6b96abd42b8f2b783f286572, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 0.5, y: 0.5}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 8
+    m_clips:
+    - {fileID: 8300000, guid: ba3b63b03878127448346d2a7ffbfc10, type: 3}
+    - {fileID: 8300000, guid: fddfe74f7dcaaeb458bead1c2b03f5ba, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 0.5, y: 0.5}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 9
+    m_clips:
+    - {fileID: 8300000, guid: 21d7f70e93868f14c9abc12921c5d945, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 0.5, y: 0.5}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 10
+    m_clips:
+    - {fileID: 8300000, guid: 43e519f62dde4354586739e3395fc405, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 0.5, y: 0.5}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 11
+    m_clips:
+    - {fileID: 8300000, guid: 8590f3b90942fff45a3ec74bd3996385, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 0.5, y: 0.5}
