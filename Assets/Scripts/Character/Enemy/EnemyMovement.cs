@@ -56,7 +56,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void RecalculateRandomTarget()
     {
-        Debug.Log("Recalculating");
         randomVector = GetRandomVector();
     }
 
