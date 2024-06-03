@@ -101,7 +101,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 259725117347979985, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.5
+      value: 20.42
       objectReference: {fileID: 0}
     - target: {fileID: 259725117347979985, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -138,6 +138,34 @@ PrefabInstance:
     - target: {fileID: 259725117347979985, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284671955174378579, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: OnPlayerInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284671955174378579, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: OnPlayerInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284671955174378579, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: OnPlayerInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9082677739770264212}
+    - target: {fileID: 2284671955174378579, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: OnPlayerInteract.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284671955174378579, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: OnPlayerInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellHealing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284671955174378579, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: OnPlayerInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WaterDispenser, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284671955174378579, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: OnPlayerInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2588131291229887517, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -199,9 +227,27 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6856525579489666647, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.47
+      objectReference: {fileID: 0}
     - target: {fileID: 7177233730671026006, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_text
-      value: Coming soon...
+      value: 'Press E
+
+        +20% <sprite=0>for 15<sprite=1>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177233730671026006, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_fontSize
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177233730671026006, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_spriteAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c299674611a1314bb7bc11031258479, type: 2}
+    - target: {fileID: 7177233730671026006, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       propertyPath: m_Name
@@ -211,6 +257,18 @@ PrefabInstance:
       propertyPath: indicator
       value: 
       objectReference: {fileID: 2606828997991026060}
+    - target: {fileID: 8478078161309728967, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478078161309728967, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478078161309728967, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3650306324656245636, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
@@ -219,6 +277,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3644648178751345443}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9082677739770264212}
     - targetCorrespondingSourceObject: {fileID: 8905902611369793499, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 383455285680022035}
@@ -263,3 +324,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3786712924899290848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7323708652079390075, guid: 11ccf447294206d488b3432cc1eb428a, type: 3}
+  m_PrefabInstance: {fileID: 5849632073348101019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9082677739770264212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3786712924899290848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6048322a22632d41af08a5a9d4675fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 15
+  healingPercentage: 20
+  interactionTextMesh: {fileID: 3653749079470255309}

@@ -21,12 +21,13 @@ public class HealthBarUI : MonoBehaviour
     private void OnEnable()
     {
         playerHealth.OnAttacked.AddListener(UpdateBar);
+        playerHealth.OnHealed.AddListener(UpdateBar);
     }
 
     private void OnDisable()
     {
         playerHealth.OnAttacked.RemoveListener(UpdateBar);
-
+        playerHealth.OnHealed.RemoveListener(UpdateBar);
     }
 
     void UpdateBar(float damage)

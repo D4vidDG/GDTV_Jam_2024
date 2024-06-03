@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     bool isDead;
     bool isInvincible;
 
+
+    public UnityEvent<float> OnHealed;
     public UnityEvent<float> OnAttacked;
     public UnityEvent OnDead;
     public SoundName hit, death;
@@ -54,6 +56,14 @@ public class Health : MonoBehaviour
         {
             AudioManager.instance.PlaySound(hit);
         }
+    }
+
+    public void Heal(float amount)
+    {
+        if (isDead) return;
+        if (isInvincible) return;
+        health = Mathf.Min(maxHealth, health + amount);
+        OnHealed?.Invoke(amount);
     }
 
     public bool IsDead()
