@@ -7965,6 +7965,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[1].m_ColliderPaths.Array.data[0].Array.data[3].X
       value: 2528999
       objectReference: {fileID: 0}
+    - target: {fileID: 8060268272673990645, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: startCoins
+      value: 999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

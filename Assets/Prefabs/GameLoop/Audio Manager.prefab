@@ -51,7 +51,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
     - {fileID: 8300000, guid: 06036aacced006e40863b73b3c9fda71, type: 3}
     - {fileID: 8300000, guid: c8e2c9665adbd564f84ba18e753d47f8, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -61,7 +61,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
     - {fileID: 8300000, guid: 06036aacced006e40863b73b3c9fda71, type: 3}
     - {fileID: 8300000, guid: c8e2c9665adbd564f84ba18e753d47f8, type: 3}
-    volume: 0.25
+    volume: 0.5
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -71,7 +71,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f7e5722f15c0e974295ba28883de2a96, type: 3}
     - {fileID: 8300000, guid: 6bf6832b926f4c34ba4ade83655359be, type: 3}
     - {fileID: 8300000, guid: 53bb4a10ff1182448ab7f93dab7d8bfd, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -84,7 +84,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 94c9fab5c219191418c730b99fbbd5f3, type: 3}
     - {fileID: 8300000, guid: 493bb3bdb3750f54b8fb09ecbd736045, type: 3}
     - {fileID: 8300000, guid: b68fe8d81be990d4a85d2b943362ce23, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -92,7 +92,7 @@ MonoBehaviour:
   - m_name: 0
     m_clips:
     - {fileID: 8300000, guid: 7a8df729226d87b49a3e01e551316ac5, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -100,7 +100,7 @@ MonoBehaviour:
   - m_name: 5
     m_clips:
     - {fileID: 8300000, guid: 3096d32a595de6e4c96c7a2d5279b984, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -110,7 +110,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: bacd4469903f10e4cbd075a21d53220f, type: 3}
     - {fileID: 8300000, guid: b7c2b47adefc372458b1128de462e2ae, type: 3}
     - {fileID: 8300000, guid: 822e4e850e7a4e7459ba363bc57badd1, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -118,7 +118,7 @@ MonoBehaviour:
   - m_name: 7
     m_clips:
     - {fileID: 8300000, guid: fd18d91a6b96abd42b8f2b783f286572, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -127,7 +127,7 @@ MonoBehaviour:
     m_clips:
     - {fileID: 8300000, guid: ba3b63b03878127448346d2a7ffbfc10, type: 3}
     - {fileID: 8300000, guid: fddfe74f7dcaaeb458bead1c2b03f5ba, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -135,7 +135,7 @@ MonoBehaviour:
   - m_name: 9
     m_clips:
     - {fileID: 8300000, guid: 21d7f70e93868f14c9abc12921c5d945, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -143,7 +143,7 @@ MonoBehaviour:
   - m_name: 10
     m_clips:
     - {fileID: 8300000, guid: 43e519f62dde4354586739e3395fc405, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -151,7 +151,7 @@ MonoBehaviour:
   - m_name: 12
     m_clips:
     - {fileID: 8300000, guid: 6d48294aa2542a442894f66e8388bcb0, type: 3}
-    volume: 0.5
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}
@@ -159,7 +159,23 @@ MonoBehaviour:
   - m_name: 11
     m_clips:
     - {fileID: 8300000, guid: 8590f3b90942fff45a3ec74bd3996385, type: 3}
-    volume: 0.5
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 13
+    m_clips:
+    - {fileID: 8300000, guid: c2300333c5bf3564a847f15f5e1d1ca6, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+  - m_name: 14
+    m_clips:
+    - {fileID: 8300000, guid: b6eb5dc88d2e75945a9aa52ab89c2f89, type: 3}
+    volume: 0.75
     pitch: 1
     loop: 0
     m_randomVolumeRange: {x: 1, y: 1}

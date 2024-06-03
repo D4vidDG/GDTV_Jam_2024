@@ -56,6 +56,7 @@ public class UpgradeShop : UIShop
         Upgrade upgrade = item as Upgrade;
         if (upgrade != null)
         {
+            AudioManager.instance.PlaySound(SoundName.Upgrade);
             WeaponStat targetStat = upgrade.GetTargetStat();
             WeaponStats stats = GetSelectedWeaponStats();
             stats.IncreaseStatLevel(targetStat);

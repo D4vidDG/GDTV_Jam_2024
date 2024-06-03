@@ -26,5 +26,6 @@ public class WaterDispenser : MonoBehaviour
         coinWallet.Spend(price);
         float healingAmount = healingPercentage * playerHealth.GetMaxHealth() / 100;
         playerHealth.Heal(healingAmount);
+        AudioManager.instance.PlaySound(SoundName.Heal);
     }
 }

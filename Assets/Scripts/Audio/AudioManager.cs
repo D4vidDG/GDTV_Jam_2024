@@ -162,7 +162,6 @@ public enum SoundName
     ZombieAttacked,
     ZombieNoises,
     CoinPickup,
-
     PistolFire,
     PistolReload,
     ShotgunFire,
@@ -170,4 +169,6 @@ public enum SoundName
     MGFire,
     MGReload,
     CoinSpend,
+    Upgrade,
+    Heal,
 }
