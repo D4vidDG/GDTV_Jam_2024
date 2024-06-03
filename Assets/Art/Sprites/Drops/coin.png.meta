@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c2e81f2456c314daf1cc14a36d7622
-      internalID: -160161798
+      spriteID: 3404044e99432de4ab49d5e2d14d5df2
+      internalID: -1874755791
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 940b06a730f74b94db50768e4da27b8f
-      internalID: 1565137523
+      spriteID: 1c89392a3c6367f43951e9e6e83266c0
+      internalID: -1873283985
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10d4ea49202b5ac43bb4f29c78432814
-      internalID: -1001421001
+      spriteID: bf44381893991eb45ac9b4ffd6475241
+      internalID: -1109612286
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc2e30dfc4bdc774881a9e224201d000
-      internalID: -1151032079
+      spriteID: a7129ecb99971e8438fdda8a3873eb52
+      internalID: 213641791
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      coin_0: -160161798
-      coin_1: 1565137523
-      coin_2: -1001421001
-      coin_3: -1151032079
+      coin_0: -1874755791
+      coin_1: -1873283985
+      coin_2: -1109612286
+      coin_3: 213641791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
