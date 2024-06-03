@@ -7,10 +7,11 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] int levelIndex;
     public bool enableInput;
+    public SpriteRenderer background;
 
     [Header("Images")]
     public static GameOver instance;
-    public Image gameOver, background;
+    public Image gameOver;
     public float delay1, delay2;
 
     [Header("Buttons")]
@@ -53,7 +54,9 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator GameOverRoutine()
     {
-        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().sortingLayerName = "UI";
+        SpriteRenderer playerRenderer = GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>();
+        playerRenderer.sortingLayerName = "UI";
+        playerRenderer.sortingOrder = background.sortingOrder + 1;
         background.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(delay1);
