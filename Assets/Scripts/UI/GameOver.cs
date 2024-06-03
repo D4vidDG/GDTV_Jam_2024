@@ -53,6 +53,7 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator GameOverRoutine()
     {
+        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().sortingLayerName = "UI";
         background.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(delay1);

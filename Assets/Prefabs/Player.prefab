@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCoins: 999
-  startCoins: 999
+  startCoins: 0
 --- !u!1 &3094364272628612999
 GameObject:
   m_ObjectHideFlags: 0
