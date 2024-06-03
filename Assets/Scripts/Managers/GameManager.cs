@@ -79,7 +79,16 @@ public class GameManager : MonoBehaviour
     IEnumerator NextWaveWait()
     {
         inBetweenWaves = true;
-        yield return new WaitForSeconds(timeBetweenWaves);
+        float timer = timeBetweenWaves;
+        while (0 < timer)
+        {
+            int units = (int)timer;
+            int decimals = (int)((timer - units) * 100f);
+            waveOver.timerText.text = units + "." + decimals;
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        waveOver.timerText.text = "0.0";
         inBetweenWaves = false;
         StartCoroutine(NewWaveIntro());
     }
