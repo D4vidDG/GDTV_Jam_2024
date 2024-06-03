@@ -121,7 +121,7 @@ public class SpawnManager : MonoBehaviour
         Vector2 location = (Vector2)mainCamera.transform.position
             + (xDirection * xDelta) + (yDirection * yDelta);
 
-        Debug.DrawLine((Vector2)mainCamera.transform.position, location, Color.blue, 2f);
+        //Debug.DrawLine((Vector2)mainCamera.transform.position, location, Color.blue, 2f);
         NNInfo nodeInfo = AstarPath.active.GetNearest(location);
         return (Vector2)(Vector3)nodeInfo.node.position;
 
