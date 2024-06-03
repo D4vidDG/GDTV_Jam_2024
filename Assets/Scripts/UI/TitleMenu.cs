@@ -23,32 +23,9 @@ public class TitleMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isOnOptions)
         {
-            if (!isOnOptions)
-            {
-                TogglePause();
-            }
-            else
-            {
-                ToggleOptions();
-            }
-        }
-    }
-
-    public void TogglePause()
-    {
-        if (isPaused)
-        {
-            Time.timeScale = 1.0f;
-            menuScreen.SetActive(false);
-            isPaused = false;
-        }
-        else
-        {
-            Time.timeScale = 0.0f;
-            menuScreen.SetActive(true);
-            isPaused = true;
+            ToggleOptions();
         }
     }
 
