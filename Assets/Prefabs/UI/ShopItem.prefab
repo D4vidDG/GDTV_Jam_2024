@@ -51,6 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 100
+  soldOnStart: 0
+  oneTimePurchase: 0
+  soldTag: Sold
 --- !u!1 &4551957320927898420
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinImage: {fileID: 1389300418458011711}
   priceTag: {fileID: 6814797306305773897}
-  coinEnabled: {fileID: 21300000, guid: 1217a81668199b54c9c9ac3ae8b3dd8b, type: 3}
-  coinDisabled: {fileID: 21300000, guid: 29aecbb50c2e5674fa076efa1295a44d, type: 3}
-  enabledPriceColor: {r: 0.21568629, g: 0.7176471, b: 0.38823533, a: 1}
-  disabledPriceColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+  coinEnabledSprite: {fileID: 21300000, guid: 1217a81668199b54c9c9ac3ae8b3dd8b, type: 3}
+  coinDisabledSprite: {fileID: 21300000, guid: 29aecbb50c2e5674fa076efa1295a44d, type: 3}
+  priceTextEnabledColor: {r: 0.21960786, g: 0.7176471, b: 0.3921569, a: 1}
+  priceTextDisabledColor: {r: 0.3372549, g: 0.42352945, b: 0.5254902, a: 1}

@@ -3,58 +3,42 @@ using UnityEngine;
 public abstract class UIShop : MonoBehaviour
 {
     [SerializeField] GameObject panel;
-    [SerializeField] bool canAccessShop;
 
-    bool opened;
+    bool opened = false;
 
-    protected ShopItem[] items;
+    protected ShopItem[] shopItems;
 
     private void Awake()
     {
-        items = GetComponentsInChildren<ShopItem>(true);
+        shopItems = GetComponentsInChildren<ShopItem>(true);
         Initialize();
     }
 
     protected abstract void Initialize();
+    protected abstract void OnItemSold(ShopItem item);
 
-    protected void OnEnable()
+    private void OnEnable()
     {
         PauseMenu.OnPause += OnPause;
 
-        foreach (ShopItem item in items)
+        foreach (ShopItem item in shopItems)
         {
             item.OnItemSold += OnItemSold;
         }
     }
 
-    protected void OnDisable()
+    private void OnDisable()
     {
         PauseMenu.OnPause -= OnPause;
 
-        foreach (ShopItem item in items)
+        foreach (ShopItem item in shopItems)
         {
             item.OnItemSold -= OnItemSold;
         }
     }
 
-    private void OnPause()
-    {
-        if (opened)
-        {
-            opened = false;
-            panel.SetActive(false);
-        }
-    }
-
-    protected void Start()
-    {
-        opened = false;
-        ToggleAccess(true);
-    }
-
     public virtual void Open()
     {
-        if (!canAccessShop) return;
         GameManager.instance.ToggleControl(false);
         opened = true;
         panel.SetActive(true);
@@ -68,16 +52,18 @@ public abstract class UIShop : MonoBehaviour
         panel.SetActive(false);
     }
 
-    protected abstract void OnItemSold(ShopItem item);
+    private void OnPause()
+    {
+        if (opened)
+        {
+            opened = false;
+            panel.SetActive(false);
+        }
+    }
 
-    public bool IsOpened()
+    public bool IsOpen()
     {
         return opened;
     }
 
-
-    public void ToggleAccess(bool toggle)
-    {
-        canAccessShop = toggle;
-    }
 }

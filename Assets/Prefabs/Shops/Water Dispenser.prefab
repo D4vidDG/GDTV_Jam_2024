@@ -341,6 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6048322a22632d41af08a5a9d4675fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 15
+  price: 10
   healingPercentage: 20
   interactionTextMesh: {fileID: 3653749079470255309}

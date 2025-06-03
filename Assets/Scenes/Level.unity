@@ -1755,6 +1755,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6742362521817082292, guid: e92bee28be8a76a4995f44826da4da14, type: 3}
+      propertyPath: statUpgradesData.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6764621727044320065, guid: e92bee28be8a76a4995f44826da4da14, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7844,6 +7848,10 @@ PrefabInstance:
     - target: {fileID: 7684724765268315060, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
       propertyPath: m_ColliderPaths.Array.data[1].m_ColliderPaths.Array.data[0].Array.data[3].X
       value: 2528999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060268272673990645, guid: 5843aa2db5969af45976590be2ce02c7, type: 3}
+      propertyPath: startCoins
+      value: 999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

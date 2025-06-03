@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558a4f007bbdba148826a25fb621d559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: 0
+  targetStat: 0
   title: {fileID: 1591492702554958320}
   value: {fileID: 5068725128214228798}
-  diff: {fileID: 3250497923484190249}
+  increase: {fileID: 3250497923484190249}

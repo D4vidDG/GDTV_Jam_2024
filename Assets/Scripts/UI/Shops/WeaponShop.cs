@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class WeaponShop : UIShop
 {
-    [SerializeField] WeaponByShopItem[] weaponsByItem;
+    [SerializeField] ShopItemData[] shopItemsData;
     WeaponInventory weaponInventory;
+
     [Serializable]
-    struct WeaponByShopItem
+    struct ShopItemData
     {
         public ShopItem shopItem;
         public Weapon weaponPrefab;
     }
 
-    Dictionary<ShopItem, Weapon> lookUpTable;
+    Dictionary<ShopItem, Weapon> weaponByShopItem;
 
     protected override void Initialize()
     {
-        lookUpTable = new Dictionary<ShopItem, Weapon>();
-        foreach (WeaponByShopItem item in weaponsByItem)
+        weaponByShopItem = new Dictionary<ShopItem, Weapon>();
+        foreach (ShopItemData itemData in shopItemsData)
         {
-            lookUpTable.Add(item.shopItem, item.weaponPrefab);
+            weaponByShopItem.Add(itemData.shopItem, itemData.weaponPrefab);
         }
         weaponInventory = FindObjectOfType<WeaponInventory>();
     }
@@ -28,7 +29,7 @@ public class WeaponShop : UIShop
 
     protected override void OnItemSold(ShopItem item)
     {
-        Weapon weaponPrefab = lookUpTable[item];
+        Weapon weaponPrefab = weaponByShopItem[item];
         Weapon weaponInstance = Instantiate<Weapon>(weaponPrefab);
         weaponInventory.AddWeapon(weaponInstance);
         weaponInventory.EquipWeapon(weaponInstance.GetWeaponType());

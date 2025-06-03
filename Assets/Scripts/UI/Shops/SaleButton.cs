@@ -3,14 +3,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.UI.Button;
 
-public class ShopButton : MonoBehaviour
+public class SaleButton : MonoBehaviour
 {
     [SerializeField] Image coinImage;
     [SerializeField] TextMeshProUGUI priceTag;
-    [SerializeField] Sprite coinEnabled;
-    [SerializeField] Sprite coinDisabled;
-    [SerializeField] Color enabledPriceColor;
-    [SerializeField] Color disabledPriceColor;
+    [SerializeField] Sprite coinEnabledSprite;
+    [SerializeField] Sprite coinDisabledSprite;
+    [SerializeField] Color priceTextEnabledColor;
+    [SerializeField] Color priceTextDisabledColor;
 
     Button button;
 
@@ -24,21 +24,19 @@ public class ShopButton : MonoBehaviour
     public void Enable()
     {
         button.interactable = true;
-        coinImage.sprite = coinEnabled;
-        priceTag.color = enabledPriceColor;
+        coinImage.sprite = coinEnabledSprite;
+        priceTag.color = priceTextEnabledColor;
     }
 
     public void Disable()
     {
         button.interactable = false;
-        coinImage.sprite = coinDisabled;
-        priceTag.color = disabledPriceColor;
+        coinImage.sprite = coinDisabledSprite;
+        priceTag.color = priceTextDisabledColor;
     }
 
     public void SetPriceTag(string value)
     {
         priceTag.text = value;
     }
-
-
 }

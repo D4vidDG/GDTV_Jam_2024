@@ -126,8 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 6548986327780658665}
-  canAccessShop: 0
-  weaponsByItem:
+  shopItemsData:
   - shopItem: {fileID: 1927469137460075537}
     weaponPrefab: {fileID: 4312881845819348631, guid: da7f03ec87b8aee4984161a5b2cb551b, type: 3}
   - shopItem: {fileID: 6376887691297274710}
@@ -669,6 +668,10 @@ PrefabInstance:
       propertyPath: price
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5106120141781468153, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
+      propertyPath: oneTimePurchase
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6814797306305773897, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
       propertyPath: m_fontSize
       value: 40
@@ -901,6 +904,10 @@ PrefabInstance:
     - target: {fileID: 5106120141781468153, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
       propertyPath: price
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106120141781468153, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
+      propertyPath: oneTimePurchase
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6814797306305773897, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
       propertyPath: m_fontSize
@@ -1149,6 +1156,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5106120141781468153, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
       propertyPath: soldOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106120141781468153, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
+      propertyPath: oneTimePurchase
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6814797306305773897, guid: f4952697fe1ca9f4cb4fa20f77092872, type: 3}
